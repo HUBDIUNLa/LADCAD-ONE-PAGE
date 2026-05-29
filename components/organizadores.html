@@ -1,0 +1,116 @@
+
+<style>
+    :root {
+        --bg-light: #f9f9f9;
+        --text-dark: #222;
+    }
+
+    .jornada-organizadores {
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+       
+    }
+
+    /* --- GUARDA SUPERIOR DE MINI BLOQUES INTERCALADOS --- */
+    .guarda-bloques {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-bottom: 45px;
+    }
+
+    .mini-bloque {
+        height: 35px; 
+        width: auto;
+        object-fit: contain;
+        opacity: 0.8;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 55px;
+        color: #333;
+    }
+
+    /* --- FILA ÚNICA DE LOGOS INTEGRADOS (SIN CONTENEDOR BLANCO) --- */
+    .fila-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px; /* Aumentamos el espacio entre logos ya que no hay recuadros */
+        flex-wrap: wrap;
+    }
+
+    .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;  /* Espacio horizontal asignado a cada logo */
+        height: 100px; /* Espacio vertical asignado a cada logo */
+    }
+
+    .logo-item img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        /* Podés activar un filtro sutil si querés que los logos con fondo blanco puro 
+           se integren mejor con el gris claro, aunque al ser pngs transparentes o fotos no hace falta */
+    }
+
+    /* Ajustes para pantallas chicas (Móviles) */
+    @media (max-width: 768px) {
+        .jornada-organizadores {
+            padding: 40px 15px;
+        }
+        .guarda-bloques {
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .mini-bloque {
+            height: 25px; 
+        }
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+        }
+        .fila-logos {
+            gap: 25px;
+        }
+        .logo-item {
+            width: 120px;
+            height: 75px; 
+        }
+    }
+</style>
+
+<section class="jornada-organizadores">
+    
+   
+    <h2 class="section-title">Organizan la Jornada</h2>
+
+    <div class="fila-logos">
+        <div class="logo-item">
+            <img src="assets/images/unla logo rrss.jpg" alt="UNLa">
+        </div>
+        <div class="logo-item">
+            <img src="assets/images/lad sin borde negro.png" alt="LAD">
+        </div>
+        <div class="logo-item">
+            <img src="assets/images/logo di.jpg" alt="DI UNLa">
+        </div>
+        <div class="logo-item">
+            <img src="assets/images/logo HyA.jpg" alt="HyA UNLa">
+        </div>
+        <div class="logo-item">
+            <img src="assets/images/etfdunla_logo.jpg" alt="ETFD UNLa">
+        </div>
+    </div>
+
+</section>

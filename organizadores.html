@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizadores de la Jornada</title>
+    <style>
+        :root {
+            --bg-light: #f9f9f9;
+            --text-dark: #222;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .jornada-organizadores {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        /* Contenedor Principal de Logos */
+        .logos-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Fila de Organizadores Principales (UNLa y LAD) */
+        .logos-principales {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        /* Fila de Áreas / Carreras Co-organizadoras */
+        .logos-secundarios {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Estilo para las tarjetas de logos */
+        .logo-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Tamaños de imágenes según jerarquía */
+        .logo-main img {
+            height: 120px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-sub img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* --- DETALLES DE LOS BLOQUES GEOMÉTRICOS --- */
+        /* Opción A: Bloques integrados en los laterales como decoración de fondo */
+        .deco-bloque {
+            position: absolute;
+            opacity: 0.85;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .bloque-izq {
+            left: -20px;
+            top: 15%;
+            width: 150px;
+        }
+
+        .bloque-der {
+            right: -20px;
+            bottom: 10%;
+            width: 160px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .jornada-organizadores {
+                padding: 50px 15px;
+            }
+            .logos-principales, .logos-secundarios {
+                gap: 30px;
+            }
+            .logo-main img {
+                height: 95px;
+            }
+            .logo-sub img {
+                height: 75px;
+            }
+            .deco-bloque {
+                opacity: 0.3; /* Menos invasivo en móviles */
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="jornada-organizadores">
+        
+        <img src="BLOQUE1.png" alt="Detalle geométrico" class="deco-bloque bloque-izq">
+        <img src="BLOQUE2.png" alt="Detalle geométrico" class="deco-bloque bloque-der">
+
+        <h2 class="section-title">Organizan la Jornada</h2>
+
+        <div class="logos-grid">
+            
+            <div class="logos-principales">
+                <div class="logo-card logo-main">
+                    <img src="unla logo rrss.jpg" alt="UNLa - Universidad Nacional de Lanús">
+                </div>
+                <div class="logo-card logo-main">
+                    <img src="lad sin borde negro.png" alt="LAD - Laboratorio de Diseño">
+                </div>
+            </div>
+
+            <div class="logos-secundarios">
+                <div class="logo-card logo-sub">
+                    <img src="logo di.jpg" alt="DI UNLa - Diseño Industrial">
+                </div>
+                <div class="logo-card logo-sub">
+                    <img src="logo HyA.jpg" alt="HyA UNLa - Departamento de Humanidades y Artes">
+                </div>
+                <div class="logo-card logo-sub">
+                    <img src="etfdunla_logo.jpg" alt="ETFD UNLa - Tecnologías de Fabricación Digital">
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

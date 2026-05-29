@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDFD - Open Page Animation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+        }
+        /* Ocultamos inicialmente los elementos finales para manejarlos con GSAP */
+        #linea-divisoria, #texto-congreso {
+            opacity: 0;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <svg viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+        <g id="grilla-bloques">
+            <rect id="b-violeta-1" x="100" y="50" width="80" height="80" fill="#802080" />
+            <polygon id="b-turquesa-triang" points="200,50 280,50 200,130" fill="#00a0b0" />
+            <path id="b-naranja-d" d="M300,50 H340 A40,40 0 0 1 380,90 A40,40 0 0 1 340,130 H300 Z" fill="#ff4511" />
+            
+            <path id="b-crema-l" d="M100,150 H140 A20,20 0 0 1 160,170 V230 H100 Z" fill="#f3d1a0" />
+            <path id="b-turquesa-curva" d="M200,150 H280 V210 A20,20 0 0 1 260,230 H200 Z" fill="#00a0b0" />
+            <rect id="b-violeta-2" x="300" y="150" width="80" height="80" fill="#802080" />
+            
+            <path id="b-naranja-curva" d="M100,250 A40,40 0 0 1 140,290 V330 H100 Z" fill="#ff4511" />
+            <rect id="b-crema-2" x="200" y="250" width="80" height="80" fill="#f3d1a0" />
+            <g id="b-puntos-turquesa">
+                <circle cx="310" cy="260" r="8" fill="#00a0b0"/><circle cx="340" cy="260" r="8" fill="#00a0b0"/><circle cx="370" cy="260" r="8" fill="#00a0b0"/>
+                <circle cx="310" cy="290" r="8" fill="#00a0b0"/><circle cx="340" cy="290" r="8" fill="#00a0b0"/><circle cx="370" cy="290" r="8" fill="#00a0b0"/>
+                <circle cx="310" cy="330" r="8" fill="#00a0b0"/><circle cx="340" cy="330" r="8" fill="#00a0b0"/><circle cx="370" cy="330" r="8" fill="#00a0b0"/>
+            </g>
+        </g>
+
+        <g id="logo-letras">
+            <path id="letra-J" d="M100,70 H150 V250 A50,50 0 0 1 100,300 H80" stroke="#802080" stroke-width="25" stroke-linecap="round" fill="none" opacity="0"/>
+            <path id="letra-D1" d="M220,80 V280 H260 A100,100 0 0 0 360,180 A100,100 0 0 0 260,80 Z" fill="#00a0b0" opacity="0"/>
+            <path id="letra-F" d="M420,280 V80 H520 M420,170 H490" stroke="#f3d1a0" stroke-width="25" stroke-linecap="round" fill="none" opacity="0"/>
+            <path id="letra-D2" d="M580,80 V280 H620 A100,100 0 0 0 720,180 A100,100 0 0 0 620,80 Z" fill="#ff4511" opacity="0"/>
+        </g>
+
+        <line id="linea-divisoria" x1="760" y1="80" x2="760" y2="280" stroke="#000000" stroke-width="4" />
+        
+        <g id="texto-congreso" fill="#000000" font-weight="bold">
+            <text x="790" y="120" font-size="28">Jornada de</text>
+            <text x="790" y="165" font-size="28">Diseño y</text>
+            <text x="790" y="210" font-size="28">Fabricación</text>
+            <text x="790" y="255" font-size="28">Digital</text>
+        </g>
+    </svg>
+</div>
+
+<script>
+    // Creamos una línea de tiempo (Timeline) con GSAP
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    // PASO 1 y 2: Los bloques entran desde afuera, rotando y posicionándose en la grilla
+    tl.from("#grilla-bloques > *", {
+        duration: 1.2,
+        x: () => (Math.random() - 0.5) * 600, // Posición inicial aleatoria en X
+        y: () => -400 - (Math.random() * 200), // Caen desde arriba
+        rotation: () => (Math.random() - 0.5) * 360,
+        opacity: 0,
+        stagger: 0.15, // Delay secuencial entre bloque y bloque
+        transformOrigin: "center center"
+    });
+
+    // Pequeña pausa dramática contemplando la grilla armada
+    tl.to({}, { duration: 0.5 });
+
+    // PASO 3: Los bloques de la grilla se desvanecen mientras las letras se "arman" y se desplazan
+    // Nota: Para una transición vectorial perfecta "morfando" las formas, se usa el plugin MorphSVG (de pago).
+    // Esta alternativa con herramientas gratuitas genera una fusión por opacidad y escala muy elegante.
+    tl.to("#grilla-bloques", {
+        duration: 0.6,
+        opacity: 0,
+        scale: 0.8,
+        transformOrigin: "center center"
+    }, "fusion"); // El "fusion" es una etiqueta para que ocurra en simultáneo
+
+    tl.to("#letra-J, #letra-D1, #letra-F, #letra-D2", {
+        duration: 0.8,
+        opacity: 1,
+        stagger: 0.1,
+    }, "fusion");
+
+    // Reacomodamos el bloque entero de letras hacia la izquierda para dar espacio al texto
+    tl.to("#logo-letras", {
+        duration: 1,
+        x: -40,
+        ease: "power4.inOut"
+    }, "=-0.3");
+
+    // PASO 4: Aparece la línea y se despliega el texto de la derecha
+    tl.to("#linea-divisoria", {
+        duration: 0.5,
+        opacity: 1,
+        scaleY: 1,
+        transformOrigin: "center center"
+    }, "-=0.4");
+
+    tl.fromTo("#texto-congreso", 
+        { opacity: 0, x: 30 },
+        { duration: 0.8, opacity: 1, x: 0, stagger: 0.1 },
+        "-=0.3"
+    );
+</script>
+
+</body>
+</html>

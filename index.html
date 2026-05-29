@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JDFD</title>
+  <meta name="description" content="Jornada de Diseño y Fabricación Digital" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JDFD" />
+  <meta property="og:description" content="Jornada de Diseño y Fabricación Digital" />
+  <meta property="og:image" content="https://hubdiunla.github.io/JDFD-WEB/assets/images/JDFD_2026_COLORTWHSP.png" />
+  <meta property="og:url" content="https://hubdiunla.github.io/JDFD-WEB/" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JDFD" />
+  <meta name="twitter:description" content="Jornada de Diseño y Fabricación Digital" />
+  <meta name="twitter:image" content="https://hubdiunla.github.io/JDFD-WEB/assets/images/JDFD_2026_COLORTWHSP.png" />
+
+  <link rel="icon" href="assets/images/JDFDBLOQUESSINFONDO.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+</head>
+
+<body>
+
+   <div id="navbar"></div>
+
+  <div id="video-intro-overlay" class="no-print">
+    <div class="video-intro-container">
+      
+      <video autoplay muted loop playsinline id="intro-video">
+        <source src="assets/images/JDFDmobile.mp4" type="video/mp4" media="(max-width: 767px)">
+        
+        <source src="assets/images/JDFD.mp4" type="video/mp4" media="(min-width: 768px)">
+        
+        Tu navegador no soporta la reproducción de video.
+      </video>
+      
+      <div class="video-overlay-filtro"></div>
+
+      <button onclick="alternarSonidoIntro()" id="btn-volumen-intro" class="btn-audio-flotante">
+      <i class="fa-solid fa-volume-xmark" id="icono-volumen"></i>
+    </button>
+      
+      <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
+        <span>Ingresar</span>
+        <i class="fa-solid fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+  </div>
+
+
+
+  <main id="JDFD" class="page-main">
+    <section id="inicio" class="hero-section flex items-start justify-center px-6">
+  <div class="flex flex-col md:flex-row items-center gap-10 max-w-7xl mx-auto">
+
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img
+        src="assets/images/JDFD_2026_Color+Texto.png"
+        alt="Logo JDFD"
+        class="h-[650px] w-auto object-contain scale-120"
+      />
+    </div>
+
+    <div class="w-full md:w-1/2">
+      <div class="text-center md:text-left">
+        
+
+        <p class="text-xl font-bold mb-4 leading-relaxed">
+          Jueves 27 de Agosto de 2026 - UNLa - Buenos Aires, Argentina
+        </p>
+
+       
+
+
+  <div class="flex flex-col md:flex-row items-center gap-10 max-w-7xl mx-auto">
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+      <a href="#estudios" class="button-primary">CONVOCATORIA</a>
+      <a href="circular.html" class="button-primary">CIRCULAR</a>
+      <a href="proximamente.html" class="button-primary">PROGRAMA</a>
+      <a href="#equipo" class="button-primary">ORGANIZADORES</a>
+       
+      </div>
+      <br>
+      <br>  
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inicio" class="bg-[#1A8C92] flex flex-col items-center justify-center full-bleed px-6 py-12">
+  
+  <div class="max-w-6xl mx-auto w-full text-center mb-10">
+    <h1 id="titulo" class="text-2xl md:text-3xl font-bold mb-3 text-white uppercase tracking-wider">
+      1ERA JORNADA DE DISEÑO Y FABRICACIÓN DIGITAL
+    </h1>
+    <h2 class="text-xl md:text-2xl font-semibold text-black">
+      Diseñar haciendo, fabricar transformando
+    </h2>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-start gap-10 max-w-7xl mx-auto w-full">
+    
+    <div class="w-full md:w-1/2">
+      <div class="text-white text-justify md:text-left space-y-4">
+        <p id="descripcion" class="text-white text-sm leading-relaxed">
+          La 1ª Jornada de Diseño y Fabricación Digital en el LAD (JDFD LAD 2026) es un espacio de encuentro, 
+          reflexión e intercambio colectivo acerca de las transformaciones en la gestión del diseño 
+          y de la innovación en la actual era de digitalización creciente de los procesos productivos, 
+          con el objetivo de promover la innovación y el desarrollo de proyectos que integren diseño y tecnología.
+        </p>
+
+        <p class="text-white text-sm leading-relaxed">
+          Esta primera edición, organizada por el Laboratorio de Diseño (LAD) del Departamento de Humanidades y Artes 
+          de la Universidad Nacional de Lanús (UNLa), se llevará a cabo el día jueves 27 de agosto de 2026 en el Polo Tecnológico 
+          de la universidad (Predio Yrigoyen), en Lanús, Buenos Aires, Argentina.
+        </p>
+
+        <p class="text-white text-sm leading-relaxed">
+          Bajo el propósito de reunir a los actores de la innovación en fabricación digital aplicada al campo del diseño y 
+          de otras ciencias, la jornada invita a investigadores, docentes universitarios y de escuelas técnicas, 
+          profesionales de la industria y estudiantes de grado y posgrado a promover 
+          la divulgación de experiencias, investigación y desarrollo. 
+          En el encuentro se combinarán charlas virtuales matutinas, espacios de talleres y muestras, 
+          y conferencias presenciales vespertinas, con el objetivo de promover un ecosistema de fabricación digital 
+          en Argentina.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2 flex justify-center items-center">
+      <div class="w-full bg-[#1A8C92] p-0 rounded-none shadow-xl overflow-hidden">
+        <video 
+          src="assets/images/JDFD.mp4" 
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          class="w-full h-auto object-cover transform scale-x-[1.03] scale-y-[1.01] origin-left">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="estudios" class="ecosystem2-section full-bleed py-16 px-6">
+  <h2 class="text-black text-3xl font-semibold text-center mb-12">CONVOCATORIA: MODALIDADES DE PARTICIPACIÓN</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+
+    <div id="capacitaciones" class="ecosystem2-card p-6 shadow flex flex-col items-center text-center justify-between">
+      <div class="text-6xl mb-4 h-20 flex items-center justify-center">
+       <img src="assets/images/BLOQUE1.png"  alt="Logo Jornada"  class="w-[3.6rem] h-[3.6rem] object-contain"/>
+      </div>
+
+      <h3 class="text-lg font-semibold mb-1">COMUNICACIÓN BREVE</h3>
+      <p class="text-sm text-white/80 mb-4">Hasta 1000 palabras y 20 imágenes. Se publicará en libro de Actas.</p>
+<br>
+      <a href="https://forms.gle/bquzBb5Qo3K9SAQ76" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Ir al Formulario
+        
+      </a>
+      <br>
+      <a href="condicionescomunicacionbreve.html" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Descargar condiciones
+        
+      </a>
+      <br>
+    </div>
+
+    <div id="servicios" class="ecosystem2-card p-6 shadow flex flex-col items-center text-center justify-between">
+      <div class="text-6xl mb-4 h-20 flex items-center justify-center">
+        <img src="assets/images/BLOQUE2.png"  alt="Logo Jornada"  class="w-[3.6rem] h-[3.6rem] object-contain"/>
+      </div>
+
+      <h3 class="text-lg font-semibold mb-1">ARTÍCULO</h3>
+      <p class="text-sm text-white/80 mb-4">Artículo completo con máximo 4000 palabras. Se publicará en libro de Actas de la Jornada en 2027 con ISBN propio en formato de libro.</p>
+<br>
+      <a href="https://forms.gle/z36mywVRbmHh2R8d6" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Ir al Formulario
+      </a>
+      <br>
+      <a href="condicionesarticulo.html" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Descargar condiciones
+        
+      </a>
+      <br>
+    </div>
+
+    <div id="incubadora" class="ecosystem2-card p-6 shadow flex flex-col items-center text-center justify-between">
+      <div class="h-20 flex items-center justify-center">
+        <img src="assets/images/BLOQUE3.png"  alt="Logo Jornada"  class="w-[3.6rem] h-[3.6rem] object-contain"/>
+      </div>
+<br>
+      <h3 class="text-lg font-semibold mb-1">EXPERIENCIA EN VIVO</h3>
+      <p class="text-sm text-white/80 mb-4">Podrás compartir tu experiencia en tiempo real durante el evento. Duración 20 minutos.</p>
+<br>
+      <a href="https://forms.gle/rsgGG7NUNthrT43P6" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+         Ir al Formulario
+      </a>
+      <br>
+      <a href="condicionesexperienciaenvivo.html" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Descargar condiciones
+      </a>
+      <br>
+    </div>
+
+    <div id="proyectos" class="ecosystem2-card p-6 shadow flex flex-col items-center text-center justify-between">
+      <div class="text-6xl mb-4 h-20 flex items-center justify-center">
+        <img src="assets/images/BLOQUE4.png"  alt="Logo Jornada"  class="w-[3.6rem] h-[3.6rem] object-contain"/>
+      </div>
+
+      <h3 class="text-lg font-semibold mb-1">MICROTALLER</h3>
+      <p class="text-sm text-white/80 mb-4">Taller interactivo de participación mediante inscripción previa y cupos limitados. Duración 40 minutos en total.</p>
+<br>      <a href="https://forms.gle/cT9dNPKpDVTxLMiD7" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Ir al Formulario
+      </a>
+      <br>
+      <a href="condicionesmicrotaller.html" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Descargar condiciones
+      </a>
+      <br>
+    </div>
+
+    <div id="proyectos" class="ecosystem2-card p-6 shadow flex flex-col items-center text-center justify-between">
+      <div class="text-6xl mb-4 h-20 flex items-center justify-center">
+        <img src="assets/images/JDFDBLOQUESSINFONDO.png"  alt="Logo Jornada"  class="w-[3.6rem] h-[3.6rem] object-contain"/>
+      </div>
+
+      <h3 class="text-lg font-semibold mb-1">ASISTENTE</h3>
+      <p class="text-sm text-white/80 mb-4">Participación del evento como asistente. La participación es grstuita y con certificación de asistencia</p>
+<br>      <a href="https://forms.gle/JeERcJpw28ytae6U8" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Ir al Formulario
+      </a>
+      <br>
+      <a href="certificados.html" target="_blank" rel="noopener noreferrer" class="ecosystem2-card-link">
+        Descargar Certificado
+      </a>
+      <br>
+    </div>
+
+  </div>
+</section>
+
+<div class="cronograma-interactivo" style="
+  --hub-lad-cyan-dark: #0BA79A;
+  --grape-soda: #88498f;
+  --champagne-mist: #F6E7D0;
+  --tomato: #FF6542;
+  --Mauve-Shadow: #564154;
+  --white-grey: #EBEBEB;
+  --hub-dark-dark-cyan: #1A8C92;
+  --tomato-clear: #f9751d;
+  --tomato-dark: #e54906;
+  --hub-black: #000000;
+  --hub-white: #FFFFFF;
+  --hub-lad-cyan: #11D6C5;
+  --hub-lad-cyan-light: #2CE5D6;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: transparent;
+">
+
+  <h2 style="color: var(--hub-dark-dark-cyan); font-size: 2rem; text-align: center; margin-bottom: 20px; font-weight: bold;">Cronograma</h2>
+
+  <details style="
+    background-color: #262626; /* Fondo gris oscuro de la barra del botón */
+    border-radius: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  ">
+    
+    <summary style="
+      list-style: none;
+      outline: none;
+      cursor: pointer;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    ">
+      <span style="
+        background-color: var(--hub-dark-dark-cyan); /* Base de tu var --tomato con opacidad suave tipo la foto */
+        color: var(--hub-white); 
+        padding: 8px 24px; 
+        border-radius: none; 
+        font-weight: bold; 
+        font-size: 1rem;
+      ">
+        JUEVES 27 DE AGOSTO DE 2026
+      </span>
+      
+      <span class="flecha-icono" style="
+        color: var(--hub-lad-cyan);
+        font-size: 1.2rem;
+        font-weight: bold;
+      ">▼</span>
+    </summary>
+
+    <div style="
+      background-color: var(--hub-black);
+      padding: 24px;
+      border-top: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    ">
+
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 16px;">
+        <div style="border: 1px solid var(--Mauve-Shadow); border-radius: none; display: flex; align-items: center; justify-content: center; padding: 20px;">
+          <span style="color: var(--hub-lad-cyan-light); font-weight: bold; font-size: 1.1rem; text-align: center;">09:00h — 13:00h</span>
+        </div>
+        <div style="background-color: var(--Mauve-Shadow); border-radius: none; padding: 20px;">
+          <div style="color: var(--hub-white); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+            Bloque Matutino — Modalidad Virtual / 
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+            <div style="background: rgba(255,255,255,0.06); border-radius: none; padding: 12px;">
+              <div style="color: var(--hub-lad-cyan); font-weight: bold; font-size: 0.8rem;">09:30 h</div>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Acreditación General</p>
+              <div style="color: var(--hub-lad-cyan); font-weight: bold; font-size: 0.8rem; margin-top: 8px;">10:00 h</div>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Apertura de Autoridades</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-left: 3px solid var(--hub-lad-cyan); border-radius: none 8px 8px 4px; padding: 12px;">
+              <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 1 / PRESENCIAL Y VIRTUAL</div>
+              <p style="margin: 4px 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-left: 3px solid var(--grape-soda); border-radius: none 8px 8px 4px; padding: 12px;">
+              <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 2 / PRESENCIAL Y VIRTUAL</div>
+              <p style="margin: 4px 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-left: 3px solid var(--tomato); border-radius: none 8px 8px 4px; padding: 12px;">
+              <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 3 / PRESENCIAL Y VIRTUAL</div>
+              <p style="margin: 4px 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 16px;">
+        <div style="border: 1px solid var(--Mauve-Shadow); border-radius: none; display: flex; align-items: center; justify-content: center; padding: 12px;">
+          <span style="color: var(--white-grey); font-weight: bold; font-size: 1rem;">13:00h — 14:00h</span>
+        </div>
+        <div style="background-color: var(--white-grey); color: var(--hub-black); border-radius: none; display: flex; align-items: center; justify-content: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; padding: 12px;">
+          Intervalo / Almuerzo libre
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 16px;">
+        <div style="border: 1px solid var(--Mauve-Shadow); border-radius: none; display: flex; align-items: center; justify-content: center; padding: 20px;">
+          <span style="color: var(--hub-lad-cyan-light); font-weight: bold; font-size: 1.1rem; text-align: center;">14:00h — 20:00h</span>
+        </div>
+        <div style="background-color: var(--hub-dark-dark-cyan); border-radius: none; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+          
+          <div>
+            <div style="color: var(--hub-white); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+              Bloque Tarde — 14:00 h a 17:00 h // Sede Polo Tecnológico UNLa
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+              <div style="background: rgba(0,0,0,0.2); border-radius: none; padding: 14px;">
+                <div style="color: var(--tomato); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Espacio Showroom</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Muestra Tecnológica y Experiencias en vivo</p>
+              </div>
+              <div style="background: rgba(0,0,0,0.2); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-lad-cyan-light); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Espacio de Talleres</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Microtalleres</p>
+                <span style="font-size: 0.75rem; color: var(--tomato-clear); font-weight: bold;">⚠️ Cupos Limitados</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px;">
+            <div style="color: var(--hub-white); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+              Bloque Vespertino — 17:00 h a 20:00 h // Ponencias y Cierre en Auditorio Principal
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+              <div style="background: rgba(0,0,0,0.25); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 4 / PRESENCIAL</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+              </div>
+              <div style="background: rgba(0,0,0,0.25); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 5 / PRESENCIAL</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+              </div>
+              <div style="background: var(--grape-soda); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">Actividades de Cierre</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Charlas Principales e Invitados Especiales</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </details>
+</div>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details[open] .flecha-icono { transform: rotate(180deg); display: inline-block; }
+</style>
+
+
+<section id="equipo" class="ecosystem-section full-bleed py-16 px-6" style="
+  --hub-dark-dark-cyan: #1A8C92;
+  --hub-lad-cyan: #11D6C5;
+  --hub-white: #FFFFFF;
+  --hub-black: #000000;
+  --Mauve-Shadow: #564154;
+  --grape-soda: #88498f;
+">
+  <div class="max-w-6xl mx-auto w-full mb-8">
+    <h2 class="text-white text-3xl font-semibold text-center">ORGANIZADORES y COMITÉ</h2>
+  </div>
+
+  <div class="cronograma-interactivo" style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <details style="
+      background-color: #262626; 
+      border-radius: 0px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      width: 100%;
+    ">
+      
+      <summary style="
+        list-style: none;
+        outline: none;
+        cursor: pointer;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      ">
+        <span style="
+          background-color: var(--hub-dark-dark-cyan); 
+          color: var(--hub-white); 
+          padding: 8px 24px; 
+          border-radius: 0px; 
+          font-weight: bold; 
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        ">
+          Conocer a los Miembros del Comité
+        </span>
+        <span class="flecha-icono" style="color: var(--hub-lad-cyan); font-size: 1.2rem; font-weight: bold;">▼</span>
+      </summary>
+
+      <div style="
+        background-color: var(--hub-black);
+        padding: 32px 24px;
+        border-top: 1px solid #333;
+      ">
+        
+        <div class="max-w-6xl mx-auto w-full">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+
+          <div class="ecosystem-card p-6 shadow flex flex-col items-center text-center justify-between">
+            <div class="w-full flex flex-col items-center">
+              <div class="w-40 h-40 mb-5 overflow-hidden rounded-none border-4 border-white/10">
+                <img src="assets/images/Estefania Fondevila Sancet.png" alt="Esp. Estefanía Fondevila Sancet" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-lg font-semibold mb-1 uppercase text-white">Esp. Estefanía Fondevila Sancet</h3>
+              <p class="text-sm text-white mb-3 font-medium">Coordinadora General del Laboratorio de Diseño LAD UNLa</p>
+            </div>
+            
+            <details class="bio-individual w-full mt-2">
+              <summary class="btn-ver-bio">
+                <span class="txt-btn">Ver Trayectoria</span>
+                <i class="fa-solid fa-chevron-down text-xs flecha-bio"></i>
+              </summary>
+              <p class="text-xs text-white/90 text-justify leading-relaxed pt-3 border-t border-white/10 mt-2 animate-fade-in">
+                Esp. en Metodología de la Investigación Científica y programadora web, Responsable de la coordinacion de Investigación DHyA, fundadora del HUB de Diseño Industrial de la UNLa, Directora de Diversos proyectos de Investigación y Becarios. Desarrolla herramientas de planificación, diagnóstico, desarrollo y seguimiento de proyectos y emprendimientos. Promotora de la Gestión del Diseño. Articula con empresas, instituciones y equipos interdisciplinarios.
+              </p>
+            </details>
+          </div>
+
+          <div class="ecosystem-card p-6 shadow flex flex-col items-center text-center justify-between">
+            <div class="w-full flex flex-col items-center">
+              <div class="w-40 h-40 mb-5 overflow-hidden rounded-none border-4 border-white/10">
+                <img src="assets/images/andrs-ruscitti.png" alt="DI Andrés Ruscitti" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-lg font-semibold mb-1 uppercase text-white">  DI Andrés   Ruscitti</h3>
+              <p class="text-sm text-white mb-3 font-medium">Director de la Especialización en Tecnologías de Fabricación Digital UNLa</p>
+            </div>
+            
+            <details class="bio-individual w-full mt-2">
+              <summary class="btn-ver-bio">
+                <span class="txt-btn">Ver Trayectoria</span>
+                <i class="fa-solid fa-chevron-down text-xs flecha-bio"></i>
+              </summary>
+              <p class="text-xs text-white/90 text-justify leading-relaxed pt-3 border-t border-white/10 mt-2 animate-fade-in">
+                Diseñador Industrial y Experto en tecnologías de fabricación digital y cultura maker, Director de Proyectos de impresión 3D en cerámica y modelado tecnológico, desarrolla procesos de innovación en materiales, matricería y prototipado avanzado. Experimenta con la integración de tecnologías digitales en procesos de diseño y producción, y promueve la colaboración interdisciplinaria entre diseñadores, ingenieros y fabricantes. Articula con laboratorios, instituciones académicas y equipos de desarrollo productivo.
+              </p>
+            </details>
+          </div>
+
+          <div class="ecosystem-card p-6 shadow flex flex-col items-center text-center justify-between">
+            <div class="w-full flex flex-col items-center">
+              <div class="w-40 h-40 mb-5 overflow-hidden rounded-none border-4 border-white/10">
+                <img src="assets/images/diego-velazco.jpg" alt="Esp. DI Diego Velazco" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-lg font-semibold mb-1 uppercase text-white">Esp DI Diego Velazco</h3>
+              <p class="text-sm text-white mb-3 font-medium">Director de la Licenciatura en Diseño Industrial UNLa</p>
+            </div>
+            
+            <details class="bio-individual w-full mt-2">
+              <summary class="btn-ver-bio">
+                <span class="txt-btn">Ver Trayectoria</span>
+                <i class="fa-solid fa-chevron-down text-xs flecha-bio"></i>
+              </summary>
+              <p class="text-xs text-white/90 text-justify leading-relaxed pt-3 border-t border-white/10 mt-2 animate-fade-in">
+                Diseñador Industrial, Especialista en Metodología, Cofundador del LAD, Director de la Licenciatura en Diseño Industrial UNLa y especialista en Diseño y producción de productos en madera y metal con fabricación digital. Director de proyectos de investigación y desarrollo en diseño, tecnología y producción. Modelado y diseño 3D, prototipado rápido y fabricación aditiva. Vincula diseño, tecnología y experimentación material.
+              </p>
+            </details>
+          </div>
+
+          <div class="ecosystem-card p-6 shadow flex flex-col items-center text-center justify-between">
+            <div class="w-full flex flex-col items-center">
+              <div class="w-40 h-40 mb-5 overflow-hidden rounded-none border-4 border-white/10">
+                <img src="assets/images/ANDRADE.png" alt="Mg DI Guillermo Andrade" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-lg font-semibold mb-1 uppercase text-white">Mg DI Guillermo Andrade</h3>
+              <p class="text-sm text-white mb-3 font-medium">Director de la Escuela de Oficios Felipe Vallese UNLa</p>
+            </div>
+            
+            <details class="bio-individual w-full mt-2">
+              <summary class="btn-ver-bio">
+                <span class="txt-btn">Ver Trayectoria</span>
+                <i class="fa-solid fa-chevron-down text-xs flecha-bio"></i>
+              </summary>
+              <p class="text-xs text-white/90 text-justify leading-relaxed pt-3 border-t border-white/10 mt-2 animate-fade-in">
+                Mg en Marketing, Diseñador Industrial, Cofundador del LAD y es un especialista enfocado en la gestión estratégica y el desarrollo de productos institucionales. Su labor se centra en la intersección entre el diseño y la comunidad, promoviendo metodologías de enfoque participativo para el codiseño de proyectos con alto impacto social, territorial y productivo. Articula la formación en oficios tradicionales con la innovación del diseño industrial.
+              </p>
+            </details>
+          </div>
+
+        </div> ```
+
+---
+
+
+  </div>
+</section>
+
+<section id="ubicacion" class="bg-[#1A8C92] text-white full-bleed py-16 px-6 overflow-hidden" style="
+  --hub-dark-dark-cyan: #1A8C92;
+  --hub-lad-cyan: #11D6C5;
+  --hub-white: #FFFFFF;
+  --hub-black: #000000;
+">
+  <div class="max-w-6xl mx-auto w-full mb-8 text-center">
+    <h2 class="text-3xl font-bold mb-6">Ubicación y Cómo Llegar</h2>
+    <p class="max-w-3xl mx-auto text-lg text-gray-300">
+      La 1° Jornada de Diseño y Fabricación Digital se realizará en el 
+      Polo Tecnológico de la Universidad Nacional de Lanús (UNLa), 
+      un espacio dedicado a la innovación, el diseño y la fabricación digital.
+    </p>
+  </div>
+
+  <div class="cronograma-interactivo" style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <details style="
+      background-color: #262626; 
+      border-radius: 0px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      width: 100%;
+    ">
+      
+      <summary style="
+        list-style: none;
+        outline: none;
+        cursor: pointer;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      ">
+        <span style="
+          background-color: var(--hub-dark-dark-cyan); 
+          color: var(--hub-white); 
+          padding: 8px 24px; 
+          border-radius: 0px; 
+          font-weight: bold; 
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        ">
+          Ver Dirección, Mapas y Accesos
+        </span>
+        <span class="flecha-icono" style="color: var(--hub-lad-cyan); font-size: 1.2rem; font-weight: bold;">▼</span>
+      </summary>
+
+      <div style="background-color: var(--hub-black); padding: 32px 24px; border-top: 1px solid #333;">
+        <div class="w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+
+            <div class="space-y-8 h-full">
+              <div class="bg-cyan-900 p-8 border border-cyan-800">
+                <h3 class="text-2xl font-semibold mb-4 text-white">Dirección</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  Polo Tecnológico UNLa <br>
+                  Av. Hipólito Yrigoyen 5682 <br>
+                  Remedios de Escalada, Lanús <br>
+                  Provincia de Buenos Aires
+                </p>
+                <p class="text-gray-300 leading-relaxed mt-4">
+                  El predio se encuentra a pocos minutos de la estación de tren Remedios de Escalada (Línea Roca) y es accesible mediante varias líneas de colectivo que circulan por Av. Hipólito Yrigoyen. En este predio encontrás los edificios del Polo Tecnológico, la Escuela de Oficios Felipe Vallese, el Museo Universitario de Diseño MUD, el Museo Universitario de Ciencia MUC, RadioUNLa y el Polideportivo Mary Terán de Weiss.
+                </p>
+              </div>
+
+              <div class="bg-cyan-900 p-8 border border-cyan-800">
+                <h3 class="text-2xl font-semibold mb-4 text-white">Cómo Llegar</h3>
+                <ul class="space-y-4 text-gray-300">
+                  <li>
+                    <strong>En tren:</strong><br>
+                    Se puede llegar en subte con la línea C a la estación Constitución. Allí tomar el tren eléctrico, ramales Glew, Ezeiza, Alejandro Korn o Claypole ("vía Temperley"). Tiene tres opciones:<br>
+                    • Bajar en la estación Banfield: Al salir de la estación, dirigirse a la Av. Alsina, doblar a la izquierda y caminar 7 cuadras hasta llegar al ingreso de la UNLa por calle Malabia.<br>
+                    • Bajar en la estación Lanús: Al salir de la estación tomar un colectivo hasta la Universidad.<br>
+                    Línea Roca – Estación Lanús.
+                  </li>
+                  <li>
+                    <strong>En colectivo:</strong><br>
+                    Varias líneas circulan por Av. Hipólito Yrigoyen y alrededores del predio universitario.<br>
+                    74 (desde Correo Central/San Telmo/Barracas)<br>
+                    79 (desde Constitución)<br>
+                    160 (desde Aeroparque/Palermo/Almagro): sólo cartel verde.
+                  </li>
+                  <li>
+                    <strong>En automóvil:</strong><br>
+                    El acceso principal se encuentra sobre Av. Hipólito Yrigoyen. Acceso por Puente Pueyrredón o Puente Uriburu. Se recomienda llegar con anticipación.
+                  </li>
+                  <div class="pt-2">
+                    <a href="https://www.google.com/maps/dir//Av+Hipolito+Yrigoyen+5682,+B1824PJU+Remedios+de+Escalada,+Buenos+Aires,+Argentina/@-34.7352876,-58.3946148,16z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x95bccd5ebfe25857:0x6bf910c99cc7591f!2m2!1d-58.3902374!2d-34.7352965?hl=es-ES" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#1A8C92] hover:bg-cyan-600 text-white font-medium px-6 py-3 transition-colors duration-200 uppercase text-sm tracking-wider">
+                      Acceder a Google Maps
+                    </a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grid grid-rows-2 gap-8 h-full min-h-[500px] lg:min-h-0">
+              <div class="border border-cyan-800 w-full h-full">
+                <iframe src="https://www.google.com/maps?q=Av.%20Hip%C3%B3lito%20Yrigoyen%205682%20Lan%C3%BAs&output=embed" class="w-full h-full object-cover" style="border:0; min-height: 250px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+              <div class="relative w-full h-full overflow-hidden border border-cyan-800 group min-h-[250px]">
+  <img src="assets/images/Mapa-Predio-yrigoyen-ByW-1536x1276.jpg" alt="Mapa Predio" class="w-full h-full object-cover object-center">
+  
+  <div class="absolute inset-0 bg-black/65 transition-all duration-300 group-hover:bg-black/40 pointer-events-none"></div>
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+    <p class="text-sm font-semibold text-white mb-3 tracking-wide uppercase pointer-events-none">Esquema Predio Yrigoyen</p>
+    
+    <button type="button" onclick="event.preventDefault(); event.stopPropagation(); abrirModalMapa();" class="relative z-10 bg-[#1A8C92] hover:bg-[#11D6C5] text-white hover:text-black font-bold px-5 py-2.5 text-xs uppercase tracking-wider transition-all duration-200 shadow-md cursor-pointer">
+      <i class="fa-solid fa-magnifying-glass-plus mr-2"></i> Ampliar Mapa del Predio
+    </button>
+  </div>
+</div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<div id="modal-mapa-predio" class="fixed inset-0 z-[999999] hidden bg-black/90 backdrop-blur-sm items-center justify-center p-4 animate-fade-in" onclick="cerrarModalMapaOutside(event)">
+  <div class="relative bg-[#1a1a1a] p-4 max-w-4xl w-full border border-white/10 shadow-2xl flex flex-col items-center" onclick="event.stopPropagation()">
+    
+    <button onclick="cerrarModalMapa()" class="absolute -top-12 right-0 text-white hover:text-[#11D6C5] text-3xl transition-colors focus:outline-none">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="text-center w-full mb-3 border-b border-white/10 pb-2">
+      <h4 class="text-lg font-bold text-white uppercase tracking-wide">Campus Universitario UNLa</h4>
+      <p class="text-xs text-gray-400">Distribución de Edificios y Museos — Acceso Av. Hipólito Yrigoyen</p>
+    </div>
+
+    <div class="w-full overflow-auto max-h-[70vh] flex justify-center bg-black">
+      <img src="assets/images/Mapa-Predio-yrigoyen-ByW-1536x1276.jpg" alt="Mapa del Predio UNLa ampliado" class="max-w-full h-auto object-contain">
+    </div>
+
+    <button onclick="cerrarModalMapa()" class="w-full mt-4 bg-[#1A8C92] hover:bg-[#11D6C5] text-white font-bold py-3 uppercase text-sm tracking-wider transition-colors duration-200">
+      Cerrar Vista del Mapa
+    </button>
+  </div>
+</div>
+
+<div id="organizadores"></div>
+
+  </main>
+
+  <div id="footer"></div>
+
+  <div id="cookie-privacy-banner" class="fixed bottom-0 left-0 right-0 z-[999999] hidden bg-[#1a1a1a] border-t border-white/10 text-white p-6 shadow-2xl animate-fade-in" style="font-family: sans-serif;">
+  <div class="max-w-6xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6">
+    
+    <div class="flex-1 text-left">
+      <h5 class="text-sm font-bold uppercase tracking-wider mb-1" style="color: #11D6C5;">
+        Aviso de Privacidad y Cookies
+      </h5>
+      <p class="text-xs text-gray-300 leading-relaxed max-w-4xl">
+        Utilizamos cookies propias y de terceros para garantizar el correcto funcionamiento del sitio, analizar el tráfico web de la Jornada y optimizar tu experiencia de navegación. Al hacer clic en "Aceptar todo", prestás tu consentimiento para el uso de estas tecnologías de acuerdo con nuestras 
+        <a href="#politicas" class="underline hover:text-[#11D6C5] transition-colors">Políticas de Privacidad</a>, 
+        <a href="#cookies" class="underline hover:text-[#11D6C5] transition-colors">Política de Cookies</a> y 
+        <a href="#terminos" class="underline hover:text-[#11D6C5] transition-colors">Términos y Condiciones</a>.
+      </p>
+    </div>
+
+    <div class="flex flex-row items-center gap-3 shrink-0 w-full md:w-auto justify-end">
+      <button onclick="rechazarCookies()" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider border border-white/20 hover:border-white/40 text-gray-300 hover:text-white transition-all duration-200">
+        Rechazar
+      </button>
+      
+      <button onclick="aceptarCookies()" class="bg-[#11D6C5] hover:bg-[#1A8C92] text-black hover:text-white font-bold px-6 py-2.5 text-xs uppercase tracking-wider transition-all duration-200 shadow-md">
+        Aceptar todo
+      </button>
+    </div>
+
+  </div>
+</div>
+
+  <script src="js/components.js?v=1"></script>
+
+  <div id="organizadores"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('components/organizadores.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo cargar el componente organizadores.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('organizadores').innerHTML = data;
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+
+<script>
+    function ingresarAWeb() {
+      const introScreen = document.getElementById('video-intro-overlay');
+      const videoElement = document.getElementById('intro-video');
+      
+      if (introScreen) {
+        // Forzamos la transición fluida de CSS hacia arriba de forma válida
+        introScreen.style.opacity = '0';
+        introScreen.style.transform = 'translateY(-100vh)'; 
+        
+        // Pausamos el video de fondo en paralelo para liberar memoria del dispositivo
+        if (videoElement) {
+            videoElement.pause();
+        }
+        
+        // Una vez terminada la animación (800ms), removemos el contenedor del flujo
+        setTimeout(() => {
+          introScreen.style.display = 'none';
+        }, 800);
+      }
+    }
+</script>
+
+<script>
+    function alternarSonidoIntro() {
+      const videoElement = document.getElementById('intro-video');
+      const icono = document.getElementById('icono-volumen');
+      
+      if (videoElement && icono) {
+        if (videoElement.muted) {
+          // Si está mudo, le activamos el sonido
+          videoElement.muted = false;
+          videoElement.volume = 1.0;
+          icono.className = "fa-solid fa-volume-high"; // Cambia el icono a parlante sonando
+        } else {
+          // Si ya tenía sonido, lo volvemos a mutear
+          videoElement.muted = true;
+          icono.className = "fa-solid fa-volume-xmark"; // Cambia el icono a parlante tachado
+        }
+      }
+    }
+
+    // Tu función ingresar original se mantiene igual pausando el video al salir
+    function ingresarAWeb() {
+      const introScreen = document.getElementById('video-intro-overlay');
+      const videoElement = document.getElementById('intro-video');
+      
+      if (introScreen) {
+        introScreen.style.opacity = '0';
+        introScreen.style.transform = 'translateY(-100vh)'; 
+        
+        if (videoElement) {
+            videoElement.pause();
+        }
+        
+        setTimeout(() => {
+          introScreen.style.display = 'none';
+        }, 800);
+      }
+    }
+</script>
+
+<script>
+
+// Control del Pop-up de Cookies y Políticas de Privacidad
+document.addEventListener("DOMContentLoaded", function () {
+  // Verifica si el usuario ya dio su consentimiento anteriormente
+  const consentimientoGuardado = localStorage.getItem("jdfd_consentimiento_cookies");
+  
+  if (!consentimientoGuardado) {
+    const banner = document.getElementById("cookie-privacy-banner");
+    if (banner) {
+      // Muestra el banner con un pequeño delay para que no sea brusco al cargar
+      setTimeout(() => {
+        banner.style.setProperty("display", "block", "important");
+      }, 1000);
+    }
+  }
+});
+
+function aceptarCookies() {
+  const banner = document.getElementById("cookie-privacy-banner");
+  if (banner) {
+    banner.style.setProperty("display", "none", "important");
+    // Guarda la decisión en el navegador por 365 días (evita que vuelva a salir)
+    localStorage.setItem("jdfd_consentimiento_cookies", "aceptado");
+  }
+}
+
+function rechazarCookies() {
+  const banner = document.getElementById("cookie-privacy-banner");
+  if (banner) {
+    banner.style.setProperty("display", "none", "important");
+    // Podés elegir guardar un estado de rechazo o simplemente cerrarlo temporalmente
+    localStorage.setItem("jdfd_consentimiento_cookies", "rechazado");
+  }
+}
+
+</script>
+
+<script>
+
+// Funciones Globales para el Pop-up del mapa
+function abrirModalMapa() {
+  const modal = document.getElementById('modal-mapa-predio');
+  if (modal) {
+    modal.style.setProperty('display', 'flex', 'important');
+    document.body.style.overflow = 'hidden'; // Bloquea el scroll de la web de fondo
+  }
+}
+
+function cerrarModalMapa() {
+  const modal = document.getElementById('modal-mapa-predio');
+  if (modal) {
+    modal.style.setProperty('display', 'none', 'important');
+    document.body.style.overflow = ''; // Devuelve el scroll normal
+  }
+}
+
+// Cierra el pop-up si hacen clic en el fondo negro
+function cerrarModalMapaOutside(event) {
+  // Solo cierra si hace clic en el fondo del modal, no en la tarjeta blanca
+  if (event.target.id === 'modal-mapa-predio') {
+    cerrarModalMapa();
+  }
+}
+
+</script>
+
+</body>
+</html>

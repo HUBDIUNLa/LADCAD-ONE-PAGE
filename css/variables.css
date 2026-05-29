@@ -1,0 +1,58 @@
+
+:root {
+  --hub-dark-gray: #404A4D;
+  --hub-mint-leaf: #16C499;
+  --hub-turquoise: #29DBB3;
+  --hub-dark-teal: #0E7469;
+  --hub-alabaster-gray: #BFC4C6;
+  --hub-onyx: #090F0D;
+  --hub-black: #000000;
+  --hub-white: #FFFFFF;
+  --hub-light-bg: #F5F7F7;
+  --hub-page-bg: #f9f7f4;
+  --hub-border: #D9E1E2;
+  --hub-cyan-bright: #00FFFF;
+  --hub-lad-cyan: #11D6C5;
+  --hub-lad-cyan-light: #2CE5D6;
+  --hub-lad-cyan-dark: #0BA79A;
+  --grape-soda: #88498f;
+  --champagne-mist: #F6E7D0;
+  --tomato: #FF6542;
+  --Mauve-Shadow: #564154;
+  --Granate: #8B1E3F;
+  --Azul-noche: #0D2B45;
+  --celeste: #4C6F8F;
+  --gris: #8A99A8;
+  --verde-pasto: #6DAA61;
+  --white-grey: #EBEBEB;
+  --hub-dark-dark-cyan: #1A8C92;
+  --tomato-clear: #f9751d;
+  --tomato-dark: #e54906;
+  --hub-celeste:#1C92A8;
+  
+
+
+  --hub-gradient-primary: linear-gradient(
+    135deg,
+    #16C499 0%,
+    #29DBB3 100%
+  );
+
+  --hub-gradient-dark: linear-gradient(
+    135deg,
+    #090F0D 0%,
+    #0E7469 100%
+  );
+
+  --hub-font-main: 'Karla', sans-serif;
+  --hub-font-heading: 'Roboto Mono', monospace;
+
+  --hub-container: 1200px;
+  --hub-page-padding: 1.5rem;
+  --hub-nav-height: 5rem;
+
+  --hub-radius-sm: 0.5rem;
+  --hub-radius-md: 1rem;
+  --hub-shadow-soft: 0 8px 24px rgba(9, 15, 13, 0.08);
+  --hub-shadow-nav: 0 2px 8px rgba(0, 0, 0, 0.12);
+}

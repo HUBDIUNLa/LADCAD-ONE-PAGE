@@ -1,0 +1,1753 @@
+
+@import "reset.css";
+@import "variables.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--hub-font-main);
+  background: var(--white-grey, #EBEBEB);
+  color: var(--hub-onyx);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--hub-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.page-main {
+  padding: 2.5rem 1rem;
+}
+
+.container {
+  width: min(100% - 2rem, var(--hub-container));
+  margin-inline: auto;
+}
+
+.title {
+  font-family: var(--hub-font-heading);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--hub-onyx);
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  min-width: 8.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--hub-dark-dark-cyan, #1A8C92);
+  color: var(--hub-white);
+  border: 0;
+  border-radius: 0;
+  font-family: var(--hub-font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  background: var(--grape-soda, #88498f);
+  color: var(--hub-black);
+  transform: translateY(-1px);
+}
+
+.hero-section {
+  min-height: calc(100vh - 8.75rem);
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.ecosystem-section {
+  background: var(--hub-black, #000000);
+  color: var(--hub-black);
+}
+
+.ecosystem-card {
+  background: var(--hub-black, #000000);
+  color: var(--hub-white);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ecosystem-card:hover {
+  transform: scale(1.03);
+  background: var(--hub-dark-dark-cyan, #1A8C92);
+}
+
+.ecosystem-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hub-white);
+  color: var(--hub-dark-gray);
+  padding: 0.6rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ecosystem-card-link:hover {
+  background: var(--dark-teal, #88498f);
+  color: var(--hub-black);
+}
+
+.ecosystem2-section {
+  background: var(--hub-white, #ffffff);
+  color: var(--hub-black);
+}
+
+.ecosystem2-card {
+  background: var(--hub-black, #000000);
+  color: var(--hub-white);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ecosystem2-card:hover {
+  transform: scale(1.03);
+  background: var(--hub-dark-dark-cyan, #1A8C92);
+}
+
+.ecosystem2-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hub-white);
+  color: var(--hub-dark-gray);
+  padding: 0.6rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ecosystem2-card-link:hover {
+  background: var(--hub-dark-dark-cyan, #1A8C92);
+  color: var(--hub-black);
+}
+
+.site-nav {
+  background: var(--hub-black);
+  color: var(--hub-white);
+  box-shadow: var(--hub-shadow-nav);
+}
+
+.site-link {
+  transition: color 0.2s ease;
+}
+
+.site-link:hover {
+  color: var(--hub-dark-dark-cyan);
+}
+
+.site-footer {
+  background: var(--hub-black);
+  color: var(--hub-white);
+  font-family: var(--hub-font-main);
+}
+
+.footer-bottom {
+  border-top: 4px solid var(--hub-white);
+}
+
+.site-link {
+  transition: color 0.2s ease;
+}
+
+.site-link:hover {
+  color: var(--hub-dark-dark-cyan);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1.2s ease-out 0.3s forwards;
+}
+
+@media (min-width: 768px) {
+  .page-main {
+    padding: 4rem 2rem;
+  }
+}
+
+.page-main {
+  padding-bottom: 0;
+}
+
+.ecosystem-section {
+  margin-bottom: 0;
+}
+
+.community-section {
+  background: var(--tomato-dark, #e54906);
+  color: var(--hub-black);
+  text-align: center;
+}
+
+.community-form label {
+  font-family: var(--hub-font-heading);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.community-input {
+  width: 100%;
+  border: 1px solid var(--hub-border);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  color: var(--hub-onyx);
+  background: var(--hub-white);
+}
+
+.community-input:focus {
+  outline: 2px solid var(--hub-lad-cyan);
+  outline-offset: 2px;
+}
+
+.community-submit {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  border: 0;
+  border-radius: 0;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.community-submit:hover {
+  background: var(--dark-teal, #0E7469);
+  color: var(--hub-onyx);
+}
+
+.legal-section {
+  padding: 4rem 0;
+}
+
+.legal-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--mauve-shadow, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.legal-divider {
+  border-top: 4px solid var(--hub-dark-dark-cyan, #1A8C92);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal-content p + p {
+  margin-top: 1rem;
+}
+
+.legal-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal-link:hover {
+  color: var(--tomato, #FF6542);
+}
+
+@media (max-width: 768px) {
+  .legal-card {
+    padding: 2rem 1.25rem;
+  }
+}
+.incubator-hero {
+  min-height: 52vh;
+  background-image: linear-gradient(rgba(249, 247, 244, 0.72), rgba(249, 247, 244, 0.72)),
+    url("../assets/images/WhatsApp Image 2023-09-28 at 7.02.46 PM.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.incubator-band {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+}
+
+.incubator-card {
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  padding: 2rem;
+}
+
+.incubator-model {
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 1.5rem;
+  box-shadow: var(--hub-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.incubator-model-title {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.incubator-model img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.incubator-strip {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  text-align: center;
+}
+
+.incubator-contact {
+  background: var(--hub-dark-teal);
+  color: var(--hub-white);
+}
+
+.incubator-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.incubator-link-button:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
+
+.courses-hero {
+  background: var(--hub-light-bg);
+  color: var(--hub-onyx);
+}
+
+.courses-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.courses-card {
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  padding: 2rem;
+  box-shadow: var(--hub-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.courses-card:hover {
+  transform: translateY(-4px);
+  background: var(--hub-dark-teal);
+}
+
+.courses-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  background: var(--hub-white);
+  color: var(--hub-dark-gray);
+  padding: 0.75rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.courses-card-link:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
+
+.courses-content p + p {
+  margin-top: 1rem;
+}
+
+.coming-soon-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: var(--hub-page-bg, #f9f7f4);
+}
+
+.coming-soon-card {
+  width: min(100%, 760px);
+  text-align: center;
+  background: var(--hub-black);
+  color: var(--hub-white);
+  padding: 3rem 2rem;
+}
+
+.coming-soon-card p {
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.coming-soon-logo {
+  width: 420px !important;
+  max-width: 120% !important;
+  height: auto !important;
+  margin: 0 auto 0rem !important;
+}
+
+.coming-soon-ribbon {
+  display: inline-block !important;
+  background: var(--hub-lad-cyan-light) !important;
+  color: var(--hub-onyx) !important;
+  padding: 0.5rem 1rem !important;
+  font-family: var(--hub-font-heading) !important;
+  font-size: 1.6rem !important;
+  line-height: 1.15 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.5rem !important;
+}
+.projects-hero {
+  background: var(--hub-light-bg);
+  color: var(--hub-onyx);
+}
+
+.projects-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.projects-section-title {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.project-frame-card {
+  background: var(--hub-white);
+  padding: 0.75rem;
+  box-shadow: var(--hub-shadow-soft);
+  border: 1px solid var(--hub-border);
+}
+
+.project-frame-card iframe {
+  width: 100%;
+  height: 800px;
+  border: 1px solid var(--hub-border);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  border-radius: 999px;
+  box-shadow: var(--hub-shadow-soft);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
+.page-hero {
+  padding: 2rem 1.5rem 2.25rem;
+}
+
+.page-hero-logo {
+  width: 260px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 1.25rem;
+}
+
+.page-hero-title {
+  font-family: var(--hub-font-heading);
+  font-size: clamp(0.75rem, 1vw, 1.25rem);
+  line-height: 1.2;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--hub-onyx);
+}
+.experts-hero {
+  background: var(--hub-light-bg);
+  color: var(--hub-onyx);
+}
+
+.experts-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.experts-section-title {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.expert-card {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 2rem;
+  box-shadow: var(--hub-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 520px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-4px);
+  background: var(--hub-dark-teal);
+}
+
+.expert-card img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.expert-divider {
+  border-top: 4px solid var(--hub-white);
+  opacity: 0.35;
+  margin: 1.5rem 0;
+}
+
+.expert-card-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 0.75rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.expert-card-link:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
+
+.course-list-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.course-item {
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 1.5rem;
+  box-shadow: var(--hub-shadow-soft);
+  border: 1px solid var(--hub-border);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.course-item img {
+  width: min(100%, 320px);
+  margin: 0 auto;
+}
+
+.course-item-title {
+  color: var(--hub-onyx);
+  font-family: var(--hub-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.course-access-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 320px);
+  margin-top: 1rem;
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 0.75rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.course-access-link:hover {
+  background: var(--hub-cyan-bright);
+  color: var(--hub-onyx);
+}
+
+@media (min-width: 768px) {
+  .course-item {
+    grid-template-columns: 320px 1fr;
+    align-items: center;
+  }
+}
+
+.resources-intro {
+  padding: 2rem 1.5rem 1rem;
+  background: var(--hub-page-bg, #f9f7f4);
+}
+
+.resources-intro-card {
+  background: var(--hub-cyan-bright);
+  color: var(--hub-onyx);
+  padding: 2.5rem 2.5rem;
+}
+
+.resources-intro-content {
+  max-width: 1150px;
+}
+
+.resources-intro-content h1 {
+  font-family: var(--hub-font-heading);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.resources-intro-content h2 {
+  font-family: var(--hub-font-heading);
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.resources-intro-content p {
+  max-width: 1050px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .resources-intro-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .resources-intro-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.resource-card {
+  background: #ffffff;
+  border: 1px solid #d8e0e0;
+  padding: 30px;
+}
+
+.resource-card img {
+  width: 100%;
+  display: block;
+  background: #f1f1f1;
+  margin-bottom: 20px;
+}
+
+.resource-card .course-access-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.legal2-section {
+  padding: 4rem 0;
+}
+
+.legal2-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.legal2-divider {
+  border-top: 4px solid var(--hub-celeste, #1C92A8);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal2-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal2-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal2-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal2-content p + p {
+  margin-top: 1rem;
+}
+
+.legal2-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal2-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal2-link:hover {
+  color: var(--hub-cyan-bright, #00a896);
+}
+
+.legal3-section {
+  padding: 4rem 0;
+}
+
+.legal3-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.legal3-divider {
+  border-top: 4px solid var(--tomato-clear, #e54906);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal3-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal3-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal3-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal3-content p + p {
+  margin-top: 1rem;
+}
+
+.legal3-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal3-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal3-link:hover {
+  color: var(--tomato-clear, #e54906);
+}
+.legal0-section {
+  padding: 4rem 0;
+}
+
+.legal0-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.legal0-divider {
+  border-top: 4px solid var(--hub-dark-teal, #0E7469);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal0-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal0-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal0-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal0-content p + p {
+  margin-top: 1rem;
+}
+
+.legal0-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal0-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal0-link:hover {
+  color: var(--hub-dark-teal, #0E7469);
+}
+
+/* Estilo para el logo de pellets flotante arriba a la derecha */
+.logo-tarjeta-esquina {
+    position: absolute;
+    top: 25px;       /* Distancia desde el borde superior de la tarjeta */
+    right: 30px;     /* Distancia desde el borde derecho de la tarjeta */
+    width: 120px;     /* Tamaño controlado para que sea un detalle elegante */
+    height: auto;
+    object-fit: contain;
+    opacity: 0.85;    /* Sutil transparencia para integrarlo al diseño */
+    pointer-events: none; /* Evita que interfiera si alguien quiere seleccionar texto abajo */
+}
+
+/* En celulares reducimos el tamaño o lo acomodamos para que no tape contenido */
+@media (max-width: 768px) {
+    .logo-tarjeta-esquina {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        opacity: 0.5;
+    }
+}
+
+
+.legal1-section {
+  padding: 4rem 0;
+}
+
+.legal1-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray, #564154);
+  color: var(--hub-white);
+  padding: 3rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.legal1-divider {
+  border-top: 4px solid var(--grape-soda, #88498f);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.legal1-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal1-title h3{
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal1-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal1-content p + p {
+  margin-top: 1rem;
+}
+
+.legal1-content h6 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 0.875rem;
+}
+
+.legal1-link {
+  color: var(--hub-white);
+  text-decoration: underline;
+}
+
+.legal1-link:hover {
+  color: var(--grape-soda, #88498f);
+}
+
+
+
+/* ===================================================
+   ESTILOS GENERALES DE IMPRESIÓN Y GENERACIÓN DE PDF
+   (Soporta legal0, legal1, legal2 y legal3)
+   =================================================== */
+@media print {
+    /* 1. Ocultamos navegación, pie de página, botones interactivos y contenedores web */
+    #navbar, 
+    #footer, 
+    .inline-flex, 
+    button, 
+    a[target="_blank"], 
+    .no-print {
+        display: none !important;
+    }
+
+    /* 2. Forzamos fondo blanco y texto negro absoluto en el cuerpo y secciones */
+    body, 
+    .page-main, 
+    .legal0-section, 
+    .legal1-section, 
+    .legal2-section, 
+    .ecosystem-section {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Limpiamos TODAS las variantes de tarjetas de sombras, fondos oscuros y bordes */
+    .legal0-card, 
+    .legal1-card, 
+    .legal2-card, 
+    .legal3-card {
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important; /* Mantiene la base para el logo en la esquina */
+    }
+
+    /* 4. LOGO DE LA ESQUINA: Forzamos que SÍ salga visible y nítido en el PDF */
+    .logo-tarjeta-esquina {
+        display: block !important;
+        position: absolute !important;
+        top: 15px !important;
+        right: 15px !important;
+        width: 60px !important; /* Tamaño ideal regulado para la hoja A4 */
+        opacity: 1 !important;  /* Sin transparencia para que salga nítido con los cartuchos */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* 5. Aseguramos que los títulos y textos destacados pasen a negro */
+    h1, h2, h3, h4, h5, .text-white {
+        color: #000000 !important;
+    }
+
+    /* 6. Ajustamos párrafos e ítems de listas para lectura en papel */
+    p, li {
+        color: #111111 !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        page-break-inside: avoid; /* Evita que un párrafo se corte feo entre hojas */
+    }
+
+    /* 7. Forzamos que se impriman las líneas divisorias de todas las secciones en negro */
+    .legal0-divider,
+    .legal1-divider,
+    .legal2-divider, 
+    .legal3-divider {
+        border-bottom: 2px solid #000000 !important;
+        background-color: #000000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* NUEVO: Forzar márgenes limpios en la hoja física o PDF */
+    @page {
+        margin: 1cm; /* Regula el espacio del borde de la hoja al texto */
+    }
+}
+
+/* --- ESTILO WEB NORMAL --- */
+.caratula-print {
+    display: none;
+}
+
+/* --- ESTILO WEB NORMAL --- */
+.caratula-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN CORREGIDO (Adentro de @media print) --- */
+@media print {
+    .caratula-print {
+        display: block !important;
+        width: 100% !important;
+        background-color: #1a8c92 !important; /* Tono más oscuro y verdoso para contraste del logo */
+        padding: 40px 30px !important;       
+        margin-bottom: 40px !important;
+        box-sizing: border-box !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .caratula-flex {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    /* Columna Izquierda de Logos */
+    .caratula-logos-col {
+        width: 35% !important; /* Más espacio para albergar el logo de la jornada extendido */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important; 
+        align-items: flex-start !important;
+    }
+    
+    .caratula-logos-col img {
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Ajuste de escalas: Jornada más grande, LAD más chico */
+    .logo-jornada {
+        max-width: 140px !important; /* Agrandado sustancialmente */
+    }
+
+    .logo-lad-sub {
+        max-width: 50px !important;  /* Reducido para que quede como firma secundaria */
+    }
+
+    /* Columna de información (Derecha - Alineación limpia) */
+    .caratula-info {
+        width: 60% !important;
+        text-align: right !important;
+    }
+
+    .caratula-info h4 {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin: 0 0 12px 0 !important;
+        color: #ffffff !important;
+    }
+
+    .caratula-meta-line {
+        font-size: 12px !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .caratula-separador {
+        margin: 0 8px !important;
+        color: rgba(255, 255, 255, 0.4) !important;
+    }
+}
+
+/* --- ESTILO WEB NORMAL --- */
+.portada-a4-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN INTEGRADO CON 5 LOGOS (Adentro de @media print) --- */
+@media print {
+    .portada-a4-print {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        position: relative !important; 
+        
+        width: 210mm !important;
+        height: 297mm !important;
+        height: 100vh !important;
+        
+        background-color: #f7f5f2 !important; /* Fondo arena/grisáceo suave */
+        padding: 30mm 20mm 25mm 20mm !important; /* Ajustamos levemente márgenes laterales */
+        box-sizing: border-box !important;
+        
+        page-break-after: always !important;
+        break-after: page !important;
+        
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* --- GUARDA DE BLOQUES Y LOGOS REDISTRIBUIDA --- */
+    .portada-guarda-bloques {
+        display: flex !important;
+        justify-content: space-between !important; /* Distribuye uniformemente a lo ancho */
+        align-items: center !important;
+        gap: 10px !important; /* Espacio compacto para que entren las 11 piezas */
+        width: 100% !important;
+    }
+
+    /* Reducción controlada a 35px para albergar la fila extendida */
+    .bloque-cabecera {
+        height: 35px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        opacity: 0.9 !important;
+    }
+
+    .contenedor-logo-institucional {
+        height: 35px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Todos los logos escalan e igualan su altura perfectamente */
+    .logo-inst-cabecera {
+        height: 100% !important;
+        width: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* --- BLOQUE CENTRAL --- */
+    .portada-centro {
+        text-align: center !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: -10mm !important;
+    }
+
+    .contenedor-logo-principal {
+        margin-bottom: 25px !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .logo-jornada-principal {
+        max-width: 210px !important; 
+        height: auto !important;
+    }
+
+    .portada-institucion {
+        font-size: 15px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: #353839 !important;
+        margin: 0 auto 12px auto !important;
+    }
+
+    .portada-linea-decorativa {
+        width: 60px !important;
+        height: 2px !important;
+        background-color: #353839 !important;
+        margin: 0 auto 25px auto !important;
+    }
+
+    .portada-centro h1 {
+        font-size: 30px !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        color: #353839 !important;
+        text-transform: uppercase !important;
+        margin: 0 auto 12px auto !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .portada-centro h2 {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        color: #4a4e50 !important;
+        margin: 0 auto 30px auto !important;
+    }
+
+    .portada-version {
+        font-size: 12px !important;
+        font-family: 'Roboto Mono', monospace !important;
+        color: #555859 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* --- AREA DEL FOOTER --- */
+    .portada-footer {
+        width: 100% !important;
+    }
+
+    .portada-modalidades {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        border-bottom: 1px solid rgba(53, 56, 57, 0.2) !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .tag-modalidad {
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        background-color: rgba(13, 92, 97, 0.06) !important;
+        color: #353839 !important;
+        padding: 5px 12px !important;
+        border: 1px solid rgba(53, 56, 57, 0.15) !important;
+    }
+
+    .portada-meta-grid {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+
+    .meta-item-izq { text-align: left !important; width: 48% !important; }
+    .meta-item-der { text-align: right !important; width: 48% !important; }
+
+    .portada-meta-grid p {
+        font-size: 11px !important;
+        color: #353839 !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* --- ESTILO WEB NORMAL (Oculto en pantalla) --- */
+.portada-impacto-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN PORTADA DE IMPACTO (Adentro de @media print) --- */
+@media print {
+    .portada-impacto-print {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; /* Centrado vertical absoluto */
+        align-items: center !important;     /* Centrado horizontal absoluto */
+        
+        width: 210mm !important;
+        height: 297mm !important;
+        height: 100vh !important;
+        
+        background-color: #000000  !important; /* Fondo color pleno institucional */
+        padding: 20mm !important;
+        box-sizing: border-box !important;
+        
+        /* Salto obligado inmediatamente después de esta primera carátula */
+        page-break-after: always !important;
+        break-after: page !important;
+        
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .impacto-contenido {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* Contenedor gráfico para los logos e imágenes del centro */
+    .impacto-grafico-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 35px !important; /* Separación estética entre logo e imagen */
+        margin-bottom: 50px !important;
+        width: 100% !important;
+    }
+
+    /* El logo tipográfico adjunto escalado de forma imponente */
+    .impacto-logo-blanco {
+        max-width: 240px !important;
+        height: auto !important;
+       
+    }
+
+    /* La imagen del bloque láser */
+    .impacto-imagen-central {
+        max-width: 360px !important;
+        height: auto !important;
+        object-fit: contain !important;
+        /* Si la imagen posee fondo negro, esto la fusiona de forma invisible sobre el fondo pleno */
+        mix-blend-mode: screen !important; 
+    }
+
+    /* Texto exacto solicitado en blanco puro */
+    .impacto-titulo {
+        font-size: 34px !important;
+        font-weight: 800 !important;
+        color: #ffffff !important; /* Texto en blanco */
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        line-height: 1.2 !important;
+        max-width: 85% !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* --- ESTILO WEB NORMAL --- */
+.portada-lad-espejo-print {
+    display: none;
+}
+
+/* --- ESTILO DE IMPRESIÓN COMPLETO (Adentro de @media print) --- */
+@media print {
+    .portada-lad-espejo-print {
+        display: block !important;
+        position: relative !important;
+        
+        width: 210mm !important;
+        height: 297mm !important;
+        height: 100vh !important;
+        
+        background-color: #000000 !important; /* Negro Pleno */
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        
+        page-break-after: always !important;
+        break-after: page !important;
+        
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .lad-espejo-contenedor {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important; /* Evita cualquier desborde por el gran tamaño de los bloques */
+    }
+
+    /* Bloques Morfológicos un 200% más grandes y con posicionamiento dinámico */
+    .bloque-morfologico {
+        position: absolute !important;
+        width: auto !important;
+        max-width: 300px !important; /* Escalado masivo a 200% para gran impacto visual */
+        height: auto !important;
+        object-fit: contain !important;
+        z-index: 1 !important;
+    }
+
+    /* POSICIONAMIENTO DE IRRADIACIÓN (Puntos de anclaje expandidos desde el centro) */
+    .b-irradia-top-izq {
+        top: 12% !important;
+        left: 8% !important;
+    }
+
+    .b-irradia-bottom-izq {
+        bottom: 12% !important;
+        left: 8% !important;
+    }
+
+    /* Bloques derechos: Irradian hacia afuera y se invierten en espejo horizontal */
+    .b-irradia-top-der {
+        top: 12% !important;
+        right: 8% !important;
+        transform: scaleX(-1) !important;
+    }
+
+    .b-irradia-bottom-der {
+        bottom: 12% !important;
+        right: 8% !important;
+        transform: scaleX(-1) !important;
+    }
+
+    /* NÚCLEO CENTRAL CON FUSIÓN ABSOLUTA EN NEGRO */
+    .columna-centro-logo {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Centro matemático absoluto de la página */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10 !important;
+    }
+
+    .logo-lad-central {
+        width: 90px !important; /* Mantiene su escala sutil y elegante en el eje */
+        height: auto !important;
+        object-fit: contain !important;
+        filter: none !important; /* Eliminado por completo el borde tenue; fusión nativa con el fondo */
+    }
+}
+
+/* --- PANTALLA DE INTRODUCCIÓN CON VIDEO --- */
+#video-intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 99999; /* Por encima de cualquier navbar o portada */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    overflow: hidden;
+}
+
+.video-intro-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Se estira estilo fondo de pantalla sin deformarse */
+}
+
+.video-overlay-filtro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece un toque el video para levantar el botón */
+    z-index: 2;
+}
+
+
+.btn-ingresar-jornada {
+    position: absolute !important;
+    bottom: 40px !important;
+    right: 40px !important;
+    z-index: 999999 !important; /* Pasa por encima del z-index: 2 del filtro */
+    pointer-events: auto !important; /* Fuerza la recepción de eventos táctiles y clicks */
+    
+    background-color: #0D5C61 !important;
+    color: #ffffff !important;
+    font-family: 'Karla', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    padding: 16px 35px !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+.btn-ingresar-jornada:hover {
+    background-color: #1A8C92 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 15px 35px rgba(26, 140, 146, 0.4) !important;
+}
+
+@media (max-width: 767px) {
+    .btn-ingresar-jornada {
+        bottom: 12% !important;
+        right: 25px !important;
+        padding: 14px 28px !important;
+        font-size: 14px !important;
+    }
+}
+
+
+
+.btn-ingresar-jornada:hover {
+    background-color: #1A8C92; /* Variante teal clara al pasar el mouse */
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(26, 140, 146, 0.4);
+}
+
+
+
+/* Si la intro está activa pero mandan a imprimir, la anulamos para que no rompa el PDF */
+@media print {
+    #video-intro-overlay {
+        display: none !important;
+    }
+}
+
+.btn-audio-flotante {
+    position: absolute !important;
+    top: 40px !important;
+    right: 40px !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+    background: rgba(13, 92, 97, 0.6) !important; /* Verde traslúcido */
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important; /* Redondo */
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-audio-flotante:hover {
+    background: #0D5C61 !important;
+    transform: scale(1.1) !important;
+}
+
+@media (max-width: 767px) {
+    .btn-audio-flotante {
+        top: 25px !important;
+        right: 25px !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* --- BOTÓN DE WHATSAPP INSTITUCIONAL EN EL FOOTER --- */
+.footer-whatsapp-container {
+    display: flex;
+    justify-content: center; /* Centra el botón en el footer de forma limpia */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.btn-footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A8C92; /* Verde oficial WhatsApp */
+    color: #ffffff !important;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 28px;
+    border: none;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-footer-whatsapp:hover {
+    background-color: #128C7E; /* Tono de WhatsApp más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
+    color: #ffffff !important;
+}
+
+/* Evitamos que el botón se imprima o rompa el diseño del PDF final */
+@media print {
+    .footer-whatsapp-container {
+        display: none !important;
+    }
+}
+
+
+/* --- BOTÓN Y CONTROL DE BIO INDIVIDUAL OCULTA --- */
+.bio-individual summary::-webkit-details-marker {
+    display: none !important; /* Oculta la flecha fea nativa en Chrome/Safari */
+}
+
+.bio-individual {
+    list-style: none !important;
+}
+
+.btn-ver-bio {
+    list-style: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    background-color: rgba(26, 140, 146, 0.2) !important; /* Tu tono teal con transparencia */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    padding: 8px 12px !important;
+    font-family: var(--hub-font-main), sans-serif;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-ver-bio:hover {
+    background-color: #1A8C92 !important; /* Sólido al pasar el mouse */
+    border-color: #ffffff !important;
+}
+
+/* Rotación de la micro flecha de la Bio */
+.bio-individual[open] .flecha-bio {
+    transform: rotate(180deg) !important;
+}
+
+.flecha-bio {
+    transition: transform 0.2s ease !important;
+}
+
+/* Asegurar que las bios se expandan completas en la impresión sin romperse */
+@media print {
+    .bio-individual {
+        display: block !important;
+    }
+    .bio-individual p {
+        display: block !important;
+        color: #111111 !important;
+    }
+    .btn-ver-bio {
+        display: none !important; /* Oculta el botón interactivo en el papel */
+    }
+}
