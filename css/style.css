@@ -154,8 +154,8 @@ h6 {
 }
 
 .site-nav {
-  background: var(--hub-black);
-  color: var(--hub-white);
+  background: var(--hub-WHITE, #FFFFFF);
+  color: var(--Azul-noche, #0D2B45);
   box-shadow: var(--hub-shadow-nav);
 }
 
@@ -164,7 +164,7 @@ h6 {
 }
 
 .site-link:hover {
-  color: var(--hub-dark-dark-cyan);
+  color: var(--Granate, #8B1E3F);
 }
 
 .site-footer {
