@@ -13,12 +13,11 @@
        
     }
 
-
     .fila-logos {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30px; 
+        gap: 40px; 
         flex-wrap: wrap;
         margin-top: 40px;
     }
@@ -27,24 +26,27 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100px; /* Altura base uniforme */
+        height: 100px;
         width: auto;
-        padding: 5px;
     }
 
     .logo-item img {
         height: 100%;
         width: auto;
-        max-width: 250px; /* Evita que los logos muy anchos se deformen */
         object-fit: contain;
     }
 
-    /* Ajuste responsivo */
-    @media (max-width: 768px) {
-        .logo-item {
-            height: 70px;
-        }
+    /* Ajuste para logos que necesitan expandirse más porque tienen márgenes internos */
+    .logo-item.ajuste-full img {
+        padding: 0;
+        height: 120%; /* Los hace ver proporcionalmente iguales a los otros */
     }
+
+    @media (max-width: 768px) {
+        .logo-item { height: 60px; }
+        .fila-logos { gap: 20px; }
+    }
+
 </style>
 
   <section class="jornada-organizadores" aria-labelledby="titulo-organizadores">
@@ -53,7 +55,7 @@
 
     <div class="fila-logos">
         
-        <div class="logo-item">
+        <div class="logo-item ajuste-full">
             <a href="https://unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Universidad Nacional de Lanús">
                 <img src="assets/images/unla logo rrss.jpg" alt="Universidad Nacional de Lanús" />
             </a>
@@ -71,7 +73,7 @@
             </a>
         </div>
 
-        <div class="logo-item">
+        <div class="logo-item ajuste-full">
             <a href="https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial del Departamento de Humanidades y Artes de la Universidad Nacional de Lanús">
                 <img src="assets/images/logo HyA.jpg" alt="Logo oficial del Departamento de Humanidades y Artes - UNLa" />
             </a>
