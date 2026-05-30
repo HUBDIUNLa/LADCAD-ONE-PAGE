@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: var(--hub-font-main);
-  background: var(--white-grey, #EBEBEB);
+  background: var(--hub-white, #EBEBEB);
   color: var(--hub-onyx);
 }
 
