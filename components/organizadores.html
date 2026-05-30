@@ -1,43 +1,31 @@
 
 <style>
-    .jornada-organizadores {
-        padding: 60px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
     .fila-logos {
         display: grid;
-        /* Crea 4 columnas iguales */
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
         gap: 20px;
         align-items: center;
+        justify-items: center;
         margin-top: 40px;
     }
 
-    .logo-item {
-        background-color: #ffffff; /* Grid invisible blanco */
+    .logo-celda {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Esto fuerza a que sea un cuadrado perfecto */
+        background-color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 120px; /* Tamaño de caja uniforme */
-        border: 1px solid transparent; /* Opcional: útil para debuguear si fuera necesario */
-        padding: 10px;
+        padding: 15px;
+        border: 1px solid #eee; /* Opcional: una línea muy fina para ver el límite */
     }
 
-    .logo-item img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
+    .logo-celda img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ajusta la imagen dentro del cuadrado sin deformar */
     }
 
-    /* Ajuste responsivo para tablets y móviles */
-    @media (max-width: 768px) {
-        .fila-logos {
-            grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas en pantallas chicas */
-        }
-    }
 
     :root {
         --bg-light: #f9f9f9;
