@@ -1809,4 +1809,34 @@ h6 {
     transform: scale(1.02);
 }
 
+    .footer-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding: 40px 20px;
+    }
 
+    /* Contenedor estándar para logos secundarios */
+    .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px; 
+        height: 80px;
+    }
+
+    /* Clase especial para el logo del Congreso (Más grande) */
+    .logo-principal {
+        width: 220px; /* Ancho mayor que el resto */
+        height: 120px; /* Alto mayor para que gane presencia */
+    }
+
+    .footer-logos img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    

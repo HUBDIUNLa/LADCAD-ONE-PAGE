@@ -1,4 +1,28 @@
 
+<style>
+    /* Ajuste específico para el logo del congreso en el footer */
+    .wrapper-logo-footer {
+        width: 100%;       /* Asegura que el contenedor tenga espacio */
+        max-width: 350px;  /* Aumenta este valor si lo quieres todavía más grande */
+        display: flex;
+        justify-content: flex-end; /* Lo mantiene alineado a la derecha como tenías */
+    }
+
+    .wrapper-logo-footer img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Opcional: Ajuste para pantallas móviles para que no quede gigante */
+    @media (max-width: 768px) {
+        .wrapper-logo-footer {
+            max-width: 200px;
+            margin: 0 auto; /* Lo centra en móviles */
+        }
+    }
+</style>
+
 <footer class="site-footer full-bleed py-10 px-4">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-lg">
     <div>
@@ -45,6 +69,8 @@
     </div>
 
     <div></div>
+
+    
 
     <div class="flex flex-col items-start md:items-end justify-center gap-4 w-full">
       
