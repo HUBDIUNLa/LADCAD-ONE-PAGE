@@ -1767,6 +1767,20 @@ h6 {
     background-color: transparent;
     overflow: hidden;
     transition: transform 0.2s ease;
+
+  
+}
+
+.wrapper-logo-footer {
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha como en tu diseño */
+    height: 80px; /* Igualamos la altura a la de la sección organizadores */
+}
+
+.img-logo-accessible {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Forzamos a que los distintos logos ocupen el máximo tamaño del bloque sin deformarse */

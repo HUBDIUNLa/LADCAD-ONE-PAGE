@@ -13,6 +13,21 @@
        
     }
 
+    /* Reemplaza .logo-item en tu CSS actual por esto: */
+.logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Define una altura uniforme para todos */
+    padding: 10px;
+}
+
+.logo-item img {
+    height: 100%; 
+    width: auto;
+    object-fit: contain;
+}
+
     /* --- GUARDA SUPERIOR DE MINI BLOQUES INTERCALADOS --- */
     .guarda-bloques {
         display: flex;
@@ -48,21 +63,7 @@
         flex-wrap: wrap;
     }
 
-    .logo-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 160px;  /* Espacio horizontal asignado a cada logo */
-        height: 100px; /* Espacio vertical asignado a cada logo */
-    }
-
-    .logo-item img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-        /* Podés activar un filtro sutil si querés que los logos con fondo blanco puro 
-           se integren mejor con el gris claro, aunque al ser pngs transparentes o fotos no hace falta */
-    }
+    
 
     /* Ajustes para pantallas chicas (Móviles) */
     @media (max-width: 768px) {
