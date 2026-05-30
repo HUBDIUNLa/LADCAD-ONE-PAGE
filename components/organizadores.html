@@ -13,114 +13,70 @@
        
     }
 
-    /* Reemplaza .logo-item en tu CSS actual por esto: */
-.logo-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px; /* Define una altura uniforme para todos */
-    padding: 10px;
-}
 
-.logo-item img {
-    height: 100%; 
-    width: auto;
-    object-fit: contain;
-}
-
-    /* --- GUARDA SUPERIOR DE MINI BLOQUES INTERCALADOS --- */
-    .guarda-bloques {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        flex-wrap: wrap;
-        margin-bottom: 45px;
-    }
-
-    .mini-bloque {
-        height: 35px; 
-        width: auto;
-        object-fit: contain;
-        opacity: 0.8;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 55px;
-        color: #333;
-    }
-
-    /* --- FILA ÚNICA DE LOGOS INTEGRADOS (SIN CONTENEDOR BLANCO) --- */
     .fila-logos {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 45px; /* Aumentamos el espacio entre logos ya que no hay recuadros */
+        gap: 30px; 
         flex-wrap: wrap;
+        margin-top: 40px;
     }
 
-    
+    .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px; /* Altura base uniforme */
+        width: auto;
+        padding: 5px;
+    }
 
-    /* Ajustes para pantallas chicas (Móviles) */
+    .logo-item img {
+        height: 100%;
+        width: auto;
+        max-width: 250px; /* Evita que los logos muy anchos se deformen */
+        object-fit: contain;
+    }
+
+    /* Ajuste responsivo */
     @media (max-width: 768px) {
-        .jornada-organizadores {
-            padding: 40px 15px;
-        }
-        .guarda-bloques {
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-        .mini-bloque {
-            height: 25px; 
-        }
-        .section-title {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-        }
-        .fila-logos {
-            gap: 25px;
-        }
         .logo-item {
-            width: 120px;
-            height: 75px; 
+            height: 70px;
         }
     }
 </style>
 
-<section class="jornada-organizadores">
+  <section class="jornada-organizadores" aria-labelledby="titulo-organizadores">
     
-   
-    <h2 class="section-title">Organizan la Jornada</h2>
+    <h2 id="titulo-organizadores" class="section-title">Organizan el Congreso</h2>
 
     <div class="fila-logos">
+        
         <div class="logo-item">
-  <a href="https://unla.edu.ar/" target="_blank" rel="noopener noreferrer" class="fila-logos focus-accessible-link" aria-label="Acceder al Sitio web oficial de la Universidad Nacional de Lanús"></a>
-            <img src="assets/images/unla logo rrss.jpg" alt="UNLa">
+            <a href="https://unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Universidad Nacional de Lanús">
+                <img src="assets/images/unla logo rrss.jpg" alt="Universidad Nacional de Lanús" />
             </a>
         </div>
 
         <div class="logo-item">
-         <a href="https://lad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" class="fila-logos focus-accessible-link" aria-label="Acceder al Sitio web oficial del Laboratorio de Diseño de la Universidad Nacional de Lanús">
-        <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD" class="img-logo-accessible" />
-      </a>    
+            <a href="https://lad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial del Laboratorio de Diseño de la Universidad Nacional de Lanús">
+                <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD" />
+            </a>
         </div>
 
         <div class="logo-item">
-              <a href="https://cad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" class="fila-logos focus-accessible-link" aria-label="Acceder al Sitio web oficial de la Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús">
-        <img src="assets/images/logocad.png" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD" class="img-logo-accessible" />
-      </a>
+            <a href="https://cad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús">
+                <img src="assets/images/logocad.png" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD" />
+            </a>
         </div>
 
         <div class="logo-item">
-  <a href="https://https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" class="fila-logos focus-accessible-link" aria-label="Acceder al Sitio web oficial del Laboratorio de Diseño de la Universidad Nacional de Lanús"></a>
-            <img src="assets/images/logo HyA.jpg" alt="Logo oficial del Departamento de Humanidades y Artes - UNLa" />
+            <a href="https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial del Departamento de Humanidades y Artes de la Universidad Nacional de Lanús">
+                <img src="assets/images/logo HyA.jpg" alt="Logo oficial del Departamento de Humanidades y Artes - UNLa" />
             </a>
         </div>
         
     </div>
-
 </section>
+
