@@ -1,37 +1,56 @@
 
 <style>
-    .fila-logos {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-        gap: 20px;
-        align-items: center;
-        justify-items: center;
-        margin-top: 40px;
+    .jornada-organizadores {
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    .logo-celda {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* Esto fuerza a que sea un cuadrado perfecto */
-        background-color: white;
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 55px;
+        color: #333;
+    }
+
+    /* Usamos Flexbox, que es más flexible que Grid para logos de distintos tamaños */
+    .fila-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+
+    /* Caja contenedora sin fondo blanco, alineación libre */
+    .logo-item {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 15px;
-        border: 1px solid #eee; /* Opcional: una línea muy fina para ver el límite */
+        width: 180px;  /* Ancho fijo para que todos ocupen el mismo espacio */
+        height: 100px; /* Alto fijo */
     }
 
-    .logo-celda img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Ajusta la imagen dentro del cuadrado sin deformar */
+    .logo-item img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain; /* Esto es la clave para que no se deformen */
     }
 
+    @media (max-width: 768px) {
+        .logo-item { width: 120px; height: 75px; }
+        .fila-logos { gap: 25px; }
+    }
 
-    :root {
+:root {
         --bg-light: #f9f9f9;
         --text-dark: #222;
     }
 
+    
 </style>
 
 <section class="jornada-organizadores" aria-labelledby="titulo-organizadores">
@@ -41,19 +60,19 @@
         
         <div class="logo-item">
             <a href="https://unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Universidad Nacional de Lanús">
-                <img src="assets/images/unla logo rrss.jpg" alt="Logo oficial de laUniversidad Nacional de Lanús - UNLa" />
+                <img src="assets/images/unla logo rrss.jpg" alt="Logo oficial de la Universidad Nacional de Lanús - UNLa" />
             </a>
         </div>
 
         <div class="logo-item">
             <a href="https://lad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial del Laboratorio de Diseño de la Universidad Nacional de Lanús">
-                <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD - UNLa" />
+                <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD" />
             </a>
         </div>
 
         <div class="logo-item">
             <a href="https://cad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús">
-                <img src="assets/images/logocad.png" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD - UNLa" />
+                <img src="assets/images/logocad.png" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD" />
             </a>
         </div>
 
@@ -66,4 +85,5 @@
     </div>
 </section>
 
- 
+
+
