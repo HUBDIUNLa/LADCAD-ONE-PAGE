@@ -1,79 +1,75 @@
 
 <style>
-    :root {
-        --bg-light: #f9f9f9;
-        --text-dark: #222;
-    }
-
     .jornada-organizadores {
         padding: 60px 20px;
         max-width: 1200px;
         margin: 0 auto;
         text-align: center;
-       
     }
 
     .fila-logos {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        /* Crea 4 columnas iguales */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
         align-items: center;
-        gap: 40px; 
-        flex-wrap: wrap;
         margin-top: 40px;
     }
 
     .logo-item {
+        background-color: #ffffff; /* Grid invisible blanco */
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100px;
-        width: auto;
+        height: 120px; /* Tamaño de caja uniforme */
+        border: 1px solid transparent; /* Opcional: útil para debuguear si fuera necesario */
+        padding: 10px;
     }
 
     .logo-item img {
-        height: 100%;
-        width: auto;
+        max-height: 100%;
+        max-width: 100%;
         object-fit: contain;
     }
 
-    /* Ajuste para logos que necesitan expandirse más porque tienen márgenes internos */
-    .logo-item.ajuste-full img {
-        padding: 0;
-        height: 120%; /* Los hace ver proporcionalmente iguales a los otros */
+    /* Ajuste responsivo para tablets y móviles */
+    @media (max-width: 768px) {
+        .fila-logos {
+            grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas en pantallas chicas */
+        }
     }
 
-    @media (max-width: 768px) {
-        .logo-item { height: 60px; }
-        .fila-logos { gap: 20px; }
+    :root {
+        --bg-light: #f9f9f9;
+        --text-dark: #222;
     }
 
 </style>
 
-  <section class="jornada-organizadores" aria-labelledby="titulo-organizadores">
-    
+<section class="jornada-organizadores" aria-labelledby="titulo-organizadores">
     <h2 id="titulo-organizadores" class="section-title">Organizan el Congreso</h2>
 
     <div class="fila-logos">
         
-        <div class="logo-item ajuste-full">
+        <div class="logo-item">
             <a href="https://unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Universidad Nacional de Lanús">
-                <img src="assets/images/unla logo rrss.jpg" alt="Universidad Nacional de Lanús" />
+                <img src="assets/images/unla logo rrss.jpg" alt="Logo oficial de laUniversidad Nacional de Lanús - UNLa" />
             </a>
         </div>
 
         <div class="logo-item">
             <a href="https://lad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial del Laboratorio de Diseño de la Universidad Nacional de Lanús">
-                <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD" />
+                <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD - UNLa" />
             </a>
         </div>
 
         <div class="logo-item">
             <a href="https://cad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial de la Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús">
-                <img src="assets/images/logocad.png" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD" />
+                <img src="assets/images/logocad.png" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD - UNLa" />
             </a>
         </div>
 
-        <div class="logo-item ajuste-full">
+        <div class="logo-item">
             <a href="https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al Sitio web oficial del Departamento de Humanidades y Artes de la Universidad Nacional de Lanús">
                 <img src="assets/images/logo HyA.jpg" alt="Logo oficial del Departamento de Humanidades y Artes - UNLa" />
             </a>
@@ -82,3 +78,4 @@
     </div>
 </section>
 
+ 
