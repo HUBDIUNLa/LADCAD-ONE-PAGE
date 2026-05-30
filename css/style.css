@@ -40,7 +40,7 @@ h6 {
   letter-spacing: 0;
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--hub-onyx);
+  color: var(--azul-noche, #0D2B45);
 }
 
 .button-primary {
@@ -50,7 +50,7 @@ h6 {
   min-height: 2.75rem;
   min-width: 8.5rem;
   padding: 0.65rem 1rem;
-  background: var(--hub-dark-dark-cyan, #1A8C92);
+  background: var(--Azul-noche, #0D2B45);
   color: var(--hub-white);
   border: 0;
   border-radius: 0;
@@ -64,8 +64,8 @@ h6 {
 }
 
 .button-primary:hover {
-  background: var(--grape-soda, #88498f);
-  color: var(--hub-black);
+  background: var(--Granate, #8b1e3f);
+  color: var(--hub-white);
   transform: translateY(-1px);
 }
 
