@@ -1751,3 +1751,46 @@ h6 {
         display: none !important; /* Oculta el botón interactivo en el papel */
     }
 }
+
+/* ===================================================
+   ESTILOS DE ACCESIBILIDAD PARA LOGOS EN EL FOOTER
+   =================================================== */
+
+/* Contenedor rígido e idéntico para nivelar las proporciones de los logos */
+.wrapper-logo-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    /* Ajustamos un área generosa y accesible en tamaño */
+    width: 220px !important; 
+    height: 80px !important;
+    background-color: transparent;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+/* Forzamos a que los distintos logos ocupen el máximo tamaño del bloque sin deformarse */
+.img-logo-accessible {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Mantiene la proporción original escalando al límite */
+    filter: brightness(1) contrast(1.2); /* Sutil refuerzo de contraste para las imágenes */
+}
+
+/* Alineación en pantallas medianas y grandes hacia la derecha */
+@media (min-width: 768px) {
+    .wrapper-logo-footer {
+        justify-content: flex-end !important; /* Clava el contenido contra el borde derecho */
+    }
+}
+
+/* Criterio WCAG: Anillo de enfoque de alto contraste al navegar con teclado (Tab) */
+.focus-accessible-link:focus-visible {
+    outline: 3px solid #11D6C5 !important; /* Cyan de alta visibilidad */
+    outline-offset: 4px !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.focus-accessible-link:hover {
+    transform: scale(1.02);
+}
