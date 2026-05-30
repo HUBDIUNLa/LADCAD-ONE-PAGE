@@ -168,8 +168,8 @@ h6 {
 }
 
 .site-footer {
-  background: var(--hub-black);
-  color: var(--hub-white);
+  background: var(--hub-WHITE, #FFFFFF);
+  color: var(--aZUL-NOCHE, #0D2B45);
   font-family: var(--hub-font-main);
 }
 
