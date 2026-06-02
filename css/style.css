@@ -124,7 +124,7 @@ h6 {
 
 .ecosystem2-card {
   background: var(--hub-white, #FFFFFF);
-  color: var(--hub-BLACK, #0D2B45);
+  color: var(--Azul-noche, #0D2B45);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
