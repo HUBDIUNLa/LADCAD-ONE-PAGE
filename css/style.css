@@ -130,7 +130,7 @@ h6 {
 
 .ecosystem2-card:hover {
   transform: scale(1.03);
-  background: var(--verde-pasto, #6DAA61);
+  background: var(--verde-pasto, #a4df98);
 }
 
 .ecosystem2-card-link {
