@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const contenido = document.querySelector('main') ? document.querySelector('main').innerText : document.body.innerText;
         const utterThis = new SpeechSynthesisUtterance(contenido);
         
-        utterThis.lang = 'es-AR';
+        utterThis.lang = 'es-ES';
         synth.speak(utterThis);
         
         hablando = true;
