@@ -1,6 +1,22 @@
 
+btnLeer.addEventListener('click', () => {
+    const video = document.querySelector('video'); // Busca el video en tu página
+    
+    if (!hablando) {
+        // Interrumpimos el audio del video antes de hablar
+        if (video) {
+            video.muted = true; 
+            video.pause(); 
+        }
+        
+        // ... (resto del código del sintetizador de voz)
+
 document.addEventListener('DOMContentLoaded', () => {
   const btnLeer = document.getElementById('btn-leer');
+
+  
+    }
+});
 
   // Si el botón no existe en esta página, simplemente salimos del script sin errores
   if (!btnLeer) return;
