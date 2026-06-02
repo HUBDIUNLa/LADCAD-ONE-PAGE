@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let hablando = false;
 
   btnLeer.addEventListener('click', () => {
+    // Si ya está hablando, detenemos
     if (hablando) {
       synth.cancel();
       hablando = false;
@@ -15,28 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // MEJORA: Seleccionamos todo el contenedor principal y filtramos lo que no queremos
+    // Si el navegador tiene el audio en pausa por seguridad, intentamos reanudar
+    if (synth.paused) {
+      synth.resume();
+    }
+
+    // Seleccionamos el contenido de <main>
     const main = document.querySelector('main');
     if (!main) return;
 
-    // Obtenemos el texto de forma más profunda
-    // Esto asegura que capture todo el texto, no solo el primer bloque
     const contenido = main.textContent; 
     
     if (!contenido || contenido.trim() === "") return;
 
+    // Crear la instancia de voz
     const utterThis = new SpeechSynthesisUtterance(contenido);
     utterThis.lang = 'es-AR';
-    
-    // Configuramos la voz para que sea más natural si está disponible
     utterThis.rate = 1; 
 
+    // Cuando termina de leer
     utterThis.onend = () => {
       hablando = false;
       btnLeer.querySelector('span').innerText = 'Escuchar';
       btnLeer.querySelector('i').className = 'fas fa-volume-up';
     };
 
+    // Lanzar la lectura
     synth.speak(utterThis);
     hablando = true;
     btnLeer.querySelector('span').innerText = 'Detener';
