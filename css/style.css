@@ -94,7 +94,7 @@ h6 {
 
 .ecosystem-card:hover {
   transform: scale(1.03);
-  background: var(--hub-celeste, #11D6C5);
+  background: var(--hub-lad-cyan-dark, #0BA79A);
 }
 
 .ecosystem-card-link {
@@ -113,7 +113,7 @@ h6 {
 }
 
 .ecosystem-card-link:hover {
-  background: var(--hub-celeste, #11D6C5);
+  background: var(--hub-lad-cyan-dark, #0BA79A);
   color: var(--hub-black);
 }
 
@@ -459,14 +459,14 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 3rem 1.5rem;
-  background: var(--hub-page-bg, #f9f7f4);
+  background: var(--hub-page-bg, #ffffff);
 }
 
 .coming-soon-card {
   width: min(100%, 760px);
   text-align: center;
-  background: var(--hub-black);
-  color: var(--hub-white);
+  background: var(--hub-white, #FFFFFF);
+  color: var(--Azul-noche, #0D2B45);
   padding: 3rem 2rem;
 }
 
