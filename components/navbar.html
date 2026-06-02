@@ -1,49 +1,40 @@
 
 <header class="relative z-50">
-  <!-- Barra superior (Breadcrumb/Info) -->
   <div class="bg-[#0D2B45] text-white shadow-sm px-6 py-2" role="banner">
-    <a href="index.html#hub" class="site-link block text-lg font-mono font-bold" aria-label="Volver al inicio del Hub">
+    <a href="index.html#hub" class="site-link block text-lg font-mono font-bold" aria-label="Volver al inicio del Hub DI UNLA">
       UNLA > HUMANIDADES Y ARTES | POLO TECNOLOGICO
     </a>
   </div>
 
-  <nav class="site-nav full-bleed px-6 py-3 font-mono" aria-label="Navegación principal">
+  <nav class="site-nav full-bleed px-6 py-3 font-mono" aria-label="Navegación principal del Congreso">
     <div class="flex items-center justify-between">
       
-      <!-- Logo y título del Congreso -->
       <div class="flex items-center gap-3">
         <img src="assets/images/LADCADSINFONDO.png" alt="Logo del Congreso LAD-CAD" class="h-16 w-auto object-contain" />
-        <a href="index.html#JDFD" class="site-link block text-lg font-semibold" aria-label="Ir a la sección JDFD del Primer Congreso Internacional CAD-LAD">
+        <a href="index.html#JDFD" class="site-link block text-lg font-semibold" aria-label="Ir a la sección JDFD del Congreso">
           PRIMER CONGRESO INTERNACIONAL CAD - LAD
         </a>
       </div>
 
-      <!-- Botón Menú Móvil -->
-      <button id="menu-toggle" class="lg:hidden text-3xl" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu">
-        <span aria-hidden="true">&#9776;</span>
-      </button>
-
-      <!-- Menú Desktop -->
-      <ul id="menu" class="hidden lg:flex items-center gap-5 text-lg font-semibold list-none">
+      <ul id="menu" class="hidden lg:flex items-center ml-auto gap-5 text-lg font-semibold list-none">
         <li><a href="index.html#titulo" class="site-link">SOBRE CAD - LAD</a></li>
         <li><a href="index.html#estudios" class="site-link">CONVOCATORIA</a></li>
         <li><a href="proximamente.html" class="site-link">PROGRAMA</a></li>
         <li><a href="index.html#ubicacion" class="site-link">UBICACION</a></li>
         <li>
-          <a href="mailto:congresoladcad@gmail.com" class="site-link flex items-center gap-2">
+          <a href="mailto:congresoladcad@gmail.com" class="site-link flex items-center gap-2" aria-label="Enviar correo electrónico de contacto">
             <i class="fas fa-envelope" aria-hidden="true"></i> Contacto
           </a>
         </li>
-        <!-- Moví el logo del LAD fuera del <ul> para que sea semánticamente correcto -->
       </ul>
-      <a href="https://lad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" class="hidden lg:block" aria-label="Sitio web del LAD UNLa (se abre en nueva pestaña)">
-        <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="" class="h-12 w-auto object-contain" />
-      </a>
+
+      <button id="menu-toggle" class="lg:hidden text-3xl" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
     </div>
 
-    <!-- Menú Móvil -->
-    <ul id="mobile-menu" class="hidden lg:hidden mt-4 flex-col gap-3 text-base font-semibold list-none">
-      <li><a href="index.html#titulo" class="site-link">SOBRE JDFD</a></li>
+    <ul id="mobile-menu" class="hidden lg:hidden mt-4 flex-col gap-3 text-base font-semibold list-none" aria-label="Menú móvil">
+      <li><a href="index.html#titulo" class="site-link">SOBRE CAD - LAD</a></li>
       <li><a href="index.html#estudios" class="site-link">CONVOCATORIA</a></li>
       <li><a href="proximamente.html" class="site-link">PROGRAMA</a></li>
       <li><a href="index.html#ubicacion" class="site-link">UBICACION</a></li>
