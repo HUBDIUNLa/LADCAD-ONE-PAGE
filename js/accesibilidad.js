@@ -73,7 +73,7 @@ document.addEventListener("click", (event) => {
 
   synth.cancel();
 
-  const contenido = document.querySelector("main") || document.body;
+  const contenido = document.body;
   const texto = contenido.innerText.replace(/\s+/g, " ").trim();
 
   if (!texto) return;
