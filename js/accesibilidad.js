@@ -1,54 +1,53 @@
 
-btnLeer.addEventListener('click', () => {
-    const video = document.querySelector('video'); // Busca el video en tu página
-    
-    if (!hablando) {
-        // Interrumpimos el audio del video antes de hablar
-        if (video) {
-            video.muted = true; 
-            video.pause(); 
-        }
-        
-        // ... (resto del código del sintetizador de voz)
-
 document.addEventListener('DOMContentLoaded', () => {
   const btnLeer = document.getElementById('btn-leer');
-
-  
-    }
-});
-
-  // Si el botón no existe en esta página, simplemente salimos del script sin errores
   if (!btnLeer) return;
 
   const synth = window.speechSynthesis;
   let hablando = false;
 
   btnLeer.addEventListener('click', () => {
+    // 1. Buscamos TODOS los videos y los silenciamos/pausamos
+    const todosLosVideos = document.querySelectorAll('video');
+    
     if (!hablando) {
-      // Intentamos obtener el main, si no, el body
+      // Detenemos cualquier audio que esté sonando en videos
+      todosLosVideos.forEach(v => {
+        v.muted = true; // Forzamos silencio
+        v.pause();      // Forzamos pausa
+      });
+
+      // 2. Preparamos el contenido
       const main = document.querySelector('main');
       const contenido = main ? main.innerText : document.body.innerText;
       
       const utterThis = new SpeechSynthesisUtterance(contenido);
       utterThis.lang = 'es-AR';
-      
-      // Manejador para cuando termina de hablar
+      utterThis.rate = 1; // Velocidad normal
+
+      // 3. Cuando termina o se cancela
       utterThis.onend = () => {
-        hablando = false;
-        btnLeer.querySelector('span').innerText = 'Escuchar';
-        btnLeer.querySelector('i').className = 'fas fa-volume-up';
+        restaurarBoton();
+      };
+      
+      utterThis.onerror = () => {
+        restaurarBoton();
       };
 
       synth.speak(utterThis);
       hablando = true;
       btnLeer.querySelector('span').innerText = 'Detener';
       btnLeer.querySelector('i').className = 'fas fa-stop';
+      
     } else {
       synth.cancel();
-      hablando = false;
-      btnLeer.querySelector('span').innerText = 'Escuchar';
-      btnLeer.querySelector('i').className = 'fas fa-volume-up';
+      restaurarBoton();
     }
   });
+
+  function restaurarBoton() {
+    hablando = false;
+    btnLeer.querySelector('span').innerText = 'Escuchar';
+    btnLeer.querySelector('i').className = 'fas fa-volume-up';
+  }
 });
