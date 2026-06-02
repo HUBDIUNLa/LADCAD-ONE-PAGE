@@ -1,50 +1,62 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  const btnLeer = document.getElementById('btn-leer');
+const synth = window.speechSynthesis;
+let hablando = false;
+let utterThis = null;
+
+function actualizarBoton(btn, estado) {
+  const texto = btn.querySelector("span");
+  const icono = btn.querySelector("i");
+
+  if (estado === "leyendo") {
+    if (texto) texto.innerText = "Detener";
+    if (icono) icono.className = "fas fa-stop";
+    btn.setAttribute("aria-label", "Detener lectura de la página");
+  } else {
+    if (texto) texto.innerText = "Escuchar";
+    if (icono) icono.className = "fas fa-volume-up";
+    btn.setAttribute("aria-label", "Escuchar contenido de la página");
+  }
+}
+
+document.addEventListener("click", (event) => {
+  const btnLeer = event.target.closest("#btn-leer");
   if (!btnLeer) return;
 
-  const synth = window.speechSynthesis;
-  let hablando = false;
+  if (!("speechSynthesis" in window)) {
+    alert("Tu navegador no soporta lectura por voz.");
+    return;
+  }
 
-  btnLeer.addEventListener('click', () => {
-    // Si ya está hablando, detenemos
-    if (hablando) {
-      synth.cancel();
-      hablando = false;
-      btnLeer.querySelector('span').innerText = 'Escuchar';
-      btnLeer.querySelector('i').className = 'fas fa-volume-up';
-      return;
-    }
+  if (hablando) {
+    synth.cancel();
+    hablando = false;
+    actualizarBoton(btnLeer, "idle");
+    return;
+  }
 
-    // Si el navegador tiene el audio en pausa por seguridad, intentamos reanudar
-    if (synth.paused) {
-      synth.resume();
-    }
+  synth.cancel();
 
-    // Seleccionamos el contenido de <main>
-    const main = document.querySelector('main');
-    if (!main) return;
+  const contenido = document.querySelector("main") || document.body;
+  const texto = contenido.innerText.replace(/\s+/g, " ").trim();
 
-    const contenido = main.textContent; 
-    
-    if (!contenido || contenido.trim() === "") return;
+  if (!texto) return;
 
-    // Crear la instancia de voz
-    const utterThis = new SpeechSynthesisUtterance(contenido);
-    utterThis.lang = 'es-AR';
-    utterThis.rate = 1; 
+  utterThis = new SpeechSynthesisUtterance(texto);
+  utterThis.lang = "es-AR";
+  utterThis.rate = 1;
+  utterThis.pitch = 1;
 
-    // Cuando termina de leer
-    utterThis.onend = () => {
-      hablando = false;
-      btnLeer.querySelector('span').innerText = 'Escuchar';
-      btnLeer.querySelector('i').className = 'fas fa-volume-up';
-    };
+  utterThis.onend = () => {
+    hablando = false;
+    actualizarBoton(btnLeer, "idle");
+  };
 
-    // Lanzar la lectura
-    synth.speak(utterThis);
-    hablando = true;
-    btnLeer.querySelector('span').innerText = 'Detener';
-    btnLeer.querySelector('i').className = 'fas fa-stop';
-  });
+  utterThis.onerror = () => {
+    hablando = false;
+    actualizarBoton(btnLeer, "idle");
+  };
+
+  hablando = true;
+  actualizarBoton(btnLeer, "leyendo");
+  synth.speak(utterThis);
 });
