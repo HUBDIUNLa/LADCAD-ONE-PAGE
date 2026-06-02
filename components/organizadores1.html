@@ -311,3 +311,34 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+<div id="video-intro-overlay" class="no-print">
+    <div class="video-intro-container">
+      
+      <video autoplay muted loop playsinline id="intro-video">
+        <source src="assets/images/VIDEOLADCAD.mp4" type="video/mp4" media="(max-width: 767px)">
+        
+        <source src="assets/images/VIDEOLADCAD.mp4" type="video/mp4" media="(min-width: 768px)">
+        
+        Tu navegador no soporta la reproducción de video.
+      </video>
+      
+      <div class="video-overlay-filtro"></div>
+
+      <button onclick="alternarSonidoIntro()" id="btn-volumen-intro" class="btn-audio-flotante">
+      <i class="fa-solid fa-volume-xmark" id="icono-volumen"></i>
+    </button>
+      
+      <button onclick="ingresarAWeb()" class="btn-ingresar-jornada">
+        <span>Ingresar</span>
+        <i class="fa-solid fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+  </div>
