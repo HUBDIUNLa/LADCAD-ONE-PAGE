@@ -110,61 +110,51 @@
   </div>
 </section>
 
-<section id="inicio" class="bg-[#8B1E3F] flex flex-col items-center justify-center full-bleed px-6 py-12">
+<section id="inicio" class="bg-[#8B1E3F] full-bleed px-6 py-16" aria-labelledby="titulo-congreso">
   
-  <div class="max-w-6xl mx-auto w-full text-center mb-10">
-    <h1 id="titulo" class="text-2xl md:text-3xl font-bold mb-3 text-white uppercase tracking-wider">
-      1ER CONGRESO INTERNACIONAL LAD - CAD
-    </h1>
-    <h2 class="text-xl md:text-2xl font-semibold text-white">
-      Diseño, Accesibilidad y Tecnologías para la Transformación Social
-    </h2>
-  </div>
+  <div class="max-w-7xl mx-auto w-full">
+    <!-- Encabezado con ID para aria-labelledby -->
+    <header class="text-center mb-12">
+      <h1 id="titulo-congreso" class="text-3xl md:text-4xl font-bold mb-4 text-white uppercase tracking-wider">
+        1er Congreso Internacional LAD - CAD
+      </h1>
+      <p class="text-xl md:text-2xl font-medium text-white/90">
+        Diseño, Accesibilidad y Tecnologías para la Transformación Social
+      </p>
+    </header>
 
-  <div class="flex flex-col md:flex-row items-start gap-10 max-w-7xl mx-auto w-full">
-    
-    <div class="w-full md:w-1/2">
-      <div class="text-white text-justify md:text-left space-y-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Bloque de Texto -->
+      <article class="text-white space-y-6">
+        <p class="text-lg leading-relaxed text-justify">
+          El 1er Congreso Internacional "Diseño, Accesibilidad y Tecnologías para la Transformación Social" (CAD-LAD 2026) 
+          se constituye como un ámbito de intercambio, reflexión y producción colectiva acerca del rol estratégico del diseño 
+          y la tecnología en la identificación y eliminación de barreras. Desde el modelo social de la discapacidad y el
+           enfoque de derechos humanos, el congreso busca visibilizar prácticas proyectuales que integren los principios de 
+           accesibilidad, diseño universal y metodologías participativas como pilares de la inclusión.
+        </p>
+        <p class="text-lg leading-relaxed text-justify">
+          Esta edición, organizada conjuntamente por la Comisión sobre Accesibilidad y Discapacidad (CAD) del Vicerrectorado y 
+          el Laboratorio de Diseño (LAD) del Departamento de Humanidades y Artes de la Universidad Nacional de Lanús (UNLa), 
+          se llevará a cabo los días 12 y 13 de noviembre de 2026 en el Polo Tecnológico UNLa.
+        </p>
+      </article>
 
-<p id="descripcion" class="text-white text-lg leading-relaxed">
-  LAD-CAD es el 1er Congreso Internacional "Diseño, Accesibilidad y Tecnologías para la Transformación Social". 
-  Se constituye como un ámbito de intercambio, reflexión y producción colectiva acerca del rol estratégico del diseño y 
-  la tecnología, en la identificación y eliminación de barreras. Desde el modelo social de la discapacidad y el 
-  enfoque de derechos humanos, el congreso busca visibilizar prácticas proyectuales que integren los principios de 
-  accesibilidad, diseño universal y metodologías participativas como pilares de la inclusión.
-</p>
-
-<p class="text-white text-lg leading-relaxed">
-  Esta edición, organizada conjuntamente por el Laboratorio de Diseño (LAD) del Departamento de Humanidades y Artes la Comisión sobre Accesibilidad y Discapacidad (CAD) del Vicerrectorado y 
-  ambos de la Universidad Nacional de Lanús (UNLa), se llevará a cabo los días 12 y 13 de noviembre de 2026 en el Polo Tecnológico de la universidad, 
-  sito en Av. Hipólito Yrigoyen 5682, Lanús, Buenos Aires, Argentina.
-</p>
-
-<p class="text-white text-lg leading-relaxed">
-  El encuentro convoca a la comunidad académica, científica, profesional y a organizaciones de la sociedad civil a
-   promover la divulgación de experiencias, investigaciones y desarrollos situados. A través de mesas temáticas, 
-   muestras de producciones, prototipos y microtalleres de formación participativa, el congreso fomenta la construcción de 
-   redes interinstitucionales y territoriales, consolidando una universidad pública comprometida con la equidad, la diversidad y 
-   la justicia social en la construcción de entornos, materiales y tecnologías más inclusivas para todas las personas.
-</p>
-
-        
+      <!-- Bloque de Video con controles accesibles -->
+      <div class="w-full">
+        <div class="rounded-lg shadow-2xl overflow-hidden border-2 border-white/20">
+          <video 
+            src="assets/images/VIDEOLADCAD.mp4" 
+            controls 
+            playsinline 
+            class="w-full h-auto"
+            aria-label="Video institucional del 1er Congreso Internacional LAD-CAD">
+          </video>
+        </div>
       </div>
-    </div>
 
-    <div class="w-full md:w-1/2 flex justify-center items-center">
-      <div class="w-full bg-[#1A8C92] p-0 rounded-none shadow-xl overflow-hidden">
-        <video 
-          src="assets/images/VIDEOLADCAD.mp4" 
-          autoplay 
-          loop 
-          muted 
-          playsinline 
-          class="w-full h-auto object-cover transform scale-x-[1.03] scale-y-[1.01] origin-left">
-        </video>
-      </div>
     </div>
-
   </div>
 </section>
 
