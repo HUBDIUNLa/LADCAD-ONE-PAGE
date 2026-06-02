@@ -1,92 +1,77 @@
 
 <style>
-    /* Ajuste específico para el logo del congreso en el footer */
+    /* Contenedor del logo */
     .wrapper-logo-footer {
-        width: 100%;       /* Asegura que el contenedor tenga espacio */
-        max-width: 350px;  /* Aumenta este valor si lo quieres todavía más grande */
+        width: 100%;
+        max-width: 350px; /* Tamaño máximo deseado */
         display: flex;
-        justify-content: flex-end; /* Lo mantiene alineado a la derecha como tenías */
+        justify-content: flex-end; /* Alineado a la derecha en escritorio */
     }
 
+    /* La imagen debe ajustarse al 100% del contenedor */
     .wrapper-logo-footer img {
-        width: 300%;
+        width: 100%;    /* Corregido: antes tenías 300% */
         height: auto;
         object-fit: contain;
     }
 
-    /* Opcional: Ajuste para pantallas móviles para que no quede gigante */
     @media (max-width: 768px) {
         .wrapper-logo-footer {
             max-width: 200px;
-            margin: 0 auto; /* Lo centra en móviles */
+            margin: 0 auto; /* Centrado en móviles */
+            justify-content: center;
         }
     }
 </style>
 
-<footer class="site-footer full-bleed py-10 px-4">
+<footer class="site-footer full-bleed py-10 px-4" role="contentinfo">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-lg">
-    <div>
-      <h2 class="font-mono text-xl font-medium mb-3">REDES</h2>
-
+    
+    <section>
+      <h2 class="font-mono text-xl font-medium mb-3">REDES Y CONTACTO</h2>
       <div class="flex space-x-4 text-xl">
-        <a href="https://www.instagram.com/lad.unla/?hl=es-la" target="_blank" rel="noopener noreferrer" class="site-link" aria-label="Instagram LAD UNLa">
-          <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/lad.unla/?hl=es-la" target="_blank" rel="noopener noreferrer" class="site-link" aria-label="Seguinos en Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
-
-        <a href="https://www.linkedin.com/lad.unla/" target="_blank" rel="noopener noreferrer" class="site-link" aria-label="LinkedIn HUB DI UNLa">
-          <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/lad.unla/" target="_blank" rel="noopener noreferrer" class="site-link" aria-label="Seguinos en LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
-
       </div>
 
       <div class="mt-4 text-lg leading-relaxed">
         <p>Remedios de Escalada, Lanús, Argentina</p>
-        <p>
-          <a href="mailto:congresoladcad@gmail.com" class="site-link">congresoladcad@gmail.com</a>
-        </p>
-
-        <div class="footer-whatsapp-container no-print">
-  <a href="https://wa.me/5492215916452?text=Hola!%20Quer%C3%ADa%20hacer%20una%20consulta%20sobre%20la%201%C2%B0%20Jornada%20de%20Diseno%20y%20Fabricacion%20Digital" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     class="btn-footer-whatsapp">
-    <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
-    <span>Consultas por WhatsApp</span>
-  </a>
-</div>
-        
+        <p><a href="mailto:congresoladcad@gmail.com" class="site-link">congresoladcad@gmail.com</a></p>
+        <a href="https://wa.me/5492215916452" target="_blank" rel="noopener noreferrer" class="btn-footer-whatsapp inline-block mt-2">
+          <i class="fa-brands fa-whatsapp text-xl mr-2" aria-hidden="true"></i> Consultas por WhatsApp
+        </a>
       </div>
-    </div>
+    </section>
 
-    <div>
-      <h2 class="font-mono text-xl font-large mb-3">SECCIONES</h2>
-      <ul class="space-y-1">
+    <nav aria-label="Navegación del footer">
+      <h2 class="font-mono text-xl font-medium mb-3">SECCIONES</h2>
+      <ul class="space-y-1 list-none p-0">
         <li><a href="index.html#inicio" class="site-link">Congreso</a></li>
         <li><a href="index.html#estudios" class="site-link">Convocatoria</a></li>
         <li><a href="index.html#equipo" class="site-link">Organizadores</a></li>
-        <li><a href="mailto:congresoladcad@gmail.com?subject=Consulta%20sobre%20la%20incubadora" class="site-link">Contacto</a></li>
+        <li><a href="mailto:congresoladcad@gmail.com" class="site-link">Contacto</a></li>
       </ul>
-    </div>
+    </nav>
 
     <div></div>
 
-    
-
-    <div class="flex flex-col items-start md:items-end justify-center gap-4 w-full">
-      
+    <div class="flex flex-col items-start md:items-end justify-center w-full">
       <div class="wrapper-logo-footer">
-        <img src="assets/images/LADCADCUADRADASF.png" alt="Logo de la propuesta conjunta entre el Laboratorio de Diseño y la Comisión de Accesibilidad y Discapacidad" class="img-logo-accessible" />
+        <img src="assets/images/LADCADCUADRADASF.png" alt="Logo del 1er Congreso Internacional LAD-CAD" class="img-logo-accessible" />
       </div>
-
     </div>
-
-    
   </div>
 
-  <div class="footer-bottom max-w-7xl mx-auto mt-10 pt-6 grid grid-cols-1 md:grid-cols-4 gap-4 text-lg text-left">
-    <a href="politicasdeprivacidad.html" target="_blank" rel="noopener noreferrer" class="site-link">Política de privacidad</a>
-    <a href="politicasdecookies.html" target="_blank" rel="noopener noreferrer" class="site-link">Política de Cookies</a>
-    <a href="terminosycondiciones.html" target="_blank" rel="noopener noreferrer" class="site-link">Términos y condiciones</a>
-    <p>HUB DI UNLA 2025 © Todos los derechos reservados</p>
+  <div class="footer-bottom max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700 text-lg">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <a href="politicasdeprivacidad.html" class="site-link">Privacidad</a>
+      <a href="politicasdecookies.html" class="site-link">Cookies</a>
+      <a href="terminosycondiciones.html" class="site-link">Términos</a>
+      <p>© 2025 HUB DI UNLA - Todos los derechos reservados</p>
+    </div>
   </div>
 </footer>
