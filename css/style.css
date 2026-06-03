@@ -270,7 +270,7 @@ h6 {
 .legal-card {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--mauve-shadow, #564154);
+  background: var(--Granate, #8B1E3F);
   color: var(--hub-white);
   padding: 3rem;
   position: relative;
@@ -278,7 +278,7 @@ h6 {
 }
 
 .legal-divider {
-  border-top: 4px solid var(--hub-dark-dark-cyan, #1A8C92);
+  border-top: 4px solid var(--gris, #8A99A8);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -316,7 +316,7 @@ h6 {
 }
 
 .legal-link:hover {
-  color: var(--tomato, #FF6542);
+  color: var(--gris, #8A99A8);
 }
 
 @media (max-width: 768px) {
@@ -782,7 +782,7 @@ h6 {
 .legal2-card {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--hub-dark-gray, #564154);
+  background: var(--Azul-noche, #0D2B45);
   color: var(--hub-white);
   padding: 3rem;
   position: relative;
@@ -838,7 +838,7 @@ h6 {
 .legal3-card {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--hub-dark-gray, #564154);
+  background: var(--Azul-noche, #0D2B45);
   color: var(--hub-white);
   padding: 3rem;
   position: relative;
@@ -846,7 +846,7 @@ h6 {
 }
 
 .legal3-divider {
-  border-top: 4px solid var(--tomato-clear, #e54906);
+  border-top: 4px solid var(--granate, #8B1E3F);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -884,7 +884,7 @@ h6 {
 }
 
 .legal3-link:hover {
-  color: var(--tomato-clear, #e54906);
+  color: var(--granate, #8B1E3F);
 }
 .legal0-section {
   padding: 4rem 0;
@@ -893,7 +893,7 @@ h6 {
 .legal0-card {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--hub-dark-gray, #564154);
+  background: var(--Azul-noche, #0D2B45);
   color: var(--hub-white);
   padding: 3rem;
   position: relative;
@@ -972,7 +972,7 @@ h6 {
 .legal1-card {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--hub-dark-gray, #564154);
+  background: var(--Azul-noche, #0D2B45);
   color: var(--hub-white);
   padding: 3rem;
   position: relative;
@@ -980,7 +980,7 @@ h6 {
 }
 
 .legal1-divider {
-  border-top: 4px solid var(--grape-soda, #88498f);
+  border-top: 4px solid var(--verde-pasto, #a4df98);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -1018,7 +1018,7 @@ h6 {
 }
 
 .legal1-link:hover {
-  color: var(--grape-soda, #88498f);
+  color: var(--verde-pasto, #a4df98);
 }
 
 
