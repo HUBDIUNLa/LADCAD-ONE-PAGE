@@ -485,8 +485,8 @@ h6 {
 
 .coming-soon-ribbon {
   display: inline-block !important;
-  background: var(--hub-lad-cyan-light) !important;
-  color: var(--hub-onyx) !important;
+  background: var(--Granate) !important;
+  color: var(--hub-white) !important;
   padding: 0.5rem 1rem !important;
   font-family: var(--hub-font-heading) !important;
   font-size: 1.6rem !important;
