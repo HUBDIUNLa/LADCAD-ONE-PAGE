@@ -18,6 +18,63 @@
     </div>
   </div>
 
+  <div class="accessibility-navbar-controls" role="region" aria-label="Herramientas de accesibilidad">
+  <div class="accessibility-reader-icon" aria-hidden="true">
+    <i class="fa-solid fa-ear-listen"></i>
+  </div>
+
+  <div class="accessibility-reader-text">
+    Screen<br>Reader
+  </div>
+
+  <div class="accessibility-audio-bars" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <button type="button" class="accessibility-nav-button" onclick="leerPagina()" aria-label="Reproducir lectura de la página" title="Reproducir lectura">
+    <i class="fa-solid fa-play"></i>
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="pausarLectura()" aria-label="Pausar o continuar lectura" title="Pausar o continuar lectura">
+    <i class="fa-solid fa-pause"></i>
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="detenerLectura()" aria-label="Detener lectura" title="Detener lectura">
+    <i class="fa-solid fa-stop"></i>
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="aumentarTexto()" aria-label="Aumentar tamaño de texto" title="Aumentar texto">
+    A+
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="disminuirTexto()" aria-label="Disminuir tamaño de texto" title="Disminuir texto">
+    A-
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="activarTipografiaLegible()" aria-label="Activar tipografía legible" title="Tipografía legible">
+    A°
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="restablecerAccesibilidad()" aria-label="Restablecer accesibilidad" title="Restablecer">
+    A
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="activarAltoContraste()" aria-label="Activar alto contraste" title="Alto contraste">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="activarContrasteInvertido()" aria-label="Invertir contraste" title="Contraste invertido">
+    <i class="fa-solid fa-circle-notch"></i>
+  </button>
+
+  <button type="button" class="accessibility-nav-button" onclick="activarEscalaGrises()" aria-label="Activar escala de grises" title="Escala de grises">
+    <i class="fa-solid fa-ban"></i>
+  </button>
+</div>
+
   <nav class="site-nav full-bleed px-6 py-3 font-mono" aria-label="Navegación principal del Congreso">
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-3">
