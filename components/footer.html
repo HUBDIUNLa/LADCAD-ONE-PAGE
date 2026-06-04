@@ -3,22 +3,22 @@
     /* Contenedor del logo */
     .wrapper-logo-footer {
         width: 100%;
-        max-width: 350px; /* Tamaño máximo deseado */
+        max-width: 700px; /* Antes 350px: ahora el doble */
         display: flex;
-        justify-content: flex-end; /* Alineado a la derecha en escritorio */
+        justify-content: flex-end;
     }
 
-    /* La imagen debe ajustarse al 100% del contenedor */
     .wrapper-logo-footer img {
-        width: 100%;    /* Corregido: antes tenías 300% */
+        width: 100%;
         height: auto;
         object-fit: contain;
+        display: block;
     }
 
     @media (max-width: 768px) {
         .wrapper-logo-footer {
-            max-width: 200px;
-            margin: 0 auto; /* Centrado en móviles */
+            max-width: 400px; /* Antes 200px: ahora el doble en móvil */
+            margin: 0 auto;
             justify-content: center;
         }
     }
@@ -61,7 +61,7 @@
 
     <div class="flex flex-col items-start md:items-end justify-center w-full">
       <div class="wrapper-logo-footer">
-        <img src="assets/images/ddasinfondo.png" alt="Logo del PRIMER CONGRESO INTERNACIONAL DE DISEÑO, DISCAPACIDAD Y ACCESIBILIDAD" class="img-logo-accessible" />
+        <img src="assets/images/ddasinfondo.png" alt="Logo del PRIMER CONGRESO INTERNACIONAL DE DISEÑO, DISCAPACIDAD Y ACCESIBILIDAD" class="img-logo-accessible">
       </div>
     </div>
   </div>
