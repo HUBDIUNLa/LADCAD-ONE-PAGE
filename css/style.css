@@ -1798,24 +1798,14 @@ h6 {
     }
 }
 
-/* Criterio WCAG: Anillo de enfoque de alto contraste al navegar con teclado (Tab) */
-.focus-accessible-link:focus-visible {
-    outline: 3px solid #11D6C5 !important; /* Cyan de alta visibilidad */
-    outline-offset: 4px !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-}
-
-.focus-accessible-link:hover {
-    transform: scale(1.02);
-}
-
 .accessibility-navbar-controls {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 9px;
   flex-wrap: wrap;
-  width: 100%;
+  margin-left: auto;
+  width: auto;
   background: #ffffff;
   color: #000000;
   padding: 6px 10px;
@@ -1840,7 +1830,6 @@ h6 {
   font-weight: 800;
   line-height: 1.05;
   color: #000000;
-  margin-right: 4px;
 }
 
 .accessibility-audio-bars {
@@ -1857,21 +1846,10 @@ h6 {
   display: block;
 }
 
-.accessibility-audio-bars span:nth-child(1) {
-  height: 6px;
-}
-
-.accessibility-audio-bars span:nth-child(2) {
-  height: 11px;
-}
-
-.accessibility-audio-bars span:nth-child(3) {
-  height: 17px;
-}
-
-.accessibility-audio-bars span:nth-child(4) {
-  height: 23px;
-}
+.accessibility-audio-bars span:nth-child(1) { height: 6px; }
+.accessibility-audio-bars span:nth-child(2) { height: 11px; }
+.accessibility-audio-bars span:nth-child(3) { height: 17px; }
+.accessibility-audio-bars span:nth-child(4) { height: 23px; }
 
 .accessibility-nav-button {
   width: 32px;
@@ -1898,9 +1876,44 @@ h6 {
   outline-offset: 2px;
 }
 
+html.access-font-readable body {
+  font-family: Arial, Verdana, sans-serif !important;
+  letter-spacing: 0.02em;
+  line-height: 1.65;
+}
+
+html.access-high-contrast body,
+html.access-high-contrast body * {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.access-high-contrast a,
+html.access-high-contrast button {
+  color: #ffff00 !important;
+}
+
+html.access-invert {
+  filter: invert(1) hue-rotate(180deg);
+  background: #000000;
+}
+
+html.access-invert img,
+html.access-invert video,
+html.access-invert iframe {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.access-grayscale {
+  filter: grayscale(1);
+}
+
 @media (max-width: 768px) {
   .accessibility-navbar-controls {
     justify-content: center;
+    margin-left: 0;
+    width: 100%;
     gap: 7px;
   }
 
@@ -1914,4 +1927,4 @@ h6 {
     font-size: 12px;
   }
 }
-  
+

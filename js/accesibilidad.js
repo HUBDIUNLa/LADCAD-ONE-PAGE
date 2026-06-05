@@ -152,15 +152,19 @@ document.addEventListener("click", (event) => {
   synth.speak(utterThis);
 });
 
+(function () {
   let lecturaActual = null;
-  let nivelTexto = 0;
+  let nivelTexto = Number(localStorage.getItem("access_nivel_texto")) || 0;
+
+  function aplicarTamanoTexto() {
+    const tamanos = ["100%", "115%", "130%"];
+    document.documentElement.style.fontSize = tamanos[nivelTexto] || "100%";
+    localStorage.setItem("access_nivel_texto", String(nivelTexto));
+  }
 
   function obtenerTextoPagina() {
     const main = document.querySelector("main") || document.body;
-
-    return main.innerText
-      .replace(/\s+/g, " ")
-      .trim();
+    return main.innerText.replace(/\s+/g, " ").trim();
   }
 
   function leerPagina() {
@@ -169,7 +173,14 @@ document.addEventListener("click", (event) => {
       return;
     }
 
-    detenerLectura();
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      return;
+    }
+
+    if (window.speechSynthesis.speaking) {
+      return;
+    }
 
     const texto = obtenerTextoPagina();
 
@@ -192,7 +203,10 @@ document.addEventListener("click", (event) => {
 
     if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
       window.speechSynthesis.pause();
-    } else if (window.speechSynthesis.paused) {
+      return;
+    }
+
+    if (window.speechSynthesis.paused) {
       window.speechSynthesis.resume();
     }
   }
@@ -203,129 +217,100 @@ document.addEventListener("click", (event) => {
     }
   }
 
-  function aumentarTexto() {
-    document.body.classList.remove("font-large", "font-xlarge");
-
-    if (nivelTexto === 0) {
-      nivelTexto = 1;
-      document.body.classList.add("font-large");
-    } else {
-      nivelTexto = 2;
-      document.body.classList.add("font-xlarge");
-    }
-
-    localStorage.setItem("accesibilidad_nivel_texto", nivelTexto);
-  }
-
-  function disminuirTexto() {
-    document.body.classList.remove("font-large", "font-xlarge");
-
-    if (nivelTexto > 0) {
-      nivelTexto--;
-    }
-
-    if (nivelTexto === 1) {
-      document.body.classList.add("font-large");
-    }
-
-    localStorage.setItem("accesibilidad_nivel_texto", nivelTexto);
-  }
-
-  function activarTipografiaLegible() {
-    document.body.classList.toggle("font-readable");
-    guardarEstadoAccesibilidad();
-  }
-
   function limpiarContrastes() {
-    document.body.classList.remove("high-contrast", "inverted-contrast", "grayscale-mode");
-  }
-
-  function activarAltoContraste() {
-    const activo = document.body.classList.contains("high-contrast");
-    limpiarContrastes();
-
-    if (!activo) {
-      document.body.classList.add("high-contrast");
-    }
-
-    guardarEstadoAccesibilidad();
-  }
-
-  function activarContrasteInvertido() {
-    const activo = document.body.classList.contains("inverted-contrast");
-    limpiarContrastes();
-
-    if (!activo) {
-      document.body.classList.add("inverted-contrast");
-    }
-
-    guardarEstadoAccesibilidad();
-  }
-
-  function activarEscalaGrises() {
-    const activo = document.body.classList.contains("grayscale-mode");
-    limpiarContrastes();
-
-    if (!activo) {
-      document.body.classList.add("grayscale-mode");
-    }
-
-    guardarEstadoAccesibilidad();
-  }
-
-  function restablecerAccesibilidad() {
-    detenerLectura();
-
-    nivelTexto = 0;
-
-    document.body.classList.remove(
-      "font-large",
-      "font-xlarge",
-      "font-readable",
-      "high-contrast",
-      "inverted-contrast",
-      "grayscale-mode"
+    document.documentElement.classList.remove(
+      "access-high-contrast",
+      "access-invert",
+      "access-grayscale"
     );
-
-    localStorage.removeItem("accesibilidad_estado");
-    localStorage.removeItem("accesibilidad_nivel_texto");
   }
 
-  function guardarEstadoAccesibilidad() {
-    const estado = {
-      readable: document.body.classList.contains("font-readable"),
-      highContrast: document.body.classList.contains("high-contrast"),
-      inverted: document.body.classList.contains("inverted-contrast"),
-      grayscale: document.body.classList.contains("grayscale-mode")
-    };
-
-    localStorage.setItem("accesibilidad_estado", JSON.stringify(estado));
+  function guardarClases() {
+    localStorage.setItem("access_classes", document.documentElement.className);
   }
 
-  function cargarEstadoAccesibilidad() {
-    const estadoGuardado = localStorage.getItem("accesibilidad_estado");
-    const textoGuardado = localStorage.getItem("accesibilidad_nivel_texto");
+  function ejecutarAccion(action) {
+    if (action === "play") leerPagina();
 
-    if (textoGuardado) {
-      nivelTexto = parseInt(textoGuardado, 10);
+    if (action === "pause") pausarLectura();
 
-      if (nivelTexto === 1) {
-        document.body.classList.add("font-large");
-      }
+    if (action === "stop") detenerLectura();
 
-      if (nivelTexto === 2) {
-        document.body.classList.add("font-xlarge");
-      }
+    if (action === "font-up") {
+      nivelTexto = Math.min(nivelTexto + 1, 2);
+      aplicarTamanoTexto();
     }
 
-    if (!estadoGuardado) return;
+    if (action === "font-down") {
+      nivelTexto = Math.max(nivelTexto - 1, 0);
+      aplicarTamanoTexto();
+    }
 
-    const estado = JSON.parse(estadoGuardado);
+    if (action === "font-readable") {
+      document.documentElement.classList.toggle("access-font-readable");
+      guardarClases();
+    }
 
-    if (estado.readable) document.body.classList.add("font-readable");
-    if (estado.highContrast) document.body.classList.add("high-contrast");
-    if (estado.inverted) document.body.classList.add("inverted-contrast");
-    if (estado.grayscale) document.body.classList.add("grayscale-mode");
+    if (action === "contrast") {
+      const activo = document.documentElement.classList.contains("access-high-contrast");
+      limpiarContrastes();
+      if (!activo) document.documentElement.classList.add("access-high-contrast");
+      guardarClases();
+    }
+
+    if (action === "invert") {
+      const activo = document.documentElement.classList.contains("access-invert");
+      limpiarContrastes();
+      if (!activo) document.documentElement.classList.add("access-invert");
+      guardarClases();
+    }
+
+    if (action === "grayscale") {
+      const activo = document.documentElement.classList.contains("access-grayscale");
+      limpiarContrastes();
+      if (!activo) document.documentElement.classList.add("access-grayscale");
+      guardarClases();
+    }
+
+    if (action === "reset") {
+      detenerLectura();
+      nivelTexto = 0;
+      document.documentElement.style.fontSize = "100%";
+      document.documentElement.classList.remove(
+        "access-font-readable",
+        "access-high-contrast",
+        "access-invert",
+        "access-grayscale"
+      );
+      localStorage.removeItem("access_nivel_texto");
+      localStorage.removeItem("access_classes");
+    }
   }
 
-  document.addEventListener("DOMContentLoaded", cargarEstadoAccesibilidad);
+  document.addEventListener("click", function (event) {
+    const boton = event.target.closest("[data-accessibility-action]");
+    if (!boton) return;
+
+    event.preventDefault();
+
+    const action = boton.getAttribute("data-accessibility-action");
+    ejecutarAccion(action);
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const clasesGuardadas = localStorage.getItem("access_classes");
+
+    if (clasesGuardadas) {
+      clasesGuardadas.split(" ").forEach(function (clase) {
+        if (clase.startsWith("access-")) {
+          document.documentElement.classList.add(clase);
+        }
+      });
+    }
+
+    aplicarTamanoTexto();
+  });
+})();
+
+
+ 
