@@ -1,8 +1,6 @@
-
-
 <style>
     :root {
-        --bg-light: #BDD129;
+        --bg-white: #ffffff;
         --text-dark: #222;
     }
 
@@ -22,12 +20,35 @@
         color: #333;
     }
 
-    .fila-logos {
+    .organizadores-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 42px;
+        align-items: start;
+    }
+
+    .organizadores-columna {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .organizadores-subtitulo {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #333;
+        margin: 0 0 28px;
+    }
+
+    .logos-grupo {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 34px;
-        flex-wrap: nowrap;
+        gap: 28px;
+        flex-wrap: wrap;
+        width: 100%;
     }
 
     .logo-item {
@@ -36,7 +57,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex: 0 0 auto;
     }
 
     .logo-item a {
@@ -54,15 +74,29 @@
         display: block;
     }
 
+    /* NUEVA CLASE ESPECÍFICA PARA EL LOGO APALANCADO */
+    .logo-auspiciante {
+        width: 180px; /* Aumentamos el ancho total del contenedor */
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-auspiciante img {
+        width: 100%;   /* Forzamos a ocupar todo el ancho */
+        height: auto;  /* Mantiene la proporción perfecta */
+        transform: scale(1.2); /* Un extra de escala visual */
+    }
+
     @media (max-width: 900px) {
-        .fila-logos {
-            flex-wrap: wrap;
-            gap: 25px;
+        .organizadores-grid {
+            grid-template-columns: 1fr;
+            gap: 44px;
         }
 
-        .logo-item {
-            width: 100px;
-            height: 62px;
+        .organizadores-subtitulo {
+            margin-bottom: 22px;
         }
     }
 
@@ -76,65 +110,80 @@
             margin-bottom: 35px;
         }
 
-        .fila-logos {
-            gap: 22px;
+        .logos-grupo {
+            gap: 24px;
         }
 
         .logo-item {
             width: 95px;
             height: 58px;
         }
+
+        /* Ajuste responsivo para el logo del auspiciante */
+        .logo-auspiciante {
+            width: min(85vw, 260px);
+        }
     }
 </style>
 
-<section class="jornada-organizadores" aria-labelledby="titulo-organizadores">
-    <h2 id="titulo-organizadores" class="section-title">Organizan el Congreso</h2>
+<section class="jornada-organizadores">
 
-    <div class="fila-logos">
+    <h2 class="section-title">Instituciones participantes</h2>
 
-        <div class="logo-item">
-            <a href="https://lad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial del Laboratorio de Diseño de la Universidad Nacional de Lanús">
-                <img src="assets/images/LOGOS/ladsinbordenegro.png" alt="Logo oficial del Laboratorio de Diseño - LAD">
-            </a>
+    <div class="organizadores-grid">
+
+        <div class="organizadores-columna">
+            <h3 class="organizadores-subtitulo">Organizan</h3>
+            <div class="logos-grupo">
+                <div class="logo-item">
+                    <a href="https://cad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial de la Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús">
+                        <img src="assets/images/logocad.jpeg" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/carreras/grado/licenciaturas/diseno-industrial" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de DI">
+                        <img src="assets/images/logo di.jpg" alt="DI UNLa">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://lad.unla.edu.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio web del LAD">
+                        <img src="assets/images/lad sin borde negro.png" alt="LAD">
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="logo-item">
-            <a href="https://cad.unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial de la Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús">
-                <img src="assets/images/logocad.jpeg" alt="Logo oficial de la Comisión sobre Accesibilidad y Discapacidad - CAD">
-            </a>
+        <div class="organizadores-columna">
+            <h3 class="organizadores-subtitulo">Convocan</h3>
+            <div class="logos-grupo">
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/carreras/posgrado/especializaciones/tecnologias-de-fabricacion-digital" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de ETFD">
+                        <img src="assets/images/etfdunla_logo.jpg" alt="ETFD UNLa">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/carreras/grado/licenciaturas/diseno-industrial" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de DI">
+                        <img src="assets/images/logo di.jpg" alt="DI UNLa">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.unla.edu.ar/rectorado/escuela-de-oficios-felipe-vallese" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de Escuela de Oficios Felipe Vallese">
+                        <img src="assets/images/escueladeoficioscuadrado.png" alt="Escuela de Oficios Felipe Vallese">
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="logo-item">
-            <a href="https://unla.edu.ar/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial de la Universidad Nacional de Lanús">
-                <img src="assets/images/unla logo rrss.jpg" alt="Logo oficial de la Universidad Nacional de Lanús - UNLa">
-            </a>
-        </div>
-
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/carreras/grado/licenciaturas/diseno-industrial/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial de Diseño Industrial de la Universidad Nacional de Lanús">
-                <img src="assets/images/logo di.jpg" alt="Logo oficial de Diseño Industrial - UNLa">
-            </a>
-        </div>
-
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/carreras/posgrado/especializaciones/tecnologias-de-fabricacion-digital/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial de la Especialización en Tecnologías de Fabricación Digital">
-                <img src="assets/images/etfdunla_logo.jpg" alt="Logo oficial de ETFD - UNLa">
-            </a>
-        </div>
-
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/departamentos/humanidades-y-artes/" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial del Departamento de Humanidades y Artes de la Universidad Nacional de Lanús">
-                <img src="assets/images/logo HyA.jpg" alt="Logo oficial del Departamento de Humanidades y Artes - UNLa">
-            </a>
-        </div>
-
-        <div class="logo-item">
-            <a href="https://www.unla.edu.ar/rectorado/escuela-de-oficios-felipe-vallese" target="_blank" rel="noopener noreferrer" aria-label="Acceder al sitio web oficial de la Escuela de Oficios Felipe Vallese">
-                <img src="assets/images/escueladeoficioscuadrado.png" alt="Logo oficial de la Escuela de Oficios Felipe Vallese - UNLa">
-            </a>
+        <div class="organizadores-columna">
+            <h3 class="organizadores-subtitulo">Auspician</h3>
+            <div class="logos-grupo"> 
+                <div class="logo-auspiciante">
+                    <a href="https://www.red-universidadydiscapacidad.org/" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de la Dirección General de Cultura y Educación de la Provincia de Buenos Aires">
+                        <img src="assets/images/Marca Red Latinoamericana (2).png" alt="Red Interuniversitaria Latinoamericana y del Caribe sobre Discapacidad y Derechos Humanos">
+                    </a>
+                </div>
+            </div>
         </div>
 
     </div>
 </section>
-
-

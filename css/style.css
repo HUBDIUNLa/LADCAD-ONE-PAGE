@@ -123,36 +123,57 @@ h6 {
 }
 
 .ecosystem2-card {
-  background: var(--hub-white, #FFFFFF);
+  /* Fondo tornasolado sutil simulando la imagen */
+  background: 
+    radial-gradient(circle at 0% 100%, rgba(139, 30, 63, 0.15), transparent 60%), /* Granate abajo-izquierda */
+    radial-gradient(circle at 20% 40%, rgba(74, 115, 122, 0.2), transparent 50%), /* Verde azulado/tornasol */
+    var(--hub-white, #FFFFFF); /* Fondo base blanco */
+  
   color: var(--Azul-noche, #0D2B45);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  /* Añadimos 'background-image' a la transición para que el gradiente cambie suavemente */
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  background-size: 140% 140%; /* Le da un poco de aire al degradado */
+  background-position: center;
 }
 
 .ecosystem2-card:hover {
   transform: scale(1.03);
-  background: var(--verde-pasto, #a4df98);
+  color: var(--hub-white, #FFFFFF);
+  
+  /* Al pasar el mouse, el tornasolado se vuelve más intenso y nocturno */
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(13, 43, 69, 0.9), transparent 80%), /* Azul noche arriba-derecha */
+    radial-gradient(circle at 0% 100%, rgba(139, 30, 63, 0.95), transparent 80%), /* Granate abajo-izquierda */
+    var(--Granate, #8B1E3F); /* Fondo base granate */
 }
 
 .ecosystem2-card-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--hub-white);
-  color: var(--hub-dark-gray);
+  background: var(--hub-white, #FFFFFF);
+  color: var(--hub-dark-gray, #333);
   padding: 0.6rem 1rem;
   font-family: var(--hub-font-heading);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Ajuste al botón interno para que resalte correctamente dentro de la tarjeta activa */
+.ecosystem2-card:hover .ecosystem2-card-link {
+  background: transparent;
+  color: var(--hub-white, #FFFFFF);
+  border-color: var(--hub-white, #FFFFFF); /* Se convierte en un botón calado (outline) muy elegante */
 }
 
 .ecosystem2-card-link:hover {
-  background: var(--hub-celeste, #11D6C5);
-  color: var(--hub-white);
+  background: var(--Azul-noche, #0D2B45);
+  color: var(--hub-white, #FFFFFF);
 }
-
 .site-nav {
   background: var(--hub-white, #FFFFFF);
   color: var(--Azul-noche, #0D2B45);
@@ -1712,7 +1733,7 @@ h6 {
     justify-content: center !important;
     gap: 8px !important;
     width: 100% !important;
-    background-color: rgba(26, 140, 146, 0.2) !important; /* Tu tono teal con transparencia */
+    background-color: var(--hub-black) !important; /* Tu tono teal con transparencia */
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     color: #ffffff !important;
     padding: 8px 12px !important;
@@ -1725,7 +1746,7 @@ h6 {
 }
 
 .btn-ver-bio:hover {
-    background-color: #1A8C92 !important; /* Sólido al pasar el mouse */
+    background-color: var(--Granate) !important; /* Sólido al pasar el mouse */
     border-color: #ffffff !important;
 }
 

@@ -54,3 +54,162 @@
   <script src="js/components.js?v=1"></script>
 </body>
 </html>
+
+
+<div class="cronograma-interactivo" style="
+  --hub-lad-cyan-dark: #0BA79A;
+  --grape-soda: #88498f;
+  --champagne-mist: #F6E7D0;
+  --tomato: #FF6542;
+  --Mauve-Shadow: #564154;
+  --white-grey: #EBEBEB;
+  --hub-dark-dark-cyan: #1A8C92;
+  --tomato-clear: #f9751d;
+  --tomato-dark: #e54906;
+  --hub-black: #000000;
+  --hub-white: #FFFFFF;
+  --hub-lad-cyan: #11D6C5;
+  --hub-lad-cyan-light: #2CE5D6;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: transparent;
+">
+
+  <h2 style="color: var(--hub-black); 
+  font-size: 2rem; text-align: center; margin-bottom: 20px; font-weight: bold;">CRONOGRAMA</h2>
+
+  <details style="
+    background-color: #262626; /* Fondo gris oscuro de la barra del botón */
+    border-radius: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  ">
+    
+    <summary style="
+      list-style: none;
+      outline: none;
+      cursor: pointer;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    ">
+      <span style="
+        background-color: var(--Granate); /* Base de tu var --tomato con opacidad suave tipo la foto */
+        color: var(--hub-white); 
+        padding: 8px 24px; 
+        border-radius: none; 
+        font-weight: bold; 
+        font-size: 1rem;
+      ">
+        JUEVES 12 DE NOVIEMBRE DE 2026
+      </span>
+      
+      <span class="flecha-icono" style="
+        color: var(--hub-white);
+        font-size: 1.2rem;
+        font-weight: bold;
+      ">▼</span>
+    </summary>
+
+    <div style="
+      background-color: var(--hub-black);
+      padding: 24px;
+      border-top: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    ">
+
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 16px;">
+        <div style="border: 1px solid var(--Mauve-Shadow); border-radius: none; display: flex; align-items: center; justify-content: center; padding: 20px;">
+          <span style="color: var(--hub-lad-cyan-light); font-weight: bold; font-size: 1.1rem; text-align: center;">09:00h — 13:00h</span>
+        </div>
+        <div style="background-color: var(--Mauve-Shadow); border-radius: none; padding: 20px;">
+          <div style="color: var(--hub-white); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+            Bloque Matutino — Modalidad Virtual / 
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+            <div style="background: rgba(255,255,255,0.06); border-radius: none; padding: 12px;">
+              <div style="color: var(--hub-lad-cyan); font-weight: bold; font-size: 0.8rem;">09:30 h</div>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Acreditación General</p>
+              <div style="color: var(--hub-lad-cyan); font-weight: bold; font-size: 0.8rem; margin-top: 8px;">10:00 h</div>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Apertura de Autoridades</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-left: 3px solid var(--hub-lad-cyan); border-radius: none 8px 8px 4px; padding: 12px;">
+              <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 1 / PRESENCIAL Y VIRTUAL</div>
+              <p style="margin: 4px 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-left: 3px solid var(--grape-soda); border-radius: none 8px 8px 4px; padding: 12px;">
+              <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 2 / PRESENCIAL Y VIRTUAL</div>
+              <p style="margin: 4px 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-left: 3px solid var(--tomato); border-radius: none 8px 8px 4px; padding: 12px;">
+              <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 3 / PRESENCIAL Y VIRTUAL</div>
+              <p style="margin: 4px 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 16px;">
+        <div style="border: 1px solid var(--Mauve-Shadow); border-radius: none; display: flex; align-items: center; justify-content: center; padding: 12px;">
+          <span style="color: var(--white-grey); font-weight: bold; font-size: 1rem;">13:00h — 14:00h</span>
+        </div>
+        <div style="background-color: var(--white-grey); color: var(--hub-black); border-radius: none; display: flex; align-items: center; justify-content: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; padding: 12px;">
+          Intervalo / Almuerzo libre
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 16px;">
+        <div style="border: 1px solid var(--Mauve-Shadow); border-radius: none; display: flex; align-items: center; justify-content: center; padding: 20px;">
+          <span style="color: var(--hub-lad-cyan-light); font-weight: bold; font-size: 1.1rem; text-align: center;">14:00h — 20:00h</span>
+        </div>
+        <div style="background-color: var(--hub-dark-dark-cyan); border-radius: none; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+          
+          <div>
+            <div style="color: var(--hub-white); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+              Bloque Tarde — 14:00 h a 17:00 h // Sede Polo Tecnológico UNLa
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+              <div style="background: rgba(0,0,0,0.2); border-radius: none; padding: 14px;">
+                <div style="color: var(--tomato); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Espacio Showroom</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Muestra Tecnológica y Experiencias en vivo</p>
+              </div>
+              <div style="background: rgba(0,0,0,0.2); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-lad-cyan-light); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Espacio de Talleres</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Microtalleres</p>
+                <span style="font-size: 0.75rem; color: var(--tomato-clear); font-weight: bold;">⚠️ Cupos limitados</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px;">
+            <div style="color: var(--hub-white); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+              Bloque Vespertino — 17:00 h a 20:00 h // Ponencias y Cierre en Auditorio Principal
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+              <div style="background: rgba(0,0,0,0.25); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 4 / PRESENCIAL</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+              </div>
+              <div style="background: rgba(0,0,0,0.25); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold;">MESA 5 / PRESENCIAL</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--hub-white); font-weight: bold;"></p>
+              </div>
+              <div style="background: var(--grape-soda); border-radius: none; padding: 14px;">
+                <div style="color: var(--hub-white); font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">Actividades de Cierre</div>
+                <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--hub-white); font-weight: bold;">Charlas Principales e Invitados Especiales</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </details>
+</div>
