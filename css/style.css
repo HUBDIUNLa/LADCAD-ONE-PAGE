@@ -145,6 +145,7 @@ h6 {
     radial-gradient(circle at 100% 0%, rgba(13, 43, 69, 0.9), transparent 80%), /* Azul noche arriba-derecha */
     radial-gradient(circle at 0% 100%, rgba(139, 30, 63, 0.95), transparent 80%), /* Granate abajo-izquierda */
     var(--Granate, #8B1E3F); /* Fondo base granate */
+    color: var(--hub-white, #FFFFFF);
 }
 
 .ecosystem2-card-link {
@@ -299,7 +300,7 @@ h6 {
 }
 
 .legal-divider {
-  border-top: 4px solid var(--gris, #8A99A8);
+  border-top: 4px solid var(--hub-white);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -811,7 +812,7 @@ h6 {
 }
 
 .legal2-divider {
-  border-top: 4px solid var(--hub-celeste, #1C92A8);
+  border-top: 4px solid var(--hub-white);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -867,7 +868,7 @@ h6 {
 }
 
 .legal3-divider {
-  border-top: 4px solid var(--granate, #8B1E3F);
+  border-top: 4px solid var(--hub-white);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -922,7 +923,7 @@ h6 {
 }
 
 .legal0-divider {
-  border-top: 4px solid var(--hub-dark-teal, #0E7469);
+  border-top: 4px solid var(--hub-white);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
