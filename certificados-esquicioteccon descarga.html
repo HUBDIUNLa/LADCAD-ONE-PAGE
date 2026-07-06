@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificados | Portaminas</title>
+  <meta name="description" content="Repositorio de certificados para expositores del Esquicio Taller de Diseño I, II y III de Tecnicatura" />
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  
+    <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  
+  
+  
+  <style>
+    :root {
+      --ink: #080d08;
+      --paper: #f2f2f0;
+      --white: #ffffff;
+      --cyan: #aef8f5;
+      --cyan-strong: #00e7e1;
+      --web-lad: #A6FFF0; 
+      --muted: #59615d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Karla", Arial, sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      border: 12px solid var(--ink);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 48px 0 28px;
+      background: var(--cyan);
+      border-bottom: 12px solid var(--ink);
+    }
+
+    .hero-kicker,
+    .preview-label {
+      margin: 0 0 12px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(18px, 3vw, 40px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin: 22px 0 0;
+      font-size: 19px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .preview-section {
+      padding: 38px 0 16px;
+    }
+
+    .certificate-shell {
+      width: 100%;
+      overflow: auto;
+      padding-bottom: 14px;
+    }
+
+    .certificate {
+      position: relative;
+      width: min(100%, 1120px);
+      aspect-ratio: 1.414 / 1;
+      margin: 0 auto;
+      background: var(--white);
+      border: 10px solid var(--ink);
+      color: var(--ink);
+      overflow: hidden;
+    }
+
+    .certificate-field {
+      position: absolute;
+      inset: 62px 52px 182px 52px;
+      background: linear-gradient(90deg, var(--cyan-strong), #35f3ee 52%, var(--cyan));
+    }
+
+    .certificate-brand {
+      position: absolute;
+      z-index: 2;
+      top: 28px;
+      left: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .certificate-logo {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      overflow: hidden;
+    }
+
+    .certificate-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .logo-fallback {
+      display: none;
+      color: var(--white);
+      font-family: "Roboto Mono", monospace;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: .9;
+      text-align: center;
+    }
+
+    .certificate-logo-lad {
+      padding: 6px;
+    }
+
+    .certificate-title {
+      position: absolute;
+      left: 74px;
+      right: 74px;
+      top: 238px;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(18px, 3vw, 30px);
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .certificate-copy {
+      position: absolute;
+      left: 78px;
+      right: 78px;
+      top: 374px;
+      max-width: 900px;
+      font-size: clamp(10px, 1vw, 15px);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .certificate-name {
+      display: block;
+      margin: 14px 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.05;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+ .certificate-signatures {
+  position: absolute;
+  left: 52px;
+  right: 52px;
+  bottom: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 315px);
+  justify-content: center;
+  gap: 28px;
+  align-items: end;
+
+  padding-top: 22px;
+  background: var(--white);
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.signature-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.firma {
+  display: block;
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto -5px;
+}
+
+.signature-line {
+  text-align: center;
+}
+
+
+.signature-line{
+  width:100%;
+  text-align:left;
+}
+
+    .signature-line {
+      min-height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .signature-line::before {
+      content: "";
+      display: block;
+      width: 100%;
+      border-top: 2px solid var(--ink);
+    }
+
+    .signature-line strong {
+      display: block;
+      font-weight: 700;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .download-button,
+    .course-access-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      padding: 12px 18px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .download-button:hover,
+    .course-access-link:hover,
+    .course-access-link.is-active {
+      background: var(--web-lad);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .grid-section {
+      padding: 28px 0 60px;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .resource-card {
+      display: flex;
+    }
+
+    .resource-card .course-access-link {
+      width: 100%;
+      min-height: 58px;
+      border: 2px solid var(--ink);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        border-width: 8px;
+      }
+
+      .hero {
+        padding-top: 34px;
+        border-bottom-width: 8px;
+      }
+
+      .certificate {
+        min-width: 760px;
+        border-width: 8px;
+      }
+
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        background: #ffffff;
+      }
+
+      body * {
+        visibility: hidden !important;
+      }
+
+      #certificate,
+      #certificate * {
+        visibility: visible !important;
+      }
+
+      main {
+        border: 0;
+        min-height: 0;
+      }
+
+      #certificate {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        border: 10px solid var(--ink) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .certificate-shell {
+        overflow: visible !important;
+      }
+  
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-kicker">Repositorio de certificados</p>
+        <br>
+        <h1>ESQUICIO TALLER DE DISEÑO I, II y III de Tecnicatura - DISEÑO DE SOPORTE CORPORAL BIMATERIAL</h1>
+        <p>Aquí encontraras la selección de los trabajos realizados en el marco de un esquicio de cruce vertical 
+          realizado por los 3 talleres expresado por los estudiantes de taller 1, 2 y 3 de la Tecnicatura en Diseño 
+          Industrial, a cargo de los docentes: DT Cecilia Dorado; DT Daniela Tosar; DI Natalia López; DI Sofia Nilsson; 
+          DI Gabriela Pérez; MSc. DI Edgardo Chanquia; DI Pablo Caffaro; DI Leonardo Schiavo; DI Walter Vesque; 
+          DI Isabella Brian; DI Matías Mendozzi, DI Ricardo Delgado y los Ayudantes Estudiantes: Victoria Tabernero; 
+          Lara Domínguez Violi y Abril Chamorro.</p>
+          <p>A través de este tipo de ejercicio se busca potenciar las capacidades creativas de forma colaborativa, 
+            asegurando una integración interdisciplinaria fluida entre los Talleres 1, 2 y 3. Asimismo, 
+            se busca consolidar la asignación de roles específicos dentro de los equipos de trabajo para 
+            estimular la generación de soluciones innovadoras a los desafíos de diseño, aprovechando al máximo 
+            los recursos tecno-constructivos que ofrece el taller de Diseño Industrial.</p>
+        <p>Certificados de Distinción para los proyectos seleccionados del esquicio.</p> 
+        <p>Seleccioná un nombre para previsualizar el certificado y descargarlo en PDF.</p>
+      </div>
+    </section>
+
+    <section class="preview-section" aria-label="Previsualizacion del certificado">
+      <div class="container">
+        <p class="preview-label">Previsualizacion</p>
+        <div class="certificate-shell">
+          <article class="certificate" id="certificate">
+            <div class="certificate-field"></div>
+            <div class="certificate-brand" aria-label="Marcas institucionales">
+              <div class="certificate-logo">
+                <img src="assets/images/Logo UNLA Blanco.png" alt="Universidad Nacional de Lanús" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              </div>
+              <div class="certificate-logo certificate-logo-lad">
+                <img src="assets/images/lad sin borde negro.png" alt="Laboratorio de Diseño" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              </div>
+            </div>
+            <h2 class="certificate-title">Certificado<br>de Distinción</h2>
+            <p class="certificate-copy">
+              <br>
+              Se certifica que
+              <span class="certificate-name" id="certificateName">Christian Campos</span>
+              participó en el Esquicio de Taller de la Tecnicatura en Diseño Industrial <strong>DISEÑO DE SOPORTE CORPORAL BIMATERIAL</strong>, 
+              desarrollada en el marco de las Asignaturas Taller de Diseño I, II y III de todas las orientaciones
+               de la Licenciatura en Diseño Industrial, donde el proyecto
+               realizado por su equipo, fue seleccionado para su distinción.
+            </p>
+
+            <div class="certificate-signatures">
+
+  <div class="signature-block">
+    <img class="firma" src="assets/images/firma Velazco.png" alt="">
+    <div class="signature-line">
+      <strong>Dirección Lic. en Diseño Industrial</strong>
+      <span>Esp DI Diego Velazco</span>
+    </div>
+  </div>
+
+ 
+</div>
+
+ 
+          </article>
+        </div>
+        <div class="controls">
+  <button class="download-button" type="button" id="downloadSelectedCertificate">
+    Descargar certificado
+  </button>
+</div>
+      </div>
+    </section>
+
+    <section class="grid-section" aria-label="Listado de expositores">
+      <div class="container">
+        <div class="resources-grid" id="certificateGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+
+  const exhibitors = [
+  "Christian Campos",
+  "Rodrigo Avalos",
+  "Ciro Juarez",
+  "Victoria Reupach",
+  "Francesca Monclus",
+  "Paloma Pompei",
+  "Facundo Varas",
+  "Valentino Alemi",
+  "Aylin Alvarez",
+  "Ezequiel Ojeda Juarez",
+  "Soledad Galeano",
+  "Camila Di Biassi",
+  "Mariana Gómez Seminara",
+  "Matías Papaleo",
+  "Carolina Herrera",
+  "Fernando Balsamo",
+  "Rodrigo Apa",
+  "Juan Valdez",
+  "Ian Santamaría",
+  "Gonzalo Luqui",
+  "Magalí Moreno",
+  "Erika Noceda",
+  "Agustina Camacho",
+  "Nayla Quintana",
+  "Joana Villordo",
+  "Andrea Malenotti",
+  "Iara Fernandez",
+  "Alejo Acosta",
+  "Valentino Divita",
+  "Romina Onuz",
+  "Lara Domínguez Violi",
+  "Jacqueline Núñez",
+  "Micaela Castillo",
+  "Rosario Canton",
+  "Victoria Nievas",
+  "Michelle Rodríguez",
+  "Tiara Calvo",
+  "Juan Necchi",
+  "Franco Del Priore",
+  "Leonel Bravo",
+  "Camila Mignone",
+  "Ayelen Maldonado Vera",
+  "Lionel Ramirez",
+  "Camila De Geronimo",
+  "Luca Manuel Sebastiao",
+  "Julieta Quiroga",
+  "Camila Pizzi Libertad",
+  "Ramon Lezcano",
+  "Daiana Aguirres",
+  "Francisco Montes",
+  "Alejandro Joaquín Maldonado",
+  "Chiara Bloise",
+  "Naiara Lloves",
+  "Maia Abraham",
+  "Romero Espinoza Milton",
+  "Duarte Santiago Agustin",
+  "Milagros Lapatovski",
+  "Barbara Judith Gatica",
+  "Denis Yenifer",
+  "Brizuela Agustina Camila",
+  "Andrea Calderón Reyes"
+
+];
+  
+
+  const grid = document.getElementById("certificateGrid");
+  const certificateName = document.getElementById("certificateName");
+  let selectedName = exhibitors[0];
+
+  function selectExhibitor(name) {
+    selectedName = name;
+    certificateName.textContent = name;
+
+    document.querySelectorAll(".course-access-link").forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.name === name);
+    });
+  }
+
+  exhibitors.forEach((name) => {
+    const card = document.createElement("article");
+    card.className = "resource-card";
+    card.innerHTML = `
+      <button class="course-access-link" type="button" data-name="${name}" aria-label="Previsualizar certificado de ${name}">${name}</button>
+    `;
+
+    const button = card.querySelector(".course-access-link");
+
+    button.addEventListener("click", () => {
+      selectExhibitor(name);
+    });
+
+    grid.appendChild(card);
+  });
+
+  function printSelectedCertificate() {
+    window.print();
+  }
+
+  const selectedDownloadButton = document.getElementById("downloadSelectedCertificate");
+
+  if (selectedDownloadButton) {
+    selectedDownloadButton.addEventListener("click", printSelectedCertificate);
+  }
+
+  selectExhibitor(selectedName);
+</script>
+
+  
+</body>
+</html>
