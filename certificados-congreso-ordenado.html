@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certificados | Portaminas</title>
-  <meta name="description" content="Repositorio de certificados para expositores del Esquicio Taller de Diseño I, II y III de Tecnicatura" />
+  <title>Certificados | Congreso Diseño, Discapacidad y Accesibilidad</title>
+  <meta name="description" content="Repositorio de certificados para expositores y asistentes del 1er Congreso Internacional 'Diseño, Discapacidad y Accesibilidad: Tecnologías e Innovación para la Transformación Social'" />
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   
   
-    <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/images/LADCADSINFONDO.ico" type="image/x-icon" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,35 +108,71 @@
     .certificate-field {
       position: absolute;
       inset: 62px 52px 182px 52px;
-      background: linear-gradient(90deg, var(--cyan-strong), #35f3ee 52%, var(--cyan));
+      background:
+  radial-gradient(
+    ellipse 65% 55% at 5% 0%,
+    rgba(157, 100, 116, 0.9) 0%,
+    rgba(157, 100, 116, 0.5) 35%,
+    transparent 72%
+  ),
+  radial-gradient(
+    ellipse 65% 85% at 0% 55%,
+    rgba(91, 170, 176, 0.7) 0%,
+    rgba(91, 170, 176, 0.28) 42%,
+    transparent 75%
+  ),
+  radial-gradient(
+    ellipse 55% 50% at 42% 0%,
+    rgba(164, 172, 164, 0.65) 0%,
+    rgba(164, 172, 164, 0.25) 40%,
+    transparent 72%
+  ),
+  #ffffff;
+    
     }
 
-    .certificate-brand {
-      position: absolute;
-      z-index: 2;
-      top: 28px;
-      left: 28px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
+ .certificate-brand {
+  position: absolute;
+  z-index: 2;
+  top: 90px;
+  right: 70px;
+  left: auto;
 
-    .certificate-logo {
-      width: 72px;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--ink);
-      overflow: hidden;
-    }
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
 
-    .certificate-logo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.certificate-logo {
+  width: auto;
+  height: 82px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  overflow: visible;
+}
+
+.certificate-logo img {
+  display: block;
+  width: auto;
+  height: 82px;
+  object-fit: contain;
+}
+
+/* Agranda especialmente el logo de la CAD */
+.certificate-logo:nth-child(2) img {
+  height: 88px;
+}
+
+.certificate-logo-lad {
+  padding: 0;
+}
+
+   
 
     .logo-fallback {
       display: none;
@@ -149,15 +184,13 @@
       text-align: center;
     }
 
-    .certificate-logo-lad {
-      padding: 6px;
-    }
+   
 
     .certificate-title {
       position: absolute;
       left: 74px;
       right: 74px;
-      top: 238px;
+      top: 220px;
       font-family: "Roboto Mono", monospace;
       font-size: clamp(18px, 3vw, 30px);
       line-height: 1;
@@ -169,7 +202,7 @@
       position: absolute;
       left: 78px;
       right: 78px;
-      top: 374px;
+      top: 335px;
       max-width: 900px;
       font-size: clamp(10px, 1vw, 15px);
       line-height: 1.35;
@@ -193,7 +226,7 @@
   bottom: 30px;
 
   display: grid;
-  grid-template-columns: repeat(1, 315px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: center;
   gap: 28px;
   align-items: end;
@@ -374,29 +407,22 @@
   </style>
 </head>
 <body>
+
+   <div id="navbar"></div>
+
   <main>
     <section class="hero">
       <div class="container">
         <p class="hero-kicker">Repositorio de certificados</p>
         <br>
-        <h1>ESQUICIO TALLER DE DISEÑO I, II y III de Tecnicatura - DISEÑO DE SOPORTE CORPORAL BIMATERIAL</h1>
-        <p>Aquí encontraras la selección de los trabajos realizados en el marco de un esquicio de cruce vertical 
-          realizado por los 3 talleres expresado por los estudiantes de taller 1, 2 y 3 de la Tecnicatura en Diseño 
-          Industrial, a cargo de los docentes: DT Cecilia Dorado; DT Daniela Tosar; DI Natalia López; DI Sofia Nilsson; 
-          DI Gabriela Pérez; MSc. DI Edgardo Chanquia; DI Pablo Caffaro; DI Leonardo Schiavo; DI Walter Vesque; 
-          DI Isabella Brian; DI Matías Mendozzi, DI Ricardo Delgado y los Ayudantes Estudiantes: Victoria Tabernero; 
-          Lara Domínguez Violi y Abril Chamorro.</p>
-          <p>A través de este tipo de ejercicio se busca potenciar las capacidades creativas de forma colaborativa, 
-            asegurando una integración interdisciplinaria fluida entre los Talleres 1, 2 y 3. Asimismo, 
-            se busca consolidar la asignación de roles específicos dentro de los equipos de trabajo para 
-            estimular la generación de soluciones innovadoras a los desafíos de diseño, aprovechando al máximo 
-            los recursos tecno-constructivos que ofrece el taller de Diseño Industrial.</p>
-        <p>Certificados de Distinción para los proyectos seleccionados del esquicio.</p> 
-        <p>Seleccioná un nombre para previsualizar el certificado y descargarlo en PDF.</p>
+        <h1>1er Congreso Internacional "Diseño, Discapacidad y Accesibilidad: Tecnologías e Innovación para la Transformación Social"</h1>
+       
+        <p>Certificados de Expositores</p> 
+        <p>Seleccioná tu nombre para previsualizar el certificado y descargarlo en PDF.</p>
       </div>
     </section>
 
-    <section class="preview-section" aria-label="Previsualizacion del certificado">
+    <section class="preview-section" aria-label="Previsualización del certificado">
       <div class="container">
         <p class="preview-label">Previsualizacion</p>
         <div class="certificate-shell">
@@ -404,21 +430,25 @@
             <div class="certificate-field"></div>
             <div class="certificate-brand" aria-label="Marcas institucionales">
               <div class="certificate-logo">
-                <img src="assets/images/Logo UNLA Blanco.png" alt="Universidad Nacional de Lanús" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="assets/images/logo-web-unla.jpg" alt="Universidad Nacional de Lanús" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              </div>
+               <div class="certificate-logo certificate-logo-lad">
+                <img src="assets/images/logocad.jpeg" alt="Comisión sobre Accesibilidad y Discapacidad" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               </div>
               <div class="certificate-logo certificate-logo-lad">
                 <img src="assets/images/lad sin borde negro.png" alt="Laboratorio de Diseño" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               </div>
+
             </div>
-            <h2 class="certificate-title">Certificado<br>de Distinción</h2>
+            <h2 class="certificate-title">Certificado<br>de Asistencia</h2>
             <p class="certificate-copy">
               <br>
               Se certifica que
               <span class="certificate-name" id="certificateName">Christian Campos</span>
-              participó en el Esquicio de Taller de la Tecnicatura en Diseño Industrial <strong>DISEÑO DE SOPORTE CORPORAL BIMATERIAL</strong>, 
-              desarrollada en el marco de las Asignaturas Taller de Diseño I, II y III de todas las orientaciones
-               de la Licenciatura en Diseño Industrial, donde el proyecto
-               realizado por su equipo, fue seleccionado para su distinción.
+              asistió al <strong>1er Congreso Internacional "Diseño, Discapacidad y Accesibilidad: Tecnologías e Innovación 
+                para la Transformación Social"</strong>, 
+              desarrollado los días 12 y 13 de noviembre de 2026 organizado por la Comisión sobre Accesibilidad y Discapacidad (CAD), la 
+              Licenciatura en Diseño Industrial y el Laboratorio de Diseño (LAD), en el Polo Tecnológico de la Universidad Nacional de Lanús.
             </p>
 
             <div class="certificate-signatures">
@@ -428,6 +458,22 @@
     <div class="signature-line">
       <strong>Dirección Lic. en Diseño Industrial</strong>
       <span>Esp DI Diego Velazco</span>
+    </div>
+  </div>
+
+  <div class="signature-block">
+    <img class="firma" src="assets/images/firma Marcela Mendez.png" alt="">
+    <div class="signature-line">
+      <strong>Dirección Comisión sobre Accesibilidad y Discapacidad</strong>
+      <span>Esp Marcela Mendez</span>
+    </div>
+  </div>
+
+  <div class="signature-block">
+    <img class="firma" src="assets/images/firma estefi.png" alt="">
+    <div class="signature-line">
+      <strong>Coordinación Laboratorio de Diseño</strong>
+      <span>Esp Estefanía Fondevila Sancet</span>
     </div>
   </div>
 
@@ -451,6 +497,9 @@
       </div>
     </section>
   </main>
+
+  <script src="js/components.js" defer></script>
+<script src="js/accesibilidad.js" defer></script>
 
   <script>
 
