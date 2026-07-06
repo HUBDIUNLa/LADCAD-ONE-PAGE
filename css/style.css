@@ -1002,7 +1002,7 @@ h6 {
 }
 
 .legal1-divider {
-  border-top: 4px solid var(--verde-pasto, #a4df98);
+  border-top: 4px solid var(--hub-white);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
