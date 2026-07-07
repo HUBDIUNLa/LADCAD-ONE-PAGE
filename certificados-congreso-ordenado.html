@@ -15,8 +15,12 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  
-  
+   <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+
+
   
   <style>
     :root {
@@ -41,20 +45,15 @@
     }
 
     main {
-      min-height: 100vh;
-      border: 12px solid var(--ink);
-    }
+  min-height: 100vh;
+  border: none;
+}
 
-    .container {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .hero {
-      padding: 48px 0 28px;
-      background: var(--cyan);
-      border-bottom: 12px solid var(--ink);
-    }
+.hero {
+  padding: 48px 0 28px;
+  background: var(--white);
+  border-bottom: none;
+}
 
     .hero-kicker,
     .preview-label {
@@ -313,7 +312,7 @@
     .download-button:hover,
     .course-access-link:hover,
     .course-access-link.is-active {
-      background: var(--web-lad);
+      background: var(--white);
       color: var(--ink);
       transform: translateY(-1px);
     }
@@ -329,15 +328,19 @@
     }
 
     .resource-card {
-      display: flex;
-    }
+  display: flex;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
-    .resource-card .course-access-link {
-      width: 100%;
-      min-height: 58px;
-      border: 2px solid var(--ink);
-      text-align: center;
-    }
+.resource-card .course-access-link {
+  width: 100%;
+  margin: 0;
+}
+
+  
 
     @media (max-width: 760px) {
       main {
@@ -415,9 +418,8 @@
       <div class="container">
         <p class="hero-kicker">Repositorio de certificados</p>
         <br>
-        <h1>1er Congreso Internacional "Diseño, Discapacidad y Accesibilidad: Tecnologías e Innovación para la Transformación Social"</h1>
        
-        <p>Certificados de Expositores</p> 
+        <p>Certificados de Asistentes</p> 
         <p>Seleccioná tu nombre para previsualizar el certificado y descargarlo en PDF.</p>
       </div>
     </section>
@@ -433,7 +435,7 @@
                 <img src="assets/images/logo-web-unla.jpg" alt="Universidad Nacional de Lanús" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               </div>
                <div class="certificate-logo certificate-logo-lad">
-                <img src="assets/images/logocad.jpeg" alt="Comisión sobre Accesibilidad y Discapacidad" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="assets/images/CAD_UNLa_fondo_transparente.png" alt="Comisión sobre Accesibilidad y Discapacidad" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               </div>
               <div class="certificate-logo certificate-logo-lad">
                 <img src="assets/images/lad sin borde negro.png" alt="Laboratorio de Diseño" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -454,7 +456,7 @@
             <div class="certificate-signatures">
 
   <div class="signature-block">
-    <img class="firma" src="assets/images/firma Velazco.png" alt="">
+    <img class="firma" src="assets/images/firma Velazco.png" alt="Diego Velazco">
     <div class="signature-line">
       <strong>Dirección Lic. en Diseño Industrial</strong>
       <span>Esp DI Diego Velazco</span>
@@ -462,7 +464,7 @@
   </div>
 
   <div class="signature-block">
-    <img class="firma" src="assets/images/firma Marcela Mendez.png" alt="">
+    <img class="firma" src="assets/images/marcelamendezfirma.png" alt="Marcela Mendez">
     <div class="signature-line">
       <strong>Dirección Comisión sobre Accesibilidad y Discapacidad</strong>
       <span>Esp Marcela Mendez</span>
@@ -470,7 +472,7 @@
   </div>
 
   <div class="signature-block">
-    <img class="firma" src="assets/images/firma estefi.png" alt="">
+    <img class="firma" src="assets/images/firma estefi.png" alt="Estefanía Fondevila Sancet">
     <div class="signature-line">
       <strong>Coordinación Laboratorio de Diseño</strong>
       <span>Esp Estefanía Fondevila Sancet</span>
@@ -491,7 +493,7 @@
       </div>
     </section>
 
-    <section class="grid-section" aria-label="Listado de expositores">
+    <section class="grid-section" aria-label="Listado de asistentes">
       <div class="container">
         <div class="resources-grid" id="certificateGrid"></div>
       </div>
