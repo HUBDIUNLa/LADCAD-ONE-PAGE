@@ -44,6 +44,11 @@
       border: none;
     }
 
+    .container {
+      width: min(100% - 48px, 1180px);
+      margin-inline: auto;
+    }
+
     .hero {
       padding: 48px 0 28px;
       background: var(--white);
@@ -348,6 +353,10 @@
     }
 
     @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
       main {
         border-width: 8px;
       }
@@ -481,9 +490,7 @@
 
             <div class="certificate-signatures">
               <div class="signature-block">
-                <img class="firma" src="assets/images/firma Velazco.png" alt="Firma de Diego Velazco" 
-                title="firma de Diego Velazco" 
-                onerror="this.style.display='none';">
+                <img class="firma" src="assets/images/firma Velazco.png" alt="Firma de Diego Velazco">
                 <div class="signature-line">
                   <strong>Dirección Lic. en Diseño Industrial</strong>
                   <span>ESP. DI Diego Velazco</span>
@@ -491,9 +498,7 @@
               </div>
 
               <div class="signature-block">
-                <img class="firma" src="assets/images/marcelamendezfirma.png" alt="Firma de Marcela Mendez" 
-                title="firma de Marcela Mendez" 
-                onerror="this.style.display='none';">
+                <img class="firma" src="assets/images/marcelamendezfirma.png" alt="Firma de Marcela Mendez">
                 <div class="signature-line">
                   <strong>Dirección Comisión sobre Accesibilidad y Discapacidad</strong>
                   <span>ESP. Marcela Mendez</span>
@@ -501,9 +506,7 @@
               </div>
 
               <div class="signature-block">
-                <img class="firma" src="assets/images/firma estefi.png" alt="Firma de Estefanía Fondevila Sancet" 
-                title="firma de Estefanía Fondevila Sancet" 
-                onerror="this.style.display='none';">
+                <img class="firma" src="assets/images/firma estefi.png" alt="Firma de Estefanía Fondevila Sancet">
                 <div class="signature-line">
                   <strong>Coordinación Laboratorio de Diseño</strong>
                   <span>ESP. Estefanía Fondevila Sancet</span>
