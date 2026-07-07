@@ -312,5 +312,48 @@ document.addEventListener("click", (event) => {
   });
 })();
 
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (!menuToggle || !mobileMenu) return;
+
+  function cerrarMenu() {
+    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("flex");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+  }
+
+  function abrirMenu() {
+    mobileMenu.classList.remove("hidden");
+    mobileMenu.classList.add("flex");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Cerrar menú de navegación");
+  }
+
+  menuToggle.addEventListener("click", function () {
+    const estaAbierto = menuToggle.getAttribute("aria-expanded") === "true";
+
+    if (estaAbierto) {
+      cerrarMenu();
+    } else {
+      abrirMenu();
+    }
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", cerrarMenu);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") cerrarMenu();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 1024) cerrarMenu();
+  });
+});
+
 
  
