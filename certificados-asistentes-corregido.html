@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificados | Congreso Diseño, Discapacidad y Accesibilidad</title>
+  <meta name="description" content="Repositorio de certificados para asistentes del 1er Congreso Internacional 'Diseño, Discapacidad y Accesibilidad: Tecnologías e Innovación para la Transformación Social'" />
+
+  <link rel="icon" href="assets/images/LADCADSINFONDO.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+
+  <style>
+    :root {
+      --ink: #080d08;
+      --paper: #f2f2f0;
+      --white: #ffffff;
+      --cyan: #aef8f5;
+      --cyan-strong: #00e7e1;
+      --web-lad: #A6FFF0;
+      --muted: #59615d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Karla", Arial, sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      border: none;
+    }
+
+    .hero {
+      padding: 48px 0 28px;
+      background: var(--white);
+      border-bottom: none;
+    }
+
+    .hero-kicker,
+    .preview-label {
+      margin: 0 0 12px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(18px, 3vw, 40px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin: 22px 0 0;
+      font-size: 19px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .preview-section {
+      padding: 38px 0 16px;
+    }
+
+    .certificate-shell {
+      width: 100%;
+      overflow: auto;
+      padding-bottom: 14px;
+    }
+
+    .certificate {
+      position: relative;
+      width: min(100%, 1120px);
+      aspect-ratio: 1.414 / 1;
+      margin: 0 auto;
+      background: var(--white);
+      border: 10px solid var(--ink);
+      color: var(--ink);
+      overflow: hidden;
+    }
+
+    .certificate-field {
+      position: absolute;
+      inset: 62px 52px 182px 52px;
+      background:
+        radial-gradient(
+          ellipse 65% 55% at 5% 0%,
+          rgba(157, 100, 116, 0.9) 0%,
+          rgba(157, 100, 116, 0.5) 35%,
+          transparent 72%
+        ),
+        radial-gradient(
+          ellipse 65% 85% at 0% 55%,
+          rgba(91, 170, 176, 0.7) 0%,
+          rgba(91, 170, 176, 0.28) 42%,
+          transparent 75%
+        ),
+        radial-gradient(
+          ellipse 55% 50% at 42% 0%,
+          rgba(164, 172, 164, 0.65) 0%,
+          rgba(164, 172, 164, 0.25) 40%,
+          transparent 72%
+        ),
+        #ffffff;
+    }
+
+    .certificate-brand {
+      position: absolute;
+      z-index: 2;
+      top: 90px;
+      right: 70px;
+      left: auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .certificate-logo {
+      width: auto;
+      height: 82px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      overflow: visible;
+    }
+
+    .certificate-logo img {
+      display: block;
+      width: auto;
+      height: 82px;
+      object-fit: contain;
+    }
+
+    .certificate-logo:nth-child(2) img {
+      height: 88px;
+    }
+
+    .certificate-logo-lad {
+      padding: 0;
+    }
+
+    .logo-tooltip {
+      position: relative;
+    }
+
+    .logo-tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 8px);
+      transform: translateX(-50%);
+      z-index: 20;
+      width: max-content;
+      max-width: 220px;
+      padding: 6px 9px;
+      background: #184872;
+      color: #ffffff;
+      font-family: "Karla", Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .logo-tooltip:hover::after {
+      opacity: 1;
+    }
+
+    .logo-fallback {
+      display: none;
+      color: var(--white);
+      font-family: "Roboto Mono", monospace;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: .9;
+      text-align: center;
+    }
+
+    .certificate-title {
+      position: absolute;
+      left: 74px;
+      right: 74px;
+      top: 220px;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(18px, 3vw, 30px);
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .certificate-copy {
+      position: absolute;
+      left: 78px;
+      right: 78px;
+      top: 335px;
+      max-width: 900px;
+      font-size: clamp(10px, 1vw, 15px);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .certificate-name {
+      display: block;
+      margin: 14px 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.05;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .certificate-signatures {
+      position: absolute;
+      left: 52px;
+      right: 52px;
+      bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      justify-content: center;
+      gap: 28px;
+      align-items: end;
+      padding-top: 22px;
+      background: var(--white);
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .signature-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .firma {
+      display: block;
+      width: 200px;
+      height: 100px;
+      object-fit: contain;
+      margin: 0 auto -5px;
+    }
+
+    .signature-line {
+      width: 100%;
+      min-height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .signature-line::before {
+      content: "";
+      display: block;
+      width: 100%;
+      border-top: 2px solid var(--ink);
+    }
+
+    .signature-line strong {
+      display: block;
+      font-weight: 700;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .download-button,
+    .course-access-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      padding: 12px 18px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .download-button:hover,
+    .course-access-link:hover,
+    .course-access-link.is-active {
+      background: var(--white);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .grid-section {
+      padding: 28px 0 60px;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .resource-card {
+      display: flex;
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .resource-card .course-access-link {
+      width: 100%;
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        border-width: 8px;
+      }
+
+      .hero {
+        padding-top: 34px;
+        border-bottom-width: 8px;
+      }
+
+      .certificate {
+        min-width: 760px;
+        border-width: 8px;
+      }
+
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        background: #ffffff;
+      }
+
+      body * {
+        visibility: hidden !important;
+      }
+
+      #certificate,
+      #certificate * {
+        visibility: visible !important;
+      }
+
+      main {
+        border: 0;
+        min-height: 0;
+      }
+
+      #certificate {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        border: 10px solid var(--ink) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .certificate-shell {
+        overflow: visible !important;
+      }
+
+      .logo-tooltip::after {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-kicker">Repositorio de certificados</p>
+        <br>
+        <p>Certificados de Asistentes</p>
+        <p>Seleccioná tu nombre para previsualizar el certificado y descargarlo en PDF.</p>
+      </div>
+    </section>
+
+    <section class="preview-section" aria-label="Previsualización del certificado">
+      <div class="container">
+        <p class="preview-label">Previsualizacion</p>
+
+        <div class="certificate-shell">
+          <article class="certificate" id="certificate">
+            <div class="certificate-field"></div>
+
+            <div class="certificate-brand" aria-label="Marcas institucionales">
+              <div class="certificate-logo logo-tooltip" data-tooltip="Universidad Nacional de Lanús">
+                <img
+                  src="assets/images/logo-web-unla.jpg"
+                  alt="Universidad Nacional de Lanús"
+                  title="Universidad Nacional de Lanús"
+                  onerror="this.style.display='none';"
+                >
+              </div>
+
+              <div class="certificate-logo certificate-logo-lad logo-tooltip" data-tooltip="Comisión sobre Accesibilidad y Discapacidad">
+                <img
+                  src="assets/images/CAD_UNLa_fondo_transparente.png"
+                  alt="Comisión sobre Accesibilidad y Discapacidad"
+                  title="Comisión sobre Accesibilidad y Discapacidad"
+                  onerror="this.style.display='none';"
+                >
+              </div>
+
+              <div class="certificate-logo certificate-logo-lad logo-tooltip" data-tooltip="Laboratorio de Diseño">
+                <img
+                  src="assets/images/lad sin borde negro.png"
+                  alt="Laboratorio de Diseño"
+                  title="Laboratorio de Diseño"
+                  onerror="this.style.display='none';"
+                >
+              </div>
+            </div>
+
+            <h2 class="certificate-title">Certificado<br>de Asistencia</h2>
+
+            <p class="certificate-copy">
+              <br>
+              Se certifica que
+              <span class="certificate-name" id="certificateName">Christian Campos</span>
+              asistió al <strong>1er Congreso Internacional "Diseño, Discapacidad y Accesibilidad: Tecnologías e Innovación
+              para la Transformación Social"</strong>,
+              desarrollado los días 12 y 13 de noviembre de 2026 organizado por la Comisión sobre Accesibilidad y Discapacidad (CAD), la
+              Licenciatura en Diseño Industrial y el Laboratorio de Diseño (LAD), en el Polo Tecnológico de la Universidad Nacional de Lanús.
+            </p>
+
+            <div class="certificate-signatures">
+              <div class="signature-block">
+                <img class="firma" src="assets/images/firma Velazco.png" alt="Firma de Diego Velazco" 
+                title="firma de Diego Velazco" 
+                onerror="this.style.display='none';">
+                <div class="signature-line">
+                  <strong>Dirección Lic. en Diseño Industrial</strong>
+                  <span>ESP. DI Diego Velazco</span>
+                </div>
+              </div>
+
+              <div class="signature-block">
+                <img class="firma" src="assets/images/marcelamendezfirma.png" alt="Firma de Marcela Mendez" 
+                title="firma de Marcela Mendez" 
+                onerror="this.style.display='none';">
+                <div class="signature-line">
+                  <strong>Dirección Comisión sobre Accesibilidad y Discapacidad</strong>
+                  <span>ESP. Marcela Mendez</span>
+                </div>
+              </div>
+
+              <div class="signature-block">
+                <img class="firma" src="assets/images/firma estefi.png" alt="Firma de Estefanía Fondevila Sancet" 
+                title="firma de Estefanía Fondevila Sancet" 
+                onerror="this.style.display='none';">
+                <div class="signature-line">
+                  <strong>Coordinación Laboratorio de Diseño</strong>
+                  <span>ESP. Estefanía Fondevila Sancet</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="controls">
+          <button class="download-button" type="button" id="downloadSelectedCertificate">
+            Descargar certificado
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-section" aria-label="Listado de asistentes">
+      <div class="container">
+        <div class="resources-grid" id="certificateGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/components.js" defer></script>
+  <script src="js/accesibilidad.js" defer></script>
+
+  <script>
+    const exhibitors = [
+      "Christian Campos",
+      "Rodrigo Avalos",
+      "Ciro Juarez",
+      "Victoria Reupach",
+      "Francesca Monclus",
+      "Paloma Pompei",
+      "Facundo Varas",
+      "Valentino Alemi",
+      "Aylin Alvarez",
+      "Ezequiel Ojeda Juarez",
+      "Soledad Galeano",
+      "Camila Di Biassi",
+      "Mariana Gómez Seminara",
+      "Matías Papaleo",
+      "Carolina Herrera",
+      "Fernando Balsamo",
+      "Rodrigo Apa",
+      "Juan Valdez",
+      "Ian Santamaría",
+      "Gonzalo Luqui",
+      "Magalí Moreno",
+      "Erika Noceda",
+      "Agustina Camacho",
+      "Nayla Quintana",
+      "Joana Villordo",
+      "Andrea Malenotti",
+      "Iara Fernandez",
+      "Alejo Acosta",
+      "Valentino Divita",
+      "Romina Onuz",
+      "Lara Domínguez Violi",
+      "Jacqueline Núñez",
+      "Micaela Castillo",
+      "Rosario Canton",
+      "Victoria Nievas",
+      "Michelle Rodríguez",
+      "Tiara Calvo",
+      "Juan Necchi",
+      "Franco Del Priore",
+      "Leonel Bravo",
+      "Camila Mignone",
+      "Ayelen Maldonado Vera",
+      "Lionel Ramirez",
+      "Camila De Geronimo",
+      "Luca Manuel Sebastiao",
+      "Julieta Quiroga",
+      "Camila Pizzi Libertad",
+      "Ramon Lezcano",
+      "Daiana Aguirres",
+      "Francisco Montes",
+      "Alejandro Joaquín Maldonado",
+      "Chiara Bloise",
+      "Naiara Lloves",
+      "Maia Abraham",
+      "Romero Espinoza Milton",
+      "Duarte Santiago Agustin",
+      "Milagros Lapatovski",
+      "Barbara Judith Gatica",
+      "Denis Yenifer",
+      "Brizuela Agustina Camila",
+      "Andrea Calderón Reyes"
+    ];
+
+    const grid = document.getElementById("certificateGrid");
+    const certificateName = document.getElementById("certificateName");
+    let selectedName = exhibitors[0];
+
+    function selectExhibitor(name) {
+      selectedName = name;
+      certificateName.textContent = name;
+
+      document.querySelectorAll(".course-access-link").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.name === name);
+      });
+    }
+
+    exhibitors.forEach((name) => {
+      const card = document.createElement("article");
+      card.className = "resource-card";
+      card.innerHTML = `
+        <button class="course-access-link" type="button" data-name="${name}" aria-label="Previsualizar certificado de ${name}">${name}</button>
+      `;
+
+      const button = card.querySelector(".course-access-link");
+
+      button.addEventListener("click", () => {
+        selectExhibitor(name);
+      });
+
+      grid.appendChild(card);
+    });
+
+    function printSelectedCertificate() {
+      window.print();
+    }
+
+    const selectedDownloadButton = document.getElementById("downloadSelectedCertificate");
+
+    if (selectedDownloadButton) {
+      selectedDownloadButton.addEventListener("click", printSelectedCertificate);
+    }
+
+    selectExhibitor(selectedName);
+  </script>
+</body>
+</html>

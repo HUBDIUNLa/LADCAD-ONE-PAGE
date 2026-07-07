@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -406,6 +407,60 @@
         overflow: visible !important;
       }
   
+.logo-tooltip {
+  position: relative;
+  outline: none;
+}
+
+.logo-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.5rem);
+  transform: translateX(-50%);
+  z-index: 20;
+
+  width: max-content;
+  max-width: 220px;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.4rem;
+
+  background: #184872;
+  color: #ffffff;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  text-align: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.logo-tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.15rem);
+  transform: translateX(-50%);
+  border: 0.35rem solid transparent;
+  border-top-color: #184872;
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.logo-tooltip:hover::after,
+.logo-tooltip:hover::before,
+.logo-tooltip:focus-visible::after,
+.logo-tooltip:focus-visible::before {
+  opacity: 1;
+}
+
+.logo-tooltip:focus-visible {
+  outline: 3px solid #184872;
+  outline-offset: 4px;
+}
+
     }
   </style>
 </head>
@@ -424,24 +479,54 @@
       </div>
     </section>
 
+    
+
     <section class="preview-section" aria-label="Previsualización del certificado">
       <div class="container">
-        <p class="preview-label">Previsualizacion</p>
-        <div class="certificate-shell">
-          <article class="certificate" id="certificate">
-            <div class="certificate-field"></div>
-            <div class="certificate-brand" aria-label="Marcas institucionales">
-              <div class="certificate-logo">
-                <img src="assets/images/logo-web-unla.jpg" alt="Universidad Nacional de Lanús" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-              </div>
-               <div class="certificate-logo certificate-logo-lad">
-                <img src="assets/images/CAD_UNLa_fondo_transparente.png" alt="Comisión sobre Accesibilidad y Discapacidad" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-              </div>
-              <div class="certificate-logo certificate-logo-lad">
-                <img src="assets/images/lad sin borde negro.png" alt="Laboratorio de Diseño" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-              </div>
 
-            </div>
+<div class="certificate-brand" aria-label="Marcas institucionales">
+  <div
+    class="certificate-logo logo-tooltip"
+    tabindex="0"
+    role="img"
+    aria-label="Universidad Nacional de Lanús"
+    data-tooltip="Universidad Nacional de Lanús"
+  >
+    <img
+      src="assets/images/logo-web-unla.jpg"
+      alt=""
+      onerror="this.style.display='none';"
+    >
+  </div>
+
+  <div
+    class="certificate-logo certificate-logo-lad logo-tooltip"
+    tabindex="0"
+    role="img"
+    aria-label="Comisión sobre Accesibilidad y Discapacidad de la Universidad Nacional de Lanús"
+    data-tooltip="Comisión sobre Accesibilidad y Discapacidad"
+  >
+    <img
+      src="assets/images/CAD_UNLa_fondo_transparente.png"
+      alt=""
+      onerror="this.style.display='none';"
+    >
+  </div>
+
+  <div
+    class="certificate-logo certificate-logo-lad logo-tooltip"
+    tabindex="0"
+    role="img"
+    aria-label="Laboratorio de Diseño de la Universidad Nacional de Lanús"
+    data-tooltip="Laboratorio de Diseño"
+  >
+    <img
+      src="assets/images/lad sin borde negro.png"
+      alt=""
+      onerror="this.style.display='none';"
+    >
+  </div>
+</div>
             <h2 class="certificate-title">Certificado<br>de Asistencia</h2>
             <p class="certificate-copy">
               <br>
@@ -456,26 +541,26 @@
             <div class="certificate-signatures">
 
   <div class="signature-block">
-    <img class="firma" src="assets/images/firma Velazco.png" alt="Diego Velazco">
+    <img class="firma" src="assets/images/firma Velazco.png" alt="Firma de Diego Velazco">
     <div class="signature-line">
       <strong>Dirección Lic. en Diseño Industrial</strong>
-      <span>Esp DI Diego Velazco</span>
+      <span>ESP. DI Diego Velazco</span>
     </div>
   </div>
 
   <div class="signature-block">
-    <img class="firma" src="assets/images/marcelamendezfirma.png" alt="Marcela Mendez">
+    <img class="firma" src="assets/images/marcelamendezfirma.png" alt="Firma de Marcela Mendez">
     <div class="signature-line">
       <strong>Dirección Comisión sobre Accesibilidad y Discapacidad</strong>
-      <span>Esp Marcela Mendez</span>
+      <span>ESP. Marcela Mendez</span>
     </div>
   </div>
 
   <div class="signature-block">
-    <img class="firma" src="assets/images/firma estefi.png" alt="Estefanía Fondevila Sancet">
+    <img class="firma" src="assets/images/firma estefi.png" alt="Firma de Estefanía Fondevila Sancet">
     <div class="signature-line">
       <strong>Coordinación Laboratorio de Diseño</strong>
-      <span>Esp Estefanía Fondevila Sancet</span>
+      <span>ESP. Estefanía Fondevila Sancet</span>
     </div>
   </div>
 
