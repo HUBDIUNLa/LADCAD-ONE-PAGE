@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificados | 13 Congreso Internacional REDLAT</title>
+  <meta name="description" content="Repositorio de certificados de asistentes del 13 Congreso Internacional REDLAT" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #18181b;
+      --paper: #f4f0eb;
+      --surface: #ffffff;
+      --red: #c72b4d;
+      --red-dark: #9f1837;
+      --line: #ded8d0;
+      --muted: #5f5a56;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(100% - 48px, 1180px);
+      margin-inline: auto;
+    }
+
+    .hero {
+      padding: 42px 0 28px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-kicker,
+    .preview-label {
+      margin: 0 0 12px;
+      color: var(--red-dark);
+      font-family: "Roboto Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 940px;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(24px, 4vw, 46px);
+      line-height: 1.04;
+      text-transform: uppercase;
+    }
+
+    .hero p:not(.hero-kicker) {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .preview-section {
+      padding: 34px 0 18px;
+    }
+
+    .certificate-shell {
+      width: 100%;
+      overflow: auto;
+      padding-bottom: 14px;
+    }
+
+    .certificate {
+      position: relative;
+      width: min(100%, 1120px);
+      aspect-ratio: 1.414 / 1;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #ffffff url("assets/images/redlat-certificado-asistente-base.png") center / cover no-repeat;
+      box-shadow: 0 20px 50px rgba(24, 24, 27, 0.12);
+    }
+
+    .certificate-name {
+      position: absolute;
+      left: 13%;
+      right: 13%;
+      top: 49.4%;
+      color: #111111;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 800;
+      line-height: 1.08;
+      text-align: center;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .download-button,
+    .name-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: #ffffff;
+      padding: 11px 17px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
+    }
+
+    .download-button:hover,
+    .name-button:hover,
+    .name-button.is-active {
+      border-color: var(--red);
+      background: var(--surface);
+      color: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .download-button[disabled] {
+      cursor: wait;
+      opacity: .72;
+      transform: none;
+    }
+
+    .status {
+      width: 100%;
+      min-height: 22px;
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .grid-section {
+      padding: 26px 0 60px;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .resource-card {
+      display: flex;
+    }
+
+    .resource-card .name-button {
+      width: 100%;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .certificate {
+        min-width: 760px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        background: #ffffff;
+      }
+
+      body * {
+        visibility: hidden !important;
+      }
+
+      #certificate,
+      #certificate * {
+        visibility: visible !important;
+      }
+
+      #certificate {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-kicker">Repositorio de certificados</p>
+        <h1>13 Congreso Internacional REDLAT</h1>
+        <p>Certificados de asistentes. Seleccioná tu nombre para previsualizar el certificado y descargarlo en PDF.</p>
+      </div>
+    </section>
+
+    <section class="preview-section" aria-label="Previsualización del certificado">
+      <div class="container">
+        <p class="preview-label">Previsualización</p>
+
+        <div class="certificate-shell">
+          <article class="certificate" id="certificate">
+            <div class="certificate-name" id="certificateName"></div>
+          </article>
+        </div>
+
+        <div class="controls">
+          <a class="download-button" href="#" download id="downloadSelectedCertificate">
+            Descargar certificado
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-section" aria-label="Listado de asistentes">
+      <div class="container">
+        <div class="resources-grid" id="certificateGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const attendees = [
+      "Christian Campos",
+      "Rodrigo Avalos",
+      "Ciro Juarez",
+      "Victoria Reupach",
+      "Francesca Monclus",
+      "Paloma Pompei",
+      "Facundo Varas",
+      "Valentino Alemi",
+      "Aylin Alvarez",
+      "Ezequiel Ojeda Juarez",
+      "Soledad Galeano",
+      "Camila Di Biassi",
+      "Mariana Gómez Seminara",
+      "Matías Papaleo",
+      "Carolina Herrera",
+      "Fernando Balsamo",
+      "Rodrigo Apa",
+      "Juan Valdez",
+      "Ian Santamaría",
+      "Gonzalo Luqui",
+      "Magalí Moreno",
+      "Erika Noceda",
+      "Agustina Camacho",
+      "Nayla Quintana",
+      "Joana Villordo",
+      "Andrea Malenotti",
+      "Iara Fernandez",
+      "Alejo Acosta",
+      "Valentino Divita",
+      "Romina Onuz",
+      "Lara Domínguez Violi",
+      "Jacqueline Núñez",
+      "Micaela Castillo",
+      "Rosario Canton",
+      "Victoria Nievas",
+      "Michelle Rodríguez",
+      "Tiara Calvo",
+      "Juan Necchi",
+      "Franco Del Priore",
+      "Leonel Bravo",
+      "Camila Mignone",
+      "Ayelen Maldonado Vera",
+      "Lionel Ramirez",
+      "Camila De Geronimo",
+      "Luca Manuel Sebastiao",
+      "Julieta Quiroga",
+      "Camila Pizzi Libertad",
+      "Ramon Lezcano",
+      "Daiana Aguirres",
+      "Francisco Montes",
+      "Alejandro Joaquín Maldonado",
+      "Chiara Bloise",
+      "Naiara Lloves",
+      "Maia Abraham",
+      "Romero Espinoza Milton",
+      "Duarte Santiago Agustin",
+      "Milagros Lapatovski",
+      "Barbara Judith Gatica",
+      "Denis Yenifer",
+      "Brizuela Agustina Camila",
+      "Andrea Calderón Reyes"
+    ];
+
+    const certificateFolder = "assets/pdf/redlat-certificados";
+    const grid = document.getElementById("certificateGrid");
+    const certificateName = document.getElementById("certificateName");
+    const downloadButton = document.getElementById("downloadSelectedCertificate");
+    let selectedName = attendees[0];
+
+    function slugifyName(name) {
+      return name
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function selectAttendee(name) {
+      selectedName = name;
+      certificateName.textContent = name;
+      const fileName = `certificado-redlat-asistente-${slugifyName(name)}.pdf`;
+      downloadButton.href = `${certificateFolder}/${fileName}`;
+      downloadButton.download = fileName;
+
+      document.querySelectorAll(".name-button").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.name === name);
+      });
+    }
+
+    attendees.forEach((name) => {
+      const card = document.createElement("article");
+      card.className = "resource-card";
+
+      const button = document.createElement("button");
+      button.className = "name-button";
+      button.type = "button";
+      button.dataset.name = name;
+      button.textContent = name;
+      button.setAttribute("aria-label", `Previsualizar certificado de ${name}`);
+      button.addEventListener("click", () => selectAttendee(name));
+
+      card.appendChild(button);
+      grid.appendChild(card);
+    });
+
+    selectAttendee(selectedName);
+  </script>
+</body>
+</html>
